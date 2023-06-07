@@ -1,0 +1,17 @@
+/* Projects Page */
+#projectsPage {
+    @apply py-10;
+}
+
+.projectsList {
+    @apply text-center;
+}
+
+/* Project Detail */
+#projectDetail {
+    @apply py-10;
+}
+
+.projectView {
+    @apply text-center;
+}
