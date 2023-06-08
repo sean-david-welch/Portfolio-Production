@@ -1,0 +1,31 @@
+#dialog {
+    @apply m-auto scale-0 opacity-0 transition-all;
+}
+
+#dialog[open] {
+    @apply scale-150 opacity-100 duration-1000;
+}
+
+.modal {
+    @apply m-auto flex flex-col items-center justify-center rounded-xl p-4;
+}
+
+.modal::backdrop {
+    @apply bg-slate-600 opacity-90;
+}
+
+.neon {
+    @apply relative;
+}
+
+.neonBlur {
+    @apply absolute inset-0 bg-pink-800 px-5 blur-xl;
+}
+
+.modalButton {
+    @apply relative rounded-lg bg-violet-900 px-8 py-2 font-semibold text-white transition-colors duration-700 ease-in-out hover:bg-violet-700;
+}
+
+.modalHeading {
+    @apply text-3xl font-bold leading-none text-black;
+}

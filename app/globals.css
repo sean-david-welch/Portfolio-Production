@@ -6,6 +6,7 @@
     --foreground-rgb: 0, 0, 0;
     --background-start-rgb: 214, 219, 220;
     --background-end-rgb: 255, 255, 255;
+    --webiste-width: 100vw;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -16,6 +17,29 @@
     }
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+    width: 0.3vw;
+}
+
+html::-webkit-scrollbar-thumb {
+    background-color: var(--black-color);
+    border-radius: 10px;
+}
+
+html::-webkit-scrollbar-track {
+    background-color: var(--dark-color);
+}
+
 body {
     color: rgb(var(--foreground-rgb));
     background: linear-gradient(
@@ -24,6 +48,7 @@ body {
             rgb(var(--background-end-rgb))
         )
         rgb(var(--background-start-rgb));
+    @apply max-h-screen overflow-x-hidden;
 }
 
 .main {
@@ -34,34 +59,6 @@ body {
     @apply text-5xl font-bold;
 }
 
-dialog {
-    @apply transition-all opacity-0 scale-0;
-}
-
-dialog[open] {
-    @apply duration-1000 opacity-100 scale-150;
-}
-
-.modal {
-    @apply rounded-xl flex items-center flex-col;
-}
-
-.modal::backdrop {
-    @apply bg-slate-600 opacity-90;
-}
-
-.neon {
-    @apply relative;
-}
-
-.neon-blur {
-    @apply absolute inset-0 bg-pink-800 blur-xl px-5;
-}
-
-.modal-button {
-    @apply relative bg-violet-900 hover:bg-violet-700 text-white font-semibold py-2 px-8 rounded-lg transition-colors duration-700 ease-in-out;
-}
-
-.modal-heading {
-    @apply text-3xl font-bold text-black leading-none;
+.container {
+    @apply m-0;
 }

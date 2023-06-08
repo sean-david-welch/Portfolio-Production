@@ -1,4 +1,5 @@
 'use client';
+import styles from './styles/Buttons.module.css';
 import { useRef } from 'react';
 
 export const ModalButton = () => {
@@ -6,19 +7,19 @@ export const ModalButton = () => {
 
     return (
         <>
-            <div className="neon">
-                <div className="neon-blur"></div>
+            <div className={styles.neon}>
+                <div className={styles.neonBlur}></div>
                 <button
-                    className="modal-button"
+                    className={styles.modalButton}
                     onClick={() => dialog.current?.showModal()}>
                     Open Model
                 </button>
             </div>
 
-            <dialog ref={dialog} className="modal">
-                <h1 className="modal-heading">Modal Window</h1>
+            <dialog ref={dialog} id={styles.dialog} className={styles.modal}>
+                <h1 className={styles.modalHeading}>Modal Window</h1>
                 <button
-                    className="modal-close"
+                    className={styles.modalClose}
                     onClick={() => dialog.current?.close()}>
                     Close
                 </button>
