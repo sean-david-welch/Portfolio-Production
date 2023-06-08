@@ -1,4 +1,4 @@
-import { ModalButton } from './components/buttons';
+import { ModalButton } from './components/Buttons';
 
 export default function Home() {
     return (

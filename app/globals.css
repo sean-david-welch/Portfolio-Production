@@ -42,17 +42,11 @@ html::-webkit-scrollbar-track {
 
 body {
     color: rgb(var(--foreground-rgb));
-    background: linear-gradient(
-            to bottom,
-            transparent,
-            rgb(var(--background-end-rgb))
-        )
-        rgb(var(--background-start-rgb));
-    @apply max-h-screen overflow-x-hidden;
+    @apply max-h-screen overflow-x-hidden bg-gradient-radial from-slate-950 from-60% to-slate-500 bg-cover;
 }
 
 .main {
-    @apply flex min-h-screen flex-col items-center justify-between p-24;
+    @apply flex flex-col items-center justify-between p-24;
 }
 
 .main-heading {
