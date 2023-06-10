@@ -1,6 +1,9 @@
 'use client';
+import Link from 'next/link';
+import Image from 'next/image';
 import styles from './styles/Buttons.module.css';
 import { useRef } from 'react';
+import { useSession, signIn, signOut } from 'next-auth/react';
 
 export const ModalButton = () => {
     const dialog = useRef<HTMLDialogElement>(null);
@@ -26,4 +29,35 @@ export const ModalButton = () => {
             </dialog>
         </>
     );
+};
+
+export const SignInButton = () => {
+    const { data: session, status } = useSession();
+    console.log(session, status);
+
+    if (status === 'loading') {
+        return <>...</>;
+    }
+
+    if (status === 'authenticated') {
+        return (
+            <>
+                <Link href={`/account`}>
+                    <Image
+                        src={session.user?.image ?? '/mememan.webp'}
+                        width={32}
+                        height={32}
+                        alt={`Your Name`}
+                    />
+                </Link>
+                <SignOutButton />
+            </>
+        );
+    }
+
+    return <button onClick={() => signIn()}>Sign In</button>;
+};
+
+export const SignOutButton = () => {
+    return <button onClick={() => signOut()}>Sign Out</button>;
 };

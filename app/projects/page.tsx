@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import styles from './projects.module.css';
+import styles from './styles/projects.module.css';
 import axios from 'axios';
 
 export interface Project {

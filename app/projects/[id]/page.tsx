@@ -1,5 +1,5 @@
 import axios from 'axios';
-import styles from '../projects.module.css';
+import styles from '../styles/projects.module.css';
 import { Project } from '../page';
 
 interface Props {
