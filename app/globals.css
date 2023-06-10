@@ -41,8 +41,7 @@ html::-webkit-scrollbar-track {
 }
 
 body {
-    color: rgb(var(--foreground-rgb));
-    @apply max-h-screen overflow-x-hidden bg-gradient-radial from-slate-950 from-60% to-slate-500 bg-cover;
+    @apply min-h-screen overflow-x-hidden bg-gradient-to-b from-slate-900 from-10% to-slate-800 to-90% bg-cover text-white;
 }
 
 .main {

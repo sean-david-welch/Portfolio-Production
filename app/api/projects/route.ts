@@ -1,3 +1,4 @@
+import { getServerSession } from 'next-auth';
 import { NextResponse, NextRequest } from 'next/server';
 
 const projects = [
@@ -22,5 +23,7 @@ const projects = [
 ];
 
 export const GET = async () => {
+    const session = await getServerSession();
+
     return NextResponse.json(projects);
 };
