@@ -11,3 +11,5 @@ const AuthCheck = ({ children }: { children: React.ReactNode }) => {
         return <div>Access Denied</div>;
     }
 };
+
+export default AuthCheck;

@@ -7,6 +7,8 @@ const Navbar = () => {
         <nav id={styles.navbar}>
             <Link href={'/'}>Home</Link>
             <Link href={'/projects'}>Projects</Link>
+            <Link href={'/users'}>Users</Link>
+            <Link href={'/products'}>Products</Link>
             <SignInButton />
         </nav>
     );

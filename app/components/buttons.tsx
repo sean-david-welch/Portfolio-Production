@@ -41,7 +41,7 @@ export const SignInButton = () => {
     if (status === 'authenticated') {
         return (
             <>
-                <Link href={`/account`}>
+                <Link href={`/dashboard`}>
                     <Image
                         src={session.user?.image ?? '/mememan.webp'}
                         width={32}
