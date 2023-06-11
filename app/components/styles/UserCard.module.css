@@ -1,0 +1,11 @@
+.card {
+    @apply py-2;
+}
+
+.cardImage {
+    @apply py-2;
+}
+
+.cardContent {
+    @apply py-2;
+}

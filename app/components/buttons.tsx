@@ -33,7 +33,6 @@ export const ModalButton = () => {
 
 export const SignInButton = () => {
     const { data: session, status } = useSession();
-    console.log(session, status);
 
     if (status === 'loading') {
         return <>...</>;
