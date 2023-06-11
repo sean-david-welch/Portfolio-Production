@@ -1,38 +1,25 @@
-'use client';
-
-import axios from 'axios';
+import { revalidatePath } from 'next/cache';
 import styles from './styles/ProfileForm.module.css';
 
 export const ProfileForm = ({ user }: any) => {
-    const updateUser = async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
+    const updateUser = async (formData: FormData) => {
+        'use server';
 
-        const formData = new FormData(e.currentTarget);
-
-        const body = {
+        // Fix this its not working
+        await user.set(user, {
             name: formData.get('name'),
-            bio: formData.get('bio'),
             age: formData.get('age'),
+            bio: formData.get('bio'),
             image: formData.get('image'),
-        };
-
-        axios.defaults.baseURL = 'http://localhost:3000/api';
-
-        try {
-            const respose = await axios.put('/user', body, {
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-            });
-        } catch (error) {
-            console.error('Error updating the user:', error);
-        }
+        });
+        revalidatePath(`dashboard`);
     };
 
     return (
         <div className={styles.editProfile}>
             <h2>Edit Your Profile</h2>
-            <form onSubmit={updateUser} className={styles.profileForm}>
+
+            <form action={updateUser} className={styles.profileForm}>
                 <label htmlFor="name">Name</label>
                 <input
                     type="text"
