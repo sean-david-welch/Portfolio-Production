@@ -1,0 +1,12 @@
+.editProfile {
+    @apply py-2 text-center;
+}
+
+.profileForm {
+    @apply mx-40 my-0 flex flex-col text-center;
+}
+
+.profileForm input,
+.profileForm textarea {
+    @apply px-5 text-black;
+}
