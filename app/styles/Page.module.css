@@ -1,0 +1,11 @@
+.main {
+    @apply flex flex-col items-center justify-between p-24;
+}
+
+.mainHeading {
+    @apply text-5xl font-bold;
+}
+
+.container {
+    @apply m-0;
+}

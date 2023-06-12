@@ -39,19 +39,3 @@ html::-webkit-scrollbar-thumb {
 html::-webkit-scrollbar-track {
     background-color: var(--dark-color);
 }
-
-body {
-    @apply min-h-screen overflow-x-hidden bg-gradient-to-b from-slate-900 from-10% to-slate-800 to-90% bg-cover text-white;
-}
-
-.main {
-    @apply flex flex-col items-center justify-between p-24;
-}
-
-.main-heading {
-    @apply text-5xl font-bold;
-}
-
-.container {
-    @apply m-0;
-}

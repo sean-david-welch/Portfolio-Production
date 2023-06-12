@@ -1,9 +1,10 @@
 import { ModalButton } from './components/Buttons';
+import styles from './styles/Page.module.css';
 
 const Home = () => {
     return (
-        <section className="main">
-            <h1 className="main-heading">Hello World</h1>
+        <section className={styles.main}>
+            <h1 className={styles.mainHeading}>Hello World</h1>
             <ModalButton />
         </section>
     );
