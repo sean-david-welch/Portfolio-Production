@@ -3,7 +3,7 @@ import { prisma } from '@/lib/primsa';
 import { getServerSession } from 'next-auth';
 import { redirect } from 'next/navigation';
 import { authOptions } from '../api/auth/[...nextauth]/route';
-import { ProfileFormWrapper } from './FormButton';
+import { ProfileForm } from './ProfileForm';
 
 const DashboardPage = async () => {
     const session = await getServerSession(authOptions);
@@ -13,16 +13,20 @@ const DashboardPage = async () => {
     }
 
     const currentUserEmail = session?.user?.email!;
-    const user = await prisma.user.findUnique({
-        where: {
-            email: currentUserEmail,
-        },
-    });
+    const user = await prisma.user
+        .findUnique({
+            where: {
+                email: currentUserEmail,
+            },
+        })
+        .then(user => {
+            return user;
+        });
 
     return (
         <section id={styles.dashboardPage}>
             <h1>Dashboard</h1>
-            <ProfileFormWrapper user={user} />
+            <ProfileForm user={user} />
         </section>
     );
 };

@@ -1,9 +1,6 @@
 'use server';
 import { prisma } from '@/lib/primsa';
-import { getServerSession } from 'next-auth';
-import { getSession } from 'next-auth/react';
 import { revalidatePath } from 'next/cache';
-import { authOptions } from '../api/auth/[...nextauth]/route';
 
 export const updateUser = async ({ user }: any, formData: FormData) => {
     if (!user) {
