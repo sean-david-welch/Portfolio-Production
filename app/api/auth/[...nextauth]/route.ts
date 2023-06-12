@@ -6,6 +6,7 @@ import { NextAuthOptions } from 'next-auth';
 
 export const authOptions: NextAuthOptions = {
     adapter: PrismaAdapter(prisma),
+
     providers: [
         GithubProvider({
             clientId: process.env.GITHUB_ID!,

@@ -30,10 +30,11 @@
     aspect-ratio: 16/9;
     position: relative;
     overflow: hidden;
-    img {
-        position: absolute;
-        width: 100%;
-    }
+}
+
+.cardImg img {
+    position: absolute;
+    width: 100%;
 }
 
 .cardBody {
@@ -44,21 +45,22 @@
     font-size: 1.25rem;
     line-height: 1.33;
     font-weight: 700;
-    &.skeleton {
-        min-height: 28px;
-        border-radius: 4px;
-    }
+}
+
+.cardTitle .skeleton {
+    min-height: 28px;
+    border-radius: 4px;
 }
 
 .cardIntro {
     margin-top: 0.75rem;
     line-height: 1.5;
-    &.skeleton {
-        min-height: 72px;
-        border-radius: 4px;
-    }
 }
 
+.cardIntro .skeleton {
+    min-height: 72px;
+    border-radius: 4px;
+}
 /* Loading effect */
 .skeleton {
     background-color: #e2e5e7;

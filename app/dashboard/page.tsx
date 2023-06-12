@@ -3,7 +3,7 @@ import { prisma } from '@/lib/primsa';
 import { getServerSession } from 'next-auth';
 import { redirect } from 'next/navigation';
 import { authOptions } from '../api/auth/[...nextauth]/route';
-import { ProfileForm } from './ProfileForm';
+import { ProfileFormWrapper } from './FormButton';
 
 const DashboardPage = async () => {
     const session = await getServerSession(authOptions);
@@ -22,7 +22,7 @@ const DashboardPage = async () => {
     return (
         <section id={styles.dashboardPage}>
             <h1>Dashboard</h1>
-            <ProfileForm user={user} />
+            <ProfileFormWrapper user={user} />
         </section>
     );
 };
