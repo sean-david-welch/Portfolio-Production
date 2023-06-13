@@ -29,3 +29,11 @@
 .modalHeading {
     @apply text-3xl font-bold leading-none text-black;
 }
+
+.signIn {
+    @apply flex flex-row justify-center;
+}
+
+.profileImage {
+    @apply ml-4 rounded-lg;
+}

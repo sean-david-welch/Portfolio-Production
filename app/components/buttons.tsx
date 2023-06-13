@@ -35,21 +35,28 @@ export const SignInButton = () => {
     const { data: session, status } = useSession();
 
     if (status === 'loading') {
-        return <>...</>;
+        return (
+            <ul className={styles.signIn}>
+                <li>...</li>
+            </ul>
+        );
     }
 
     if (status === 'authenticated') {
         return (
             <>
-                <Link href={`/dashboard`}>
-                    <Image
-                        src={session.user?.image ?? '/mememan.webp'}
-                        width={32}
-                        height={32}
-                        alt={`Your Name`}
-                    />
-                </Link>
-                <SignOutButton />
+                <ul className={styles.signIn}>
+                    <SignOutButton />
+                    <Link href={`/dashboard`}>
+                        <Image
+                            src={session.user?.image ?? '/mememan.webp'}
+                            width={64}
+                            height={64}
+                            alt={`Your Name`}
+                            className={styles.profileImage}
+                        />
+                    </Link>
+                </ul>
             </>
         );
     }
@@ -58,5 +65,9 @@ export const SignInButton = () => {
 };
 
 export const SignOutButton = () => {
-    return <button onClick={() => signOut()}>Sign Out</button>;
+    return (
+        <button className={styles.button} onClick={() => signOut()}>
+            Sign Out
+        </button>
+    );
 };
