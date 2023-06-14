@@ -9,8 +9,9 @@
 
 /* Side Navbar */
 .sideNav {
-    @apply absolute left-0 min-h-screen w-64 border-r-2 border-indigo-900 bg-slate-950;
+    @apply absolute left-0 min-h-screen w-64 border-r-2 border-indigo-900;
     @apply transform transition-all duration-700 ease-in-out;
+    @apply bg-gradient-to-b from-[rgb(18,24,27)] via-[rgb(18,24,27)] to-[rgb(32,39,55)];
 }
 
 .sideNav.open {
@@ -18,7 +19,7 @@
 }
 
 .sideNav.closed {
-    @apply translate-x-[-72] opacity-0;
+    @apply -translate-x-full opacity-0;
 }
 
 .navList {
@@ -26,7 +27,11 @@
 }
 
 .navItem {
-    @apply mx-auto my-7 w-56 text-xl;
+    @apply mx-auto my-6 w-56 text-xl transition-all duration-500 ease-in-out;
+}
+
+.navItem:hover {
+    @apply text-indigo-600;
 }
 
 .navItem > * {
@@ -55,21 +60,25 @@
 }
 
 .socialHeading {
-    @apply mx-auto text-2xl font-medium;
+    @apply mx-5 text-xl font-medium;
 }
 
 .underline {
-    @apply bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-[length:100%_2px] bg-bottom bg-no-repeat;
+    @apply bg-gradient-to-r from-indigo-600 via-blue-800 to-purple-900 bg-[length:100%_2px] bg-bottom bg-no-repeat;
 }
 
 .linksList {
-    @apply mx-auto;
+    @apply mx-2 flex flex-col;
 }
 
 .linksList a {
-    @apply mx-4 w-56 text-xl font-medium;
+    @apply mx-4 my-2 w-56 text-xl font-medium transition-all duration-500 ease-in-out;
+}
+
+.linksList a:hover {
+    @apply text-indigo-600;
 }
 
 .linksList svg {
-    @apply mt-6;
+    @apply mr-4 mt-6;
 }

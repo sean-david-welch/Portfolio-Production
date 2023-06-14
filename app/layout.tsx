@@ -18,7 +18,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
     return (
         <AuthProvider>
             <html lang="en" className={raleway.className}>
-                <body className="min-h-screen overflow-x-hidden bg-gradient-to-b from-slate-900 from-10% to-slate-800 to-90% bg-cover text-white">
+                <body className=" min-h-screen overflow-x-hidden  text-white">
                     <Header />
                     <main>{children}</main>
                     <Footer />

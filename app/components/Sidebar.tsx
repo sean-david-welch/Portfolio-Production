@@ -104,6 +104,12 @@ const Sidebar = () => {
                         </h1>
                         <ul className={styles.linksList}>
                             <Link
+                                href={'https://github.com/sean-david-welch'}
+                                target="_blank">
+                                <FontAwesomeIcon icon={faGithub} size={'xl'} />
+                                Github
+                            </Link>
+                            <Link
                                 href={
                                     'https://www.linkedin.com/in/sean-welch-3988191a5/'
                                 }
@@ -112,11 +118,7 @@ const Sidebar = () => {
                                     icon={faLinkedin}
                                     size={'xl'}
                                 />
-                            </Link>
-                            <Link
-                                href={'https://github.com/sean-david-welch'}
-                                target="_blank">
-                                <FontAwesomeIcon icon={faGithub} size={'xl'} />
+                                LinkedIn
                             </Link>
                         </ul>
                     </div>

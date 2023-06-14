@@ -1,3 +1,8 @@
+.boxshadow {
+    box-shadow: 0 0 0 2px rgba(74, 4, 78, 0.5), 0 0 0 3px rgba(74, 4, 78, 0.5),
+        0 0 0 4px rgba(74, 4, 78, 0.5), 0 0 0 5px rgba(74, 4, 78, 0.5);
+}
+
 /* ModalButton */
 #dialog {
     @apply m-auto flex scale-0 flex-col items-center justify-center opacity-0 transition-all duration-200 ease-in;
@@ -15,39 +20,40 @@
     @apply bg-slate-600 opacity-90;
 }
 
-.neon {
-    @apply relative;
-}
-
-.neonBlur {
-    @apply absolute inset-0 bg-pink-800 px-5 blur-xl;
-}
-
-.modalButton {
-    @apply relative rounded-lg bg-violet-900 px-8 py-2 font-semibold text-white transition-colors duration-700 ease-in-out hover:bg-violet-700;
-}
-
 .modalHeading {
     @apply text-3xl font-bold leading-none text-black;
 }
 
-.modalClose {
-    @apply transition-all duration-1000 ease-in-out;
+.modalButton {
+    @apply rounded-xl bg-violet-950 px-10 py-2 font-semibold text-white transition-all duration-700 ease-in-out hover:bg-violet-900;
+}
+
+.modalButton:hover {
+    @apply boxshadow;
 }
 
 /* SignIn/Out */
-.signInButton {
-    @apply absolute right-5 top-7 rounded-lg bg-violet-900 px-8 py-2 font-semibold text-white transition-colors duration-700 ease-in-out hover:bg-violet-700;
-}
-
-.signOutButton {
-    @apply rounded-lg bg-violet-900 px-8 py-2 font-semibold text-white transition-colors duration-700 ease-in-out hover:bg-violet-700;
-}
-
 .signIn {
-    @apply absolute right-2 top-4 flex flex-row;
+    @apply absolute right-2 top-6 flex flex-row;
+}
+
+.signInButton {
+    @apply absolute right-5 top-7;
+    @apply rounded-xl bg-violet-950 px-10 py-2 font-semibold text-white transition-all duration-700 ease-in-out hover:bg-violet-900;
+}
+
+.signInButton:hover {
+    @apply boxshadow;
 }
 
 .profileImage {
     @apply mx-4 rounded-lg;
+}
+
+.signOutButton {
+    @apply rounded-xl bg-violet-950 px-10 py-2 font-semibold text-white transition-all duration-700 ease-in-out hover:bg-violet-900;
+}
+
+.signOutButton:hover {
+    @apply boxshadow;
 }

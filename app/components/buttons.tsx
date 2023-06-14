@@ -10,14 +10,11 @@ export const ModalButton = () => {
 
     return (
         <>
-            <div className={styles.neon}>
-                <div className={styles.neonBlur}></div>
-                <button
-                    className={styles.modalButton}
-                    onClick={() => dialog.current?.showModal()}>
-                    Open Model
-                </button>
-            </div>
+            <button
+                className={styles.modalButton}
+                onClick={() => dialog.current?.showModal()}>
+                Open Model
+            </button>
 
             <dialog ref={dialog} id={styles.dialog} className={styles.modal}>
                 <h1 className={styles.modalHeading}>Modal Window</h1>
@@ -35,11 +32,7 @@ export const SignInButton = () => {
     const { data: session, status } = useSession();
 
     if (status === 'loading') {
-        return (
-            <ul className={styles.signIn}>
-                <button className={styles.signInButton}>...</button>
-            </ul>
-        );
+        return <button className={styles.signInButton}>...</button>;
     }
 
     if (status === 'authenticated') {
@@ -50,8 +43,8 @@ export const SignInButton = () => {
                     <Link href={`/dashboard`}>
                         <Image
                             src={session.user?.image ?? '/mememan.webp'}
-                            width={64}
-                            height={64}
+                            width={42}
+                            height={42}
                             alt={`Your Name`}
                             className={styles.profileImage}
                         />
