@@ -41,33 +41,58 @@ const Sidebar = () => {
                 }`}>
                 {isOpen && (
                     <div className={styles.navIcon} onClick={toggleSidebar}>
-                        <FontAwesomeIcon
-                            icon={faX}
-                            height={32}
-                            width={32}
-                            className={styles.navigation}
-                        />
+                        <div className={styles.iconGrid}>
+                            <FontAwesomeIcon
+                                icon={faX}
+                                height={32}
+                                width={32}
+                                className={styles.navigation}
+                            />
+                            <h1 className={styles.sectionHeading}>
+                                <span className={styles.underline}>
+                                    ModernDev{' '}
+                                </span>
+                            </h1>
+                        </div>
                     </div>
                 )}
                 <nav>
                     <ul className={styles.navList}>
-                        <Link className={styles.navItem} href={'/'}>
+                        <Link
+                            className={styles.navItem}
+                            href={'/'}
+                            onClick={() => setIsOpen(false)}>
                             <FontAwesomeIcon icon={faHome} /> Home
                         </Link>
-                        <Link className={styles.navItem} href={'/dashboard'}>
+                        <Link
+                            className={styles.navItem}
+                            href={'/dashboard'}
+                            onClick={() => setIsOpen(false)}>
                             <FontAwesomeIcon icon={faAddressCard} /> Dashboard
                         </Link>
-                        <Link className={styles.navItem} href={'/about'}>
+                        <Link
+                            className={styles.navItem}
+                            href={'/about'}
+                            onClick={() => setIsOpen(false)}>
                             <FontAwesomeIcon icon={faCircleInfo} /> About
                         </Link>
 
-                        <Link className={styles.navItem} href={'/projects'}>
+                        <Link
+                            className={styles.navItem}
+                            href={'/projects'}
+                            onClick={() => setIsOpen(false)}>
                             <FontAwesomeIcon icon={faDiagramProject} /> Projects
                         </Link>
-                        <Link className={styles.navItem} href={'/products'}>
+                        <Link
+                            className={styles.navItem}
+                            href={'/products'}
+                            onClick={() => setIsOpen(false)}>
                             <FontAwesomeIcon icon={faCartPlus} /> Products
                         </Link>
-                        <Link className={styles.navItem} href={'/users'}>
+                        <Link
+                            className={styles.navItem}
+                            href={'/users'}
+                            onClick={() => setIsOpen(false)}>
                             <FontAwesomeIcon icon={faUser} /> Users
                         </Link>
                     </ul>

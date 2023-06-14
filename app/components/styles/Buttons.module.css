@@ -1,5 +1,6 @@
+/* ModalButton */
 #dialog {
-    @apply m-auto scale-0 opacity-0 transition-all ease-in-out;
+    @apply m-auto flex scale-0 flex-col items-center justify-center opacity-0 transition-all duration-200 ease-in;
 }
 
 #dialog[open] {
@@ -30,8 +31,21 @@
     @apply text-3xl font-bold leading-none text-black;
 }
 
+.modalClose {
+    @apply transition-all duration-1000 ease-in-out;
+}
+
+/* SignIn/Out */
+.signInButton {
+    @apply absolute right-5 top-7 rounded-lg bg-violet-900 px-8 py-2 font-semibold text-white transition-colors duration-700 ease-in-out hover:bg-violet-700;
+}
+
+.signOutButton {
+    @apply rounded-lg bg-violet-900 px-8 py-2 font-semibold text-white transition-colors duration-700 ease-in-out hover:bg-violet-700;
+}
+
 .signIn {
-    @apply flex flex-row justify-center;
+    @apply absolute right-2 top-4 flex flex-row;
 }
 
 .profileImage {

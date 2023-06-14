@@ -1,16 +1,16 @@
 #navbar {
-    @apply flex flex-row items-center justify-center py-4 text-center;
+    @apply flex flex-row py-4;
     @apply border-b-2 border-indigo-900;
 }
 
 .logo {
-    @apply mx-auto my-auto justify-center text-center hover:pointer-events-auto;
+    @apply mx-auto flex cursor-pointer flex-row items-center justify-center hover:pointer-events-auto;
 }
 
 /* Side Navbar */
 .sideNav {
     @apply absolute left-0 min-h-screen w-[22vw] border-r-2 border-indigo-900 bg-slate-950;
-    @apply transform transition-opacity duration-700 ease-in-out;
+    @apply transform transition-all duration-700 ease-in-out;
 }
 
 .sideNav.open {
@@ -37,6 +37,15 @@
     @apply fixed left-5 top-8 z-10 cursor-pointer hover:pointer-events-auto;
 }
 
+.iconGrid {
+    @apply grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+.sectionHeading {
+    @apply mx-auto w-56 text-2xl font-light;
+}
+
 .navigation {
     @apply h-8 cursor-pointer hover:pointer-events-auto;
 }
@@ -46,7 +55,7 @@
 }
 
 .socialHeading {
-    @apply mx-auto w-56 text-2xl font-normal;
+    @apply mx-auto w-[13.5rem] text-xl font-light;
 }
 
 .underline {
@@ -58,9 +67,9 @@
 }
 
 .linksList a {
-    @apply mx-4  w-56 text-xl;
+    @apply mx-4 w-56 text-xl;
 }
 
 .linksList svg {
-    @apply mt-8;
+    @apply mt-6;
 }

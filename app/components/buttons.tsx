@@ -61,12 +61,16 @@ export const SignInButton = () => {
         );
     }
 
-    return <button onClick={() => signIn()}>Sign In</button>;
+    return (
+        <button className={styles.signInButton} onClick={() => signIn()}>
+            Sign In
+        </button>
+    );
 };
 
 export const SignOutButton = () => {
     return (
-        <button className={styles.button} onClick={() => signOut()}>
+        <button className={styles.signOutButton} onClick={() => signOut()}>
             Sign Out
         </button>
     );
