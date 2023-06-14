@@ -37,7 +37,7 @@ export const SignInButton = () => {
     if (status === 'loading') {
         return (
             <ul className={styles.signIn}>
-                <li>...</li>
+                <button className={styles.signInButton}>...</button>
             </ul>
         );
     }

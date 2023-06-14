@@ -110,13 +110,13 @@ const Sidebar = () => {
                                 target="_blank">
                                 <FontAwesomeIcon
                                     icon={faLinkedin}
-                                    size={'2xl'}
+                                    size={'xl'}
                                 />
                             </Link>
                             <Link
                                 href={'https://github.com/sean-david-welch'}
                                 target="_blank">
-                                <FontAwesomeIcon icon={faGithub} size={'2xl'} />
+                                <FontAwesomeIcon icon={faGithub} size={'xl'} />
                             </Link>
                         </ul>
                     </div>

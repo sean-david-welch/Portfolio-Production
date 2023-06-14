@@ -9,7 +9,7 @@
 
 /* Side Navbar */
 .sideNav {
-    @apply absolute left-0 min-h-screen w-[22vw] border-r-2 border-indigo-900 bg-slate-950;
+    @apply absolute left-0 min-h-screen w-64 border-r-2 border-indigo-900 bg-slate-950;
     @apply transform transition-all duration-700 ease-in-out;
 }
 
@@ -43,7 +43,7 @@
 }
 
 .sectionHeading {
-    @apply mx-auto w-56 text-2xl font-light;
+    @apply mx-6 w-56 text-2xl font-medium;
 }
 
 .navigation {
@@ -55,7 +55,7 @@
 }
 
 .socialHeading {
-    @apply mx-auto w-[13.5rem] text-xl font-light;
+    @apply mx-auto text-2xl font-medium;
 }
 
 .underline {
@@ -63,11 +63,11 @@
 }
 
 .linksList {
-    @apply mx-auto w-56;
+    @apply mx-auto;
 }
 
 .linksList a {
-    @apply mx-4 w-56 text-xl;
+    @apply mx-4 w-56 text-xl font-medium;
 }
 
 .linksList svg {
