@@ -1,14 +1,13 @@
-import Link from 'next/link';
 import Image from 'next/image';
-import styles from './styles/Navbar.module.css';
-import SideNavbar from './SideNavbar';
+import styles from './styles/Header.module.css';
+import Sidebar from './Sidebar';
 import { SignInButton } from './Buttons';
 
 const Navbar = () => {
     return (
-        <nav id={styles.navbar}>
-            <SideNavbar />
-            <ul className={styles.navList}>
+        <>
+            <Sidebar />
+            <nav id={styles.navbar}>
                 <Image
                     src={'/favicon.ico'}
                     alt={'Your Logo'}
@@ -16,21 +15,9 @@ const Navbar = () => {
                     height={64}
                     className={styles.logo}
                 />
-                <Link className={styles.navItem} href={'/'}>
-                    Home
-                </Link>
-                <Link className={styles.navItem} href={'/projects'}>
-                    Projects
-                </Link>
-                <Link className={styles.navItem} href={'/products'}>
-                    Products
-                </Link>
-                <Link className={styles.navItem} href={'/users'}>
-                    Users
-                </Link>
                 <SignInButton />
-            </ul>
-        </nav>
+            </nav>
+        </>
     );
 };
 

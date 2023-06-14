@@ -1,5 +1,5 @@
 #dialog {
-    @apply m-auto scale-0 opacity-0 transition-all;
+    @apply m-auto scale-0 opacity-0 transition-all ease-in-out;
 }
 
 #dialog[open] {
