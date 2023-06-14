@@ -22,11 +22,11 @@
 }
 
 .navList {
-    @apply mx-auto my-28 flex flex-col justify-evenly;
+    @apply mx-auto mb-2 mt-20 flex flex-col justify-evenly;
 }
 
 .navItem {
-    @apply mx-auto my-12 w-48 text-3xl;
+    @apply mx-auto my-7 w-56 text-xl;
 }
 
 .navItem > * {
@@ -39,4 +39,28 @@
 
 .navigation {
     @apply h-8 cursor-pointer hover:pointer-events-auto;
+}
+
+.socialLinks {
+    @apply mx-auto flex flex-col;
+}
+
+.socialHeading {
+    @apply mx-auto w-56 text-2xl font-normal;
+}
+
+.underline {
+    @apply bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-[length:100%_2px] bg-bottom bg-no-repeat;
+}
+
+.linksList {
+    @apply mx-auto w-56;
+}
+
+.linksList a {
+    @apply mx-4  w-56 text-xl;
+}
+
+.linksList svg {
+    @apply mt-8;
 }

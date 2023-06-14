@@ -35,5 +35,5 @@
 }
 
 .profileImage {
-    @apply ml-4 rounded-lg;
+    @apply mx-4 rounded-lg;
 }
