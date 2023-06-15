@@ -1,6 +1,6 @@
 import { prisma } from '@/lib/primsa';
 import styles from './styles/Users.module.css';
-import UserCard from '../components/UserCard';
+import UserCard from './UserCard';
 
 const Users = async () => {
     const users = await prisma.user.findMany();
