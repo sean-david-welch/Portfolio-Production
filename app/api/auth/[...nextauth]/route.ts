@@ -2,13 +2,14 @@ import NextAuth from 'next-auth/next';
 import GithubProvider from 'next-auth/providers/github';
 import { prisma } from '@/lib/primsa';
 import { PrismaAdapter } from '@next-auth/prisma-adapter';
-import { NextAuthOptions } from 'next-auth';
+import type { NextAuthOptions } from 'next-auth';
 
 export const authOptions: NextAuthOptions = {
     adapter: PrismaAdapter(prisma),
     session: {
         strategy: 'jwt',
     },
+    secret: process.env.NEXTAUTH_SECRET!,
     providers: [
         GithubProvider({
             clientId: process.env.GITHUB_ID!,
@@ -46,7 +47,7 @@ export const authOptions: NextAuthOptions = {
                 token.image = user.image;
                 token.role = user.role;
             }
-            console.log('token', token);
+
             return token;
         },
     },

@@ -1,6 +1,8 @@
 import { Metadata } from 'next';
 import styles from './styles/projects.module.css';
 import axios from 'axios';
+import { getServerSession } from 'next-auth';
+import { authOptions } from '../api/auth/[...nextauth]/route';
 
 export interface Project {
     id: number;
@@ -17,6 +19,12 @@ export const metadata: Metadata = {
 axios.defaults.baseURL = 'http://localhost:3000/api';
 
 const ProjectPage = async () => {
+    try {
+        const session = await getServerSession(authOptions);
+        console.log('user session', session?.user);
+    } catch (error) {
+        console.error('Error getting session:', error);
+    }
     const projects: Project[] = await axios(`/projects`).then(res => res.data);
 
     return (
