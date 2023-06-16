@@ -13,16 +13,13 @@ export const POST = async (request: NextRequest) => {
     const currentUserEmail = session?.user?.email!;
 
     const data = await request.json();
-    data.age = Number(data.age);
-    const user = await prisma.user.update({
+    const user = await prisma.user.findUnique({
         where: {
             email: currentUserEmail,
         },
-        data,
-        // check if data formats fits what is acceptable in db
     });
 
-    if (user.role !== 'ADMIN') {
+    if (user?.role !== 'ADMIN') {
         throw new Error('Request Denied');
     }
 
