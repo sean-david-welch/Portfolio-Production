@@ -26,8 +26,12 @@ const projects = [
 ];
 
 export const GET = async () => {
-    const session = await getServerSession(authOptions);
-    console.log(session?.user);
+    try {
+        const session = await getServerSession(authOptions);
+        console.log('user session', session?.user);
+    } catch (error) {
+        console.error('Error getting session:', error);
+    }
 
     return NextResponse.json(projects);
 };

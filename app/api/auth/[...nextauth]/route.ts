@@ -17,7 +17,7 @@ export const authOptions: NextAuthOptions = {
     ],
     callbacks: {
         async session({ token, session }) {
-            if (token) {
+            if (token && session?.user) {
                 session.user.role = token.role;
                 session.user.id = token.id;
                 session.user.email = token.email;
@@ -32,17 +32,22 @@ export const authOptions: NextAuthOptions = {
                     email: token?.email,
                 },
             });
-            if (!dbUser) {
-                token.id = user!.id;
-                return token;
+
+            if (dbUser) {
+                token.id = dbUser.id;
+                token.email = dbUser.email;
+                token.name = dbUser.name;
+                token.image = dbUser.image;
+                token.role = dbUser.role;
+            } else if (user) {
+                token.id = user.id;
+                token.email = user.email;
+                token.name = user.name;
+                token.image = user.image;
+                token.role = user.role;
             }
-            return {
-                id: dbUser.id,
-                email: dbUser.email,
-                name: dbUser.name,
-                image: dbUser.image,
-                role: dbUser.role,
-            };
+            console.log('token', token);
+            return token;
         },
     },
 };

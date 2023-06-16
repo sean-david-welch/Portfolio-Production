@@ -24,7 +24,7 @@ const UserProfile = async ({ params }: Props) => {
             <h1>{name}</h1>
             <img
                 width={300}
-                src={image ?? '/mememan.webp'}
+                src={image ?? '/favicon.ico'}
                 alt={`${name}'s profile`}
             />
             <p>{bio}</p>

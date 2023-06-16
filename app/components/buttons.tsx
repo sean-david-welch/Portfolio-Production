@@ -42,7 +42,7 @@ export const SignInButton = () => {
                     <SignOutButton />
                     <Link href={`/dashboard`}>
                         <Image
-                            src={session.user?.image ?? '/mememan.webp'}
+                            src={session.user?.image ?? '/favicon.ico'}
                             width={42}
                             height={42}
                             alt={`Your Name`}
