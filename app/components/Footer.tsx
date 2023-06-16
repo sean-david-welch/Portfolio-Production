@@ -16,23 +16,25 @@ const Footer = () => {
             <div className={styles.footerContent}>
                 <ul className={styles.footerList}>
                     <Link className={styles.navItem} href={'/'}>
-                        <FontAwesomeIcon icon={faHome} /> Home
+                        <FontAwesomeIcon icon={faHome} size="sm" /> Home
                     </Link>
                     <Link className={styles.navItem} href={'/dashboard'}>
-                        <FontAwesomeIcon icon={faAddressCard} /> Dashboard
+                        <FontAwesomeIcon icon={faAddressCard} size="sm" />{' '}
+                        Dashboard
                     </Link>
                     <Link className={styles.navItem} href={'/about'}>
-                        <FontAwesomeIcon icon={faCircleInfo} /> About
+                        <FontAwesomeIcon icon={faCircleInfo} size="sm" /> About
                     </Link>
 
                     <Link className={styles.navItem} href={'/projects'}>
-                        <FontAwesomeIcon icon={faDiagramProject} /> Projects
+                        <FontAwesomeIcon icon={faDiagramProject} size="sm" />{' '}
+                        Projects
                     </Link>
                     <Link className={styles.navItem} href={'/products'}>
-                        <FontAwesomeIcon icon={faCartPlus} /> Products
+                        <FontAwesomeIcon icon={faCartPlus} size="sm" /> Products
                     </Link>
                     <Link className={styles.navItem} href={'/users'}>
-                        <FontAwesomeIcon icon={faUser} /> Users
+                        <FontAwesomeIcon icon={faUser} size="sm" /> Users
                     </Link>
                 </ul>
             </div>

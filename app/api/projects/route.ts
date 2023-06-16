@@ -1,5 +1,8 @@
+import { prisma } from '@/lib/primsa';
 import { getServerSession } from 'next-auth';
+import { getSession } from 'next-auth/react';
 import { NextResponse, NextRequest } from 'next/server';
+import { authOptions } from '../auth/[...nextauth]/route';
 
 const projects = [
     {
@@ -23,7 +26,24 @@ const projects = [
 ];
 
 export const GET = async () => {
-    const session = await getServerSession();
+    const session = await getServerSession(authOptions);
+    console.log(session?.user);
 
     return NextResponse.json(projects);
+};
+
+export const POST = async (request: NextRequest) => {
+    const data = await request.json();
+
+    const project = await prisma.project.create({
+        data: {
+            name: data.name,
+            description: data.description,
+            image: data.image,
+            tags: data.tags,
+            createdAt: new Date(),
+        },
+    });
+
+    return NextResponse.json(project);
 };
