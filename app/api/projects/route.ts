@@ -1,33 +1,30 @@
 import { prisma } from '@/lib/primsa';
 import { NextResponse, NextRequest } from 'next/server';
-
-const projects = [
-    {
-        id: 1,
-        title: 'Project 1',
-        description: 'This is a description of project 1',
-        tags: ['React', 'Next.js', 'JavaScript'],
-    },
-    {
-        id: 2,
-        title: 'Project 2',
-        description: 'This is a description of project 2',
-        tags: ['Vue', 'TypeScript'],
-    },
-    {
-        id: 3,
-        title: 'Project 3',
-        description: 'This is a description of project 3',
-        tags: ['Angular', 'JavaScript', 'CSS'],
-    },
-];
+import { getServerSession } from 'next-auth';
+import { authOptions } from '../auth/[...nextauth]/route';
 
 export const GET = async () => {
+    const projects = await prisma.project.findMany();
     return NextResponse.json(projects);
 };
 
 export const POST = async (request: NextRequest) => {
+    const session = await getServerSession(authOptions);
+    const currentUserEmail = session?.user?.email!;
+
     const data = await request.json();
+    data.age = Number(data.age);
+    const user = await prisma.user.update({
+        where: {
+            email: currentUserEmail,
+        },
+        data,
+        // check if data formats fits what is acceptable in db
+    });
+
+    if (user.role !== 'ADMIN') {
+        throw new Error('Request Denied');
+    }
 
     const project = await prisma.project.create({
         data: {

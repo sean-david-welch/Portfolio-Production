@@ -9,7 +9,7 @@ interface Props {
 const ProjectDetail = async ({ params }: Props) => {
     const projects: Project[] = await axios(`/projects`).then(res => res.data);
 
-    const project = projects.find(project => project.id === Number(params.id))!;
+    const project = projects.find(project => project.id === String(params.id))!;
 
     return (
         <section id={styles.projectDetail}>

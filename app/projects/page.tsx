@@ -3,11 +3,13 @@ import styles from './styles/projects.module.css';
 import axios from 'axios';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '../api/auth/[...nextauth]/route';
+import { ProjectForm } from './ProjectForm';
 
 export interface Project {
-    id: number;
+    id: string;
     name: string;
     description: string;
+    image: string;
     tags: string[];
 }
 
@@ -42,6 +44,7 @@ const ProjectPage = async () => {
                         </ul>
                     </div>
                 ))}
+                <ProjectForm />
             </div>
         </section>
     );

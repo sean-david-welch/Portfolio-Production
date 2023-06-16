@@ -15,7 +15,7 @@ const Footer = () => {
         <footer className={styles.footer}>
             <div className={styles.footerContent}>
                 <ul className={styles.footerList}>
-                    {/* <Link className={styles.navItem} href={'/'}>
+                    <Link className={styles.navItem} href={'/'}>
                         <FontAwesomeIcon icon={faHome} size="sm" /> Home
                     </Link>
                     <Link className={styles.navItem} href={'/dashboard'}>
@@ -35,7 +35,7 @@ const Footer = () => {
                     </Link>
                     <Link className={styles.navItem} href={'/users'}>
                         <FontAwesomeIcon icon={faUser} size="sm" /> Users
-                    </Link> */}
+                    </Link>
                 </ul>
             </div>
         </footer>
