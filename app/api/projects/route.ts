@@ -9,29 +9,67 @@ export const GET = async () => {
 };
 
 export const POST = async (request: NextRequest) => {
-    const session = await getServerSession(authOptions);
-    const currentUserEmail = session?.user?.email!;
+    try {
+        const session = await getServerSession(authOptions);
 
-    const data = await request.json();
-    const user = await prisma.user.findUnique({
-        where: {
-            email: currentUserEmail,
-        },
-    });
+        if (!session)
+            return NextResponse.json({
+                status: 401,
+                message: 'Not Logged In!',
+            });
 
-    if (user?.role !== 'ADMIN') {
-        throw new Error('Request Denied');
+        const currentUserEmail = session?.user?.email;
+
+        if (!currentUserEmail)
+            return NextResponse.json({
+                status: 401,
+                message: 'No Email associated with this account',
+            });
+
+        const data = await request.json();
+
+        if (!data.name || !data.description || !data.image || !data.tags) {
+            return NextResponse.json({
+                status: 400,
+                message: 'Missing required project fields',
+            });
+        }
+
+        const user = await prisma.user.findUnique({
+            where: {
+                email: currentUserEmail,
+            },
+        });
+
+        if (!user)
+            return NextResponse.json({
+                status: 404,
+                message: 'User not found',
+            });
+
+        if (user?.role !== 'ADMIN') {
+            return NextResponse.json({
+                status: 403,
+                message: 'User does not have admin privileges',
+            });
+        }
+
+        const project = await prisma.project.create({
+            data: {
+                name: data.name,
+                description: data.description,
+                image: data.image,
+                tags: data.tags,
+                createdAt: new Date(),
+            },
+        });
+
+        return NextResponse.json(project);
+    } catch (err) {
+        console.error(err);
+        return NextResponse.json({
+            status: 500,
+            message: 'Internal Server Error',
+        });
     }
-
-    const project = await prisma.project.create({
-        data: {
-            name: data.name,
-            description: data.description,
-            image: data.image,
-            tags: data.tags,
-            createdAt: new Date(),
-        },
-    });
-
-    return NextResponse.json(project);
 };

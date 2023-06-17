@@ -3,22 +3,14 @@
 import axios from 'axios';
 import { useState } from 'react';
 
-interface Project {
-    [key: string]: string | string[];
-    name: string;
-    description: string;
-    image: string;
-    tags: string[];
-}
-
 export const ProjectForm = () => {
     const [showProjectForm, setShowProjectForm] = useState(false);
 
     const projectFields = [
-        { name: 'name', type: 'text', defaultValue: '' },
-        { name: 'description', type: 'text', defaultValue: '' },
-        { name: 'image', type: 'text', defaultValue: '' },
-        { name: 'tags', type: 'text', defaultValue: '' },
+        { name: 'name', type: 'text' },
+        { name: 'description', type: 'text' },
+        { name: 'image', type: 'text' },
+        { name: 'tags', type: 'text' },
     ];
 
     const createProject = async (e: React.FormEvent<HTMLFormElement>) => {

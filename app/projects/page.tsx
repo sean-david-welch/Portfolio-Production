@@ -1,6 +1,7 @@
-import { Metadata } from 'next';
-import styles from './styles/projects.module.css';
 import axios from 'axios';
+import styles from './styles/projects.module.css';
+import { prisma } from '@/lib/primsa';
+import { Metadata } from 'next';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '../api/auth/[...nextauth]/route';
 import { ProjectForm } from './ProjectForm';
@@ -21,13 +22,22 @@ export const metadata: Metadata = {
 axios.defaults.baseURL = 'http://localhost:3000/api';
 
 const ProjectPage = async () => {
-    try {
-        const session = await getServerSession(authOptions);
-        console.log('user session', session?.user);
-    } catch (error) {
-        console.error('Error getting session:', error);
+    const session = await getServerSession(authOptions);
+    const currentUserEmail = session?.user?.email || undefined;
+
+    let user;
+
+    if (currentUserEmail) {
+        user = await prisma.user.findUnique({
+            where: {
+                email: currentUserEmail,
+            },
+        });
     }
-    const projects: Project[] = await axios(`/projects`).then(res => res.data);
+
+    const projects: Project[] = await axios(`/projects`)
+        .then(res => res.data)
+        .catch(error => console.error(error));
 
     return (
         <section id={styles.projectsPage}>
@@ -44,7 +54,7 @@ const ProjectPage = async () => {
                         </ul>
                     </div>
                 ))}
-                <ProjectForm />
+                {user?.role === 'ADMIN' && <ProjectForm />}
             </div>
         </section>
     );
