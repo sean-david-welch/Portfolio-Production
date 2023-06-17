@@ -67,6 +67,7 @@ export const DELETE = async (request: NextRequest) => {
                 id: data.id,
             },
         });
+        console.log('project deleted');
 
         return NextResponse.json(project);
     } catch (error: any) {
