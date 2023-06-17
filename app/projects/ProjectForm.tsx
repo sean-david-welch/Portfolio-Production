@@ -1,9 +1,11 @@
 'use client';
 
 import axios from 'axios';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
 export const ProjectForm = () => {
+    const router = useRouter();
     const [showProjectForm, setShowProjectForm] = useState(false);
 
     const projectFields = [
@@ -30,6 +32,7 @@ export const ProjectForm = () => {
 
         if (response.status === 200) {
             console.log('Project created successfully!');
+            router.refresh();
         } else {
             console.error('Failed to create project', response);
         }

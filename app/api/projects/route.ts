@@ -52,3 +52,25 @@ export const POST = async (request: NextRequest) => {
         return errorResponse(500, error.message || 'Internal Server Error');
     }
 };
+
+export const DELETE = async (request: NextRequest) => {
+    try {
+        await validateUser(request);
+        const data = await request.json();
+
+        if (!data.id) {
+            return errorResponse(400, 'Bad Request: No id provided');
+        }
+
+        const project = await prisma.project.delete({
+            where: {
+                id: data.id,
+            },
+        });
+
+        return NextResponse.json(project);
+    } catch (error: any) {
+        console.error(error);
+        return errorResponse(500, error.message || 'Internal Server Error');
+    }
+};

@@ -1,4 +1,5 @@
 import axios from 'axios';
+import Link from 'next/link';
 import styles from './styles/projects.module.css';
 import { prisma } from '@/lib/primsa';
 import { Metadata } from 'next';
@@ -52,6 +53,9 @@ const ProjectPage = async () => {
                                 <li key={tag}>{tag}</li>
                             ))}
                         </ul>
+                        <Link href={`/projects/${project.id}`}>
+                            {`Link to page: ${project.name}`}
+                        </Link>
                     </div>
                 ))}
                 {user?.role === 'ADMIN' && <ProjectForm />}
