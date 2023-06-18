@@ -19,5 +19,5 @@ export const updateUser = async ({ user }: any, formData: FormData) => {
         where: { id: updatedUser.id },
         data: updatedUser,
     });
-    revalidatePath(`dashboard`);
+    revalidatePath(`/dashboard`);
 };
