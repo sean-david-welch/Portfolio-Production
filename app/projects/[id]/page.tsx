@@ -25,6 +25,7 @@ const ProjectDetail = async ({ params }: ProjectProps) => {
             .then(user => {
                 return user;
             });
+        console.log('user:', user);
     }
 
     const project = await prisma.project.findUnique({

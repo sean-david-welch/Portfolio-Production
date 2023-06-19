@@ -10,8 +10,8 @@ import { ProjectForm } from './ProjectForm';
 export interface Project {
     id: string;
     name: string;
-    description: string;
-    image: string;
+    description: string | null;
+    image: string | null;
     tags: string[];
 }
 
@@ -29,16 +29,19 @@ const ProjectPage = async () => {
     let user;
 
     if (currentUserEmail) {
-        user = await prisma.user.findUnique({
-            where: {
-                email: currentUserEmail,
-            },
-        });
+        user = await prisma.user
+            .findUnique({
+                where: {
+                    email: currentUserEmail,
+                },
+            })
+            .then(user => {
+                return user;
+            });
+        console.log('user:', user);
     }
 
-    const projects: Project[] = await axios(`/projects`)
-        .then(res => res.data)
-        .catch(error => console.error(error));
+    const projects: Project[] = await prisma.project.findMany();
 
     return (
         <section id={styles.projectsPage}>

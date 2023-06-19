@@ -11,7 +11,7 @@ interface ProjectProps {
 }
 
 export const deleteProject = async (projectId: ProjectProps) => {
-    const session = await getServerSession(authOptions);
+    const session = await getSession();
     const currentUserEmail = session?.user?.email || undefined;
 
     let user;
