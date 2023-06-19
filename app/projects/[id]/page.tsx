@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import styles from '../styles/projects.module.css';
+import buttonStyles from '../components/styles/Buttons.module.css';
 import { prisma } from '@/lib/primsa';
 import { DeleteButton } from '../deleteProject';
 import { getServerSession } from 'next-auth';

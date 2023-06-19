@@ -1,6 +1,6 @@
-import axios from 'axios';
 import Link from 'next/link';
 import styles from './styles/projects.module.css';
+import buttonStyles from '../components/styles/Buttons.module.css';
 import { prisma } from '@/lib/primsa';
 import { Metadata } from 'next';
 import { getServerSession } from 'next-auth';
@@ -19,8 +19,6 @@ export const metadata: Metadata = {
     title: 'Projects',
     description: 'A list of projects',
 };
-
-axios.defaults.baseURL = 'http://localhost:3000/api';
 
 const ProjectPage = async () => {
     const session = await getServerSession(authOptions);
@@ -43,6 +41,14 @@ const ProjectPage = async () => {
 
     const projects: Project[] = await prisma.project.findMany();
 
+    if (!projects) {
+        return (
+            <>
+                <h1>No Projects Found</h1>
+            </>
+        );
+    }
+
     return (
         <section id={styles.projectsPage}>
             <h1>Project Page</h1>
@@ -56,9 +62,11 @@ const ProjectPage = async () => {
                                 <li key={tag}>{tag}</li>
                             ))}
                         </ul>
-                        <Link href={`/projects/${project.id}`}>
-                            {`Link to page: ${project.name}`}
-                        </Link>
+                        <button>
+                            <Link href={`/projects/${project.id}`}>
+                                {`Link to page: ${project.name}`}
+                            </Link>
+                        </button>
                     </div>
                 ))}
                 {user?.role === 'ADMIN' && <ProjectForm />}

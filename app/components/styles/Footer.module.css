@@ -2,6 +2,22 @@
     @apply border-t-2 border-indigo-900 text-center;
 }
 
-.footer svg {
-    @apply h-4;
+.footerContent {
+    @apply mx-auto mt-4 flex flex-col items-center text-center;
+}
+
+.footerList {
+    @apply mx-auto flex flex-row items-center text-center;
+}
+
+.footerList > * {
+    @apply mx-4;
+}
+
+.footerList a {
+    @apply flex flex-row;
+}
+
+.footerList svg {
+    @apply mx-2 my-auto h-4;
 }
