@@ -1,10 +1,18 @@
 /* Projects Page */
 #projectsPage {
-    @apply py-10;
+    @apply items-center py-10 text-center;
 }
 
 .projectsList {
-    @apply text-center;
+    @apply mx-auto flex flex-col flex-wrap justify-center text-center;
+}
+
+.projectsList > * {
+    @apply mx-2 flex flex-row py-10;
+}
+
+.projectList a {
+    @apply bg-violet-800;
 }
 
 /* Project Detail */
@@ -13,5 +21,5 @@
 }
 
 .projectView {
-    @apply text-center;
+    @apply flex flex-col text-center;
 }

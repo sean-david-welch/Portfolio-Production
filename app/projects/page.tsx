@@ -42,8 +42,8 @@ const ProjectPage = async () => {
 
     return (
         <section id={styles.projectsPage}>
+            <h1>Project Page</h1>
             <div className={styles.projectsList}>
-                <h1>Project Page</h1>
                 {projects.map(project => (
                     <div key={project.id}>
                         <h2>{project.name}</h2>
