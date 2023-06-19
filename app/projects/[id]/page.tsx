@@ -2,12 +2,31 @@ import Image from 'next/image';
 import styles from '../styles/projects.module.css';
 import { prisma } from '@/lib/primsa';
 import { DeleteButton } from '../deleteProject';
+import { getServerSession } from 'next-auth';
+import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 
 interface ProjectProps {
     params: { id: string };
 }
 
 const ProjectDetail = async ({ params }: ProjectProps) => {
+    const session = await getServerSession(authOptions);
+    const currentUserEmail = session?.user?.email || undefined;
+
+    let user;
+
+    if (currentUserEmail) {
+        user = await prisma.user
+            .findUnique({
+                where: {
+                    email: currentUserEmail,
+                },
+            })
+            .then(user => {
+                return user;
+            });
+    }
+
     const project = await prisma.project.findUnique({
         where: { id: params.id },
     });
