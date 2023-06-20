@@ -36,7 +36,7 @@ const ProjectPage = async () => {
             .then(user => {
                 return user;
             });
-        console.log('user:', user);
+        console.log('user on projects page:', user);
     }
 
     const projects: Project[] = await prisma.project.findMany();

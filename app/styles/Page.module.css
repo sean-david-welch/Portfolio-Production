@@ -3,7 +3,7 @@
 }
 
 .mainHeading {
-    @apply text-5xl font-bold;
+    @apply my-2 text-3xl font-semibold;
 }
 
 .container {

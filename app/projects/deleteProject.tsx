@@ -1,21 +1,22 @@
 'use client';
 
-import axios from 'axios';
 import { deleteProject } from './actions';
 import { useRouter } from 'next/navigation';
 
 interface DeleteProps {
     projectId: string;
+    user: {} | null;
 }
 
-export const DeleteButton: React.FC<DeleteProps> = ({ projectId }) => {
-    axios.defaults.baseURL = 'http://localhost:3000/api';
-
+export const DeleteButton: React.FC<DeleteProps> = (
+    { projectId },
+    { user }
+) => {
     const router = useRouter();
 
     const onDelete = async (event: React.MouseEvent<HTMLButtonElement>) => {
         event.preventDefault();
-        deleteProject({ projectId });
+        deleteProject({ projectId }, { user });
         router.push('/projects');
     };
 

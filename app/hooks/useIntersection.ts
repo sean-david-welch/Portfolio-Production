@@ -1,5 +1,4 @@
 'use client';
-
 import { useEffect, RefObject } from 'react';
 
 const useIntersection = (ref: RefObject<HTMLElement>) => {
@@ -9,7 +8,9 @@ const useIntersection = (ref: RefObject<HTMLElement>) => {
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
+                    console.log('is intersecting');
                     entry.target.classList.add('show');
+                    entry.target.classList.remove('hidden');
                 }
             });
         });

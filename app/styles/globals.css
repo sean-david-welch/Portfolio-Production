@@ -33,3 +33,35 @@ body {
         rgb(32, 39, 55) 100%
     );
 }
+
+.hidden {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+.show {
+    animation: slideIn 800ms ease-in-out forwards;
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.show:nth-child(2) {
+    animation-delay: 300ms;
+}
+
+.show:nth-child(3) {
+    animation-delay: 600ms;
+}
+
+.show:nth-child(4) {
+    animation-delay: 900ms;
+}

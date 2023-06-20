@@ -3,18 +3,14 @@
 import { prisma } from '@/lib/primsa';
 import { revalidatePath } from 'next/cache';
 import { getSession } from 'next-auth/react';
-import { getServerSession } from 'next-auth';
-import { authOptions } from '../api/auth/[...nextauth]/route';
 
 interface ProjectProps {
     projectId: string;
 }
 
-export const deleteProject = async (projectId: ProjectProps) => {
+export const deleteProject = async (projectId: ProjectProps, user: any) => {
     const session = await getSession();
     const currentUserEmail = session?.user?.email || undefined;
-
-    let user;
 
     if (currentUserEmail) {
         user = await prisma.user

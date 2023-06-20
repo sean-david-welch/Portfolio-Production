@@ -50,7 +50,7 @@ const Sidebar = () => {
                             />
                             <h1 className={styles.sectionHeading}>
                                 <span className={styles.underline}>
-                                    ModernDev{' '}
+                                    Sean Welch{' '}
                                 </span>
                             </h1>
                         </div>
