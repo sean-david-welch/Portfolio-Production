@@ -25,14 +25,12 @@ const ProjectDetail = async ({ params }: ProjectProps) => {
             .then(user => {
                 return user;
             });
-        console.log('user on id page:', user);
     }
 
     const project = await prisma.project.findUnique({
         where: { id: params.id },
     });
     const { id, name, description, image } = project!;
-    console.log('id:', id);
 
     return (
         <section id={styles.projectDetail}>
@@ -45,7 +43,9 @@ const ProjectDetail = async ({ params }: ProjectProps) => {
                     width={64}
                     height={64}
                 />
-                <DeleteButton projectId={id} />
+                {user && user.role === 'ADMIN' && (
+                    <DeleteButton projectId={id} />
+                )}
             </div>
         </section>
     );

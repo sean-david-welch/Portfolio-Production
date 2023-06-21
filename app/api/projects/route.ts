@@ -7,29 +7,6 @@ export const GET = async () => {
     return NextResponse.json(projects);
 };
 
-export const PUT = async (request: NextRequest) => {
-    try {
-        await validateUser(request);
-        const data = await request.json();
-        validateProject(data);
-
-        const project = await prisma.project.update({
-            where: { id: data.id },
-            data: {
-                name: data.name,
-                description: data.description,
-                image: data.image,
-                tags: data.tags,
-            },
-        });
-
-        return NextResponse.json(project);
-    } catch (error: any) {
-        console.error(error);
-        return errorResponse(500, error.message || 'Internal Server Error');
-    }
-};
-
 export const POST = async (request: NextRequest) => {
     try {
         await validateUser(request);
@@ -45,30 +22,6 @@ export const POST = async (request: NextRequest) => {
                 createdAt: new Date(),
             },
         });
-
-        return NextResponse.json(project);
-    } catch (error: any) {
-        console.error(error);
-        return errorResponse(500, error.message || 'Internal Server Error');
-    }
-};
-
-export const DELETE = async (request: NextRequest) => {
-    try {
-        await validateUser(request);
-        const data = await request.json();
-        console.log(data);
-
-        if (!data.id) {
-            return errorResponse(400, 'Bad Request: No id provided');
-        }
-
-        const project = await prisma.project.delete({
-            where: {
-                id: data.id,
-            },
-        });
-        console.log('project deleted');
 
         return NextResponse.json(project);
     } catch (error: any) {

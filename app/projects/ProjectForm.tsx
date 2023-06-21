@@ -1,6 +1,7 @@
 'use client';
 
 import axios from 'axios';
+import styles from './styles/projects.module.css';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
@@ -27,10 +28,11 @@ export const ProjectForm = () => {
             tags: (formData.get('tags') as string)?.split(',') || [],
         };
 
-        const response = await axios.post('/projects', body);
+        const response = await axios.post('/api/projects', body);
 
         if (response.status === 200) {
             console.log('Project created successfully!');
+            setShowProjectForm(false);
             router.refresh();
         } else {
             console.error('Failed to create project', response);
@@ -45,7 +47,7 @@ export const ProjectForm = () => {
             {showProjectForm && (
                 <form onSubmit={createProject}>
                     {projectFields.map(field => (
-                        <div className="" key={field.name}>
+                        <div className={styles.projectForm} key={field.name}>
                             <label htmlFor={field.name}>
                                 {field.name.charAt(0).toUpperCase() +
                                     field.name.slice(1)}

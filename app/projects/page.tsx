@@ -36,7 +36,6 @@ const ProjectPage = async () => {
             .then(user => {
                 return user;
             });
-        console.log('user on projects page:', user);
     }
 
     const projects: Project[] = await prisma.project.findMany();
@@ -69,7 +68,7 @@ const ProjectPage = async () => {
                         </button>
                     </div>
                 ))}
-                {user?.role === 'ADMIN' && <ProjectForm />}
+                {user && user.role === 'ADMIN' && <ProjectForm />}
             </div>
         </section>
     );

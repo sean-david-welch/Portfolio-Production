@@ -26,7 +26,7 @@ export const ProfileForm = ({ user }: any) => {
         };
 
         try {
-            const response = await axios.put('/api/user', body);
+            const response = await axios.put('/api/users', body);
 
             if (response.status >= 200 && response.status < 300) {
                 setShowProfileForm(false);

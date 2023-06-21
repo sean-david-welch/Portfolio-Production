@@ -17,6 +17,7 @@ export const DeleteButton: React.FC<DeleteProps> = ({ projectId }) => {
             const response = await axios.delete(`/api/projects/${projectId}`);
             if (response.status >= 200 && response.status < 300) {
                 router.push('/projects');
+                router.refresh();
             } else {
                 alert(`Error: ${response.status}`);
             }
