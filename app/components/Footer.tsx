@@ -49,11 +49,6 @@ const Footer = () => {
                             Products
                         </Link>
                     </button>
-                    <button className={styles.btn}>
-                        <Link className={styles.navItem} href={'/users'}>
-                            <FontAwesomeIcon icon={faUser} size="sm" /> Users
-                        </Link>
-                    </button>
                 </ul>
             </div>
         </footer>

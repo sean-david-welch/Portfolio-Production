@@ -4,6 +4,7 @@ import { getServerSession } from 'next-auth';
 import { redirect } from 'next/navigation';
 import { authOptions } from '../api/auth/[...nextauth]/route';
 import { ProfileForm } from './ProfileForm';
+import UserCard from './UserCard';
 
 const DashboardPage = async () => {
     const session = await getServerSession(authOptions);
@@ -26,6 +27,7 @@ const DashboardPage = async () => {
     return (
         <section id={styles.dashboardPage}>
             <h1>Dashboard</h1>
+            <UserCard user={user!} />
             <ProfileForm user={user} />
         </section>
     );

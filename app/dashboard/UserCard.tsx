@@ -1,14 +1,18 @@
 import Link from 'next/link';
 import styles from './styles/UserCard.module.css';
 
-interface Props {
+interface User {
     id: string;
     name: string | null;
     age: number | null;
     image: string | null;
 }
 
-const UserCard = ({ id, name, age, image }: Props) => {
+interface Props {
+    user: User;
+}
+
+const UserCard = ({ user: { id, name, age, image } }: Props) => {
     return (
         <div className={styles.card}>
             <img

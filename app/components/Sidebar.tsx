@@ -89,12 +89,6 @@ const Sidebar = () => {
                             onClick={() => setIsOpen(false)}>
                             <FontAwesomeIcon icon={faCartPlus} /> Products
                         </Link>
-                        <Link
-                            className={styles.navItem}
-                            href={'/users'}
-                            onClick={() => setIsOpen(false)}>
-                            <FontAwesomeIcon icon={faUser} /> Users
-                        </Link>
                     </ul>
                     <div className={styles.socialLinks}>
                         <h1 className={styles.socialHeading}>
