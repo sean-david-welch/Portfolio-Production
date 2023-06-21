@@ -24,7 +24,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <QueryProvider>
             <AuthProvider>
                 <html lang="en" className={raleway.className}>
-                    <body className=" min-h-screen overflow-x-hidden  text-white">
+                    <body className="min-h-screen text-white">
                         <Header />
                         <main>{children}</main>
                         <Footer />

@@ -1,11 +1,3 @@
 .main {
     @apply flex flex-col items-center justify-between p-24;
 }
-
-.mainHeading {
-    @apply my-2 text-3xl font-semibold;
-}
-
-.container {
-    @apply m-0;
-}

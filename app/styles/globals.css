@@ -34,6 +34,10 @@ body {
     );
 }
 
+.container {
+    @apply m-0;
+}
+
 .hidden {
     opacity: 0;
     transform: translateX(-100%);

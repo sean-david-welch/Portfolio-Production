@@ -1,0 +1,3 @@
+.mainHeading {
+    @apply my-2 text-3xl font-semibold;
+}
