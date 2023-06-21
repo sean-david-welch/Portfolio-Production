@@ -1,23 +1,28 @@
 'use client';
 
-import { deleteProject } from './actions';
+import axios from 'axios';
 import { useRouter } from 'next/navigation';
 
 interface DeleteProps {
     projectId: string;
-    user: {} | null;
 }
 
-export const DeleteButton: React.FC<DeleteProps> = (
-    { projectId },
-    { user }
-) => {
+export const DeleteButton: React.FC<DeleteProps> = ({ projectId }) => {
     const router = useRouter();
 
     const onDelete = async (event: React.MouseEvent<HTMLButtonElement>) => {
         event.preventDefault();
-        deleteProject({ projectId }, { user });
-        router.push('/projects');
+
+        try {
+            const response = await axios.delete(`/api/projects/${projectId}`);
+            if (response.status >= 200 && response.status < 300) {
+                router.push('/projects');
+            } else {
+                alert(`Error: ${response.status}`);
+            }
+        } catch (error) {
+            alert(`Network error: ${error}`);
+        }
     };
 
     return <button onClick={onDelete}>Delete Project</button>;

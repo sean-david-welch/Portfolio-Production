@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import styles from './styles/projects.module.css';
-import buttonStyles from '../components/styles/Buttons.module.css';
+
 import { prisma } from '@/lib/primsa';
 import { Metadata } from 'next';
 import { getServerSession } from 'next-auth';

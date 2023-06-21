@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import styles from '../styles/projects.module.css';
-import buttonStyles from '../components/styles/Buttons.module.css';
 import { prisma } from '@/lib/primsa';
 import { DeleteButton } from '../deleteProject';
 import { getServerSession } from 'next-auth';
@@ -32,11 +31,9 @@ const ProjectDetail = async ({ params }: ProjectProps) => {
     const project = await prisma.project.findUnique({
         where: { id: params.id },
     });
-    const { id, name, description, image } = project ?? {};
+    const { id, name, description, image } = project!;
+    console.log('id:', id);
 
-    if (!project) {
-        return <div>Project not found</div>;
-    }
     return (
         <section id={styles.projectDetail}>
             <div className={styles.projectView}>
@@ -48,10 +45,7 @@ const ProjectDetail = async ({ params }: ProjectProps) => {
                     width={64}
                     height={64}
                 />
-                <DeleteButton
-                    projectId={id ?? project.id}
-                    user={user ?? null}
-                />
+                <DeleteButton projectId={id} />
             </div>
         </section>
     );

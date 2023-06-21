@@ -57,6 +57,7 @@ export const DELETE = async (request: NextRequest) => {
     try {
         await validateUser(request);
         const data = await request.json();
+        console.log(data);
 
         if (!data.id) {
             return errorResponse(400, 'Bad Request: No id provided');

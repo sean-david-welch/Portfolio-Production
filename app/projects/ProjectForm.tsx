@@ -27,7 +27,6 @@ export const ProjectForm = () => {
             tags: (formData.get('tags') as string)?.split(',') || [],
         };
 
-        axios.defaults.baseURL = 'http://localhost:3000/api';
         const response = await axios.post('/projects', body);
 
         if (response.status === 200) {
