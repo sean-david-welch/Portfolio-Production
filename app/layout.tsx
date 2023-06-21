@@ -26,7 +26,9 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
                 <html lang="en" className={raleway.className}>
                     <body className="min-h-screen text-white">
                         <Header />
-                        <main>{children}</main>
+                        <main>
+                            <div className="container">{children}</div>
+                        </main>
                         <Footer />
                     </body>
                 </html>

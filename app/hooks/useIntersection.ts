@@ -6,20 +6,17 @@ const useIntersection = (ref: RefObject<HTMLElement>) => {
         if (!ref.current) return;
 
         const observer = new IntersectionObserver(entries => {
-            entries.forEach(
-                entry => {
-                    if (entry.isIntersecting) {
-                        console.log('is intersecting');
-                        entry.target.classList.add('show');
-                        entry.target.classList.remove('hidden');
-                    }
-                },
-                {
-                    rootMargin: '0px',
-                    threshold: 0.5,
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                    entry.target.classList.remove('hidden');
+                } else {
+                    entry.target.classList.remove('show');
+                    entry.target.classList.add('hidden');
                 }
-            );
+            });
         });
+
         const target = ref.current;
         observer.observe(target);
 
