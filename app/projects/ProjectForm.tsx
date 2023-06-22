@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 import { createProject, updateProject } from './utils';
+import { useRouter } from 'next/navigation';
+
 import styles from './styles/projects.module.css';
 
 interface Project {
@@ -13,6 +15,7 @@ interface Project {
 }
 
 export const ProjectForm = ({ project }: { project?: Project }) => {
+    const router = useRouter();
     const [showProjectForm, setShowProjectForm] = useState(false);
 
     const projectFields = [
@@ -38,6 +41,7 @@ export const ProjectForm = ({ project }: { project?: Project }) => {
             await createProject(event);
         }
         setShowProjectForm(false);
+        router.refresh();
     };
 
     return (

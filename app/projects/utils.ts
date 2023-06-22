@@ -1,12 +1,9 @@
-import { useRouter } from 'next/navigation';
 import axios from 'axios';
 import React from 'react';
 
 export const createProject = async (
     event: React.FormEvent<HTMLFormElement>
 ) => {
-    const router = useRouter();
-
     const formData = new FormData(event.currentTarget as HTMLFormElement);
 
     const body = {
@@ -20,7 +17,6 @@ export const createProject = async (
 
     if (response.status === 200) {
         console.log('Project created successfully!');
-        router.refresh();
     } else {
         console.error('Failed to create project', response);
     }
@@ -30,7 +26,6 @@ export const updateProject = async (
     event: React.FormEvent<HTMLFormElement>,
     projectId: string
 ) => {
-    const router = useRouter();
     const formData = new FormData(event.currentTarget as HTMLFormElement);
 
     const body = {
@@ -44,7 +39,6 @@ export const updateProject = async (
 
     if (response.status === 200) {
         console.log('Project updated successfully!');
-        router.refresh();
     } else {
         console.error('Failed to update project', response);
     }
