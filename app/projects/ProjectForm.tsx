@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { createProject, updateProject } from './utils';
+import { createProject, updateProject } from './utils/utils';
 import { useRouter } from 'next/navigation';
 
 import styles from './styles/projects.module.css';

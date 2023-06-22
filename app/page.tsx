@@ -1,13 +1,11 @@
 import { ModalButton } from './components/Buttons';
+import HeroSection from './components/Hero';
 import styles from './styles/Page.module.css';
-import dynamic from 'next/dynamic';
 
 const Home = () => {
-    const Hero = dynamic(() => import('./components/Hero'));
-
     return (
         <section className={styles.main}>
-            <Hero />
+            <HeroSection />
             <ModalButton />
         </section>
     );
