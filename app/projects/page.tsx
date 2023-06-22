@@ -7,7 +7,7 @@ import { getServerSession } from 'next-auth';
 import { authOptions } from '../api/auth/[...nextauth]/route';
 import { ProjectForm } from './ProjectForm';
 
-export interface Project {
+interface Project {
     id: string;
     name: string;
     description: string | null;

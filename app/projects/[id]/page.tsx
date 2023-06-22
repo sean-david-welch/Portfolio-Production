@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import styles from '../styles/projects.module.css';
 import { prisma } from '@/lib/primsa';
+import { ProjectForm } from '../ProjectForm';
 import { DeleteButton } from '../deleteProject';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/app/api/auth/[...nextauth]/route';
@@ -46,6 +47,7 @@ const ProjectDetail = async ({ params }: ProjectProps) => {
                 {user && user.role === 'ADMIN' && (
                     <DeleteButton projectId={id} />
                 )}
+                {project && <ProjectForm project={project} />}
             </div>
         </section>
     );
