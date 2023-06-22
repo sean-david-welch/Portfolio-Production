@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import styles from './styles/projects.module.css';
+import ProjectCard from './ProjectCard';
 
 import { prisma } from '@/lib/primsa';
 import { Metadata } from 'next';
@@ -53,20 +53,7 @@ const ProjectPage = async () => {
             <h1>Project Page</h1>
             <div className={styles.projectsList}>
                 {projects.map(project => (
-                    <div key={project.id}>
-                        <h2>{project.name}</h2>
-                        <p>{project.description}</p>
-                        <ul>
-                            {project.tags.map(tag => (
-                                <li key={tag}>{tag}</li>
-                            ))}
-                        </ul>
-                        <button>
-                            <Link href={`/projects/${project.id}`}>
-                                {`Link to page: ${project.name}`}
-                            </Link>
-                        </button>
-                    </div>
+                    <ProjectCard key={project.id} project={project} />
                 ))}
                 {user && user.role === 'ADMIN' && <ProjectForm />}
             </div>
