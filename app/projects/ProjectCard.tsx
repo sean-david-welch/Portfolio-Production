@@ -5,6 +5,7 @@ import Link from 'next/link';
 interface Project {
     id: string;
     name: string | null;
+    blurb: string | null;
     description: string | null;
     image: string | null;
     tags: string[] | null;
@@ -14,9 +15,7 @@ interface Props {
     project: Project;
 }
 
-const ProjectCard = ({
-    project: { id, name, description, image, tags },
-}: Props) => {
+const ProjectCard = ({ project: { id, name, blurb, image, tags } }: Props) => {
     return (
         <div className={styles.projectCard}>
             <Link href={`projects/${id}`}>
@@ -26,7 +25,7 @@ const ProjectCard = ({
                     height={500}
                     width={650}></Image>
                 <h1>{name}</h1>
-                <p>{description}</p>
+                <p>{blurb}</p>
                 <ul>
                     {tags?.map(tag => (
                         <button className={styles.tagButton}>

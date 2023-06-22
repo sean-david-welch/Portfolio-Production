@@ -9,6 +9,7 @@ export const createProject = async (
     const body = {
         name: formData.get('name') as string,
         description: formData.get('description') as string,
+        blurb: formData.get('blurb') as string,
         image: formData.get('image') as string,
         tags: (formData.get('tags') as string)?.split(',') || [],
     };
@@ -31,6 +32,7 @@ export const updateProject = async (
     const body = {
         name: formData.get('name') as string,
         description: formData.get('description') as string,
+        blurb: formData.get('blurb') as string,
         image: formData.get('image') as string,
         tags: (formData.get('tags') as string)?.split(',') || [],
     };

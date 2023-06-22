@@ -6,11 +6,11 @@ import { DeleteButton } from '../deleteProject';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 
-interface ProjectProps {
+interface Props {
     params: { id: string };
 }
 
-const ProjectDetail = async ({ params }: ProjectProps) => {
+const ProjectDetail = async ({ params }: Props) => {
     const session = await getServerSession(authOptions);
     const currentUserEmail = session?.user?.email || undefined;
 
@@ -44,10 +44,10 @@ const ProjectDetail = async ({ params }: ProjectProps) => {
                     width={64}
                     height={64}
                 />
-                {user && user.role === 'ADMIN' && (
-                    <DeleteButton projectId={id} />
+                {user?.role === 'ADMIN' && <DeleteButton projectId={id} />}
+                {user?.role === 'ADMIN' && project && (
+                    <ProjectForm project={project} />
                 )}
-                {project && <ProjectForm project={project} />}
             </div>
         </section>
     );

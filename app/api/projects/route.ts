@@ -17,6 +17,7 @@ export const POST = async (request: NextRequest) => {
             data: {
                 name: data.name,
                 description: data.description,
+                blurb: data.blurb,
                 image: data.image,
                 tags: data.tags,
                 createdAt: new Date(),

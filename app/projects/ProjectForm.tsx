@@ -9,6 +9,7 @@ import styles from './styles/projects.module.css';
 interface Project {
     id: string;
     name: string;
+    blurb: string | null;
     description: string | null;
     image: string | null;
     tags: string[];
@@ -24,6 +25,11 @@ export const ProjectForm = ({ project }: { project?: Project }) => {
             name: 'description',
             type: 'text',
             defaultValue: project?.description || '',
+        },
+        {
+            name: 'blurb',
+            type: 'text',
+            defaultValue: project?.blurb || '',
         },
         { name: 'image', type: 'text', defaultValue: project?.image || '' },
         {
@@ -45,8 +51,10 @@ export const ProjectForm = ({ project }: { project?: Project }) => {
     };
 
     return (
-        <>
-            <button onClick={() => setShowProjectForm(!showProjectForm)}>
+        <section id={styles.form}>
+            <button
+                className={styles.btn}
+                onClick={() => setShowProjectForm(!showProjectForm)}>
                 Toggle Project Form
             </button>
             {showProjectForm && (
@@ -64,9 +72,11 @@ export const ProjectForm = ({ project }: { project?: Project }) => {
                             />
                         </div>
                     ))}
-                    <button type="submit">Save</button>
+                    <button className={styles.btn} type="submit">
+                        Save
+                    </button>
                 </form>
             )}
-        </>
+        </section>
     );
 };

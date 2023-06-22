@@ -35,7 +35,13 @@ export const validateUser = async (request: NextRequest) => {
 };
 
 export const validateProject = (data: any) => {
-    if (!data.name || !data.description || !data.image || !data.tags) {
+    if (
+        !data.name ||
+        !data.description ||
+        !data.blurb ||
+        !data.image ||
+        !data.tags
+    ) {
         throw new Error('Missing required project fields');
     }
 };

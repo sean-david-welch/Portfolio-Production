@@ -10,6 +10,7 @@ import { ProjectForm } from './ProjectForm';
 interface Project {
     id: string;
     name: string;
+    blurb: string | null;
     description: string | null;
     image: string | null;
     tags: string[];
@@ -50,7 +51,10 @@ const ProjectPage = async () => {
 
     return (
         <section id={styles.projectsPage}>
-            <h1>Project Page</h1>
+            <h1 className={styles.mainHeading}>Projects:</h1>
+            <p className={styles.description}>
+                Take a look at what kind of solutions we can offer your business
+            </p>
             <div className={styles.projectsList}>
                 {projects.map(project => (
                     <ProjectCard key={project.id} project={project} />

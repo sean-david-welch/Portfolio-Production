@@ -4,11 +4,11 @@ import { prisma } from '@/lib/primsa';
 import { revalidatePath } from 'next/cache';
 import { getSession } from 'next-auth/react';
 
-interface ProjectProps {
+interface Props {
     projectId: string;
 }
 
-export const deleteProject = async (projectId: ProjectProps, user: any) => {
+export const deleteProject = async (projectId: Props, user: any) => {
     const session = await getSession();
     const currentUserEmail = session?.user?.email || undefined;
 
