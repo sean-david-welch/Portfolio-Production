@@ -1,12 +1,6 @@
 import Link from 'next/link';
 import styles from './styles/UserCard.module.css';
-
-interface User {
-    id: string;
-    name: string | null;
-    age: number | null;
-    image: string | null;
-}
+import { User } from '@prisma/client';
 
 interface Props {
     user: User;

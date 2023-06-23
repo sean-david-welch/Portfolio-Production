@@ -1,7 +1,7 @@
 import { prisma } from '@/lib/primsa';
 import { getServerSession } from 'next-auth';
 import { NextRequest, NextResponse } from 'next/server';
-import { authOptions } from '../auth/[...nextauth]/route';
+import { authOptions } from '../api/auth/[...nextauth]/route';
 
 export const errorResponse = (status: number, messgae: string) => {
     return NextResponse.json({

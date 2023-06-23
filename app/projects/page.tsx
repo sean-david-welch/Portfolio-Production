@@ -6,15 +6,7 @@ import { Metadata } from 'next';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '../api/auth/[...nextauth]/route';
 import { ProjectForm } from './ProjectForm';
-
-interface Project {
-    id: string;
-    name: string;
-    blurb: string | null;
-    description: string | null;
-    image: string | null;
-    tags: string[];
-}
+import { Project } from '@prisma/client';
 
 export const metadata: Metadata = {
     title: 'Projects',

@@ -1,15 +1,7 @@
 import styles from './styles/projects.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
-
-interface Project {
-    id: string;
-    name: string | null;
-    blurb: string | null;
-    description: string | null;
-    image: string | null;
-    tags: string[] | null;
-}
+import { Project } from '@prisma/client';
 
 interface Props {
     project: Project;

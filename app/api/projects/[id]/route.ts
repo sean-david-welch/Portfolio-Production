@@ -1,6 +1,10 @@
 import { prisma } from '@/lib/primsa';
 import { NextRequest, NextResponse } from 'next/server';
-import { validateUser, validateProject, errorResponse } from '../utils';
+import {
+    validateUser,
+    validateProject,
+    errorResponse,
+} from '../../../utils/apiUtils';
 
 export const GET = async (request: NextRequest): Promise<NextResponse> => {
     const id = request.nextUrl.searchParams.get('id') as string;

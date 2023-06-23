@@ -6,11 +6,11 @@ import { useRouter } from 'next/navigation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
-interface DeleteProps {
+interface Props {
     projectId: string;
 }
 
-export const DeleteButton: React.FC<DeleteProps> = ({ projectId }) => {
+export const DeleteButton: React.FC<Props> = ({ projectId }) => {
     const router = useRouter();
 
     const onDelete = async (event: React.MouseEvent<HTMLButtonElement>) => {

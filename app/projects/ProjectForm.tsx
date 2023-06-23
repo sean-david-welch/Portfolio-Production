@@ -6,17 +6,9 @@ import { useRouter } from 'next/navigation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import { DeleteButton } from './deleteProject';
+import { Project } from '@prisma/client';
 
 import styles from './styles/projects.module.css';
-
-interface Project {
-    id: string;
-    name: string;
-    blurb: string | null;
-    description: string | null;
-    image: string | null;
-    tags: string[];
-}
 
 export const ProjectForm = ({ project }: { project?: Project }) => {
     const router = useRouter();
