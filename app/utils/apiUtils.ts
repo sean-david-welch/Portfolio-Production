@@ -45,3 +45,9 @@ export const validateProject = (data: any) => {
         throw new Error('Missing required project fields');
     }
 };
+
+export const validateAbout = (data: any) => {
+    if (!data.title) {
+        throw new Error('Missing required schema fields');
+    }
+};
