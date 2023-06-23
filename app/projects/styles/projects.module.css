@@ -113,6 +113,10 @@
     @apply text-lg text-gray-300;
 }
 
+.projectView .description {
+    @apply break-words;
+}
+
 .optionsGrid {
     @apply mx-auto flex flex-row;
 }

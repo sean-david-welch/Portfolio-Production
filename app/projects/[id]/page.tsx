@@ -33,7 +33,7 @@ const ProjectDetail = async ({ params }: Props) => {
     const project = await prisma.project.findUnique({
         where: { id: params.id },
     });
-    const { id, name, blurb, description, image, tags } = project!;
+    const { name, blurb, description, image, tags } = project!;
 
     return (
         <section id={styles.projectDetail}>
@@ -53,7 +53,7 @@ const ProjectDetail = async ({ params }: Props) => {
                         </button>
                     ))}
                 </ul>
-                <p>{description}</p>
+                <p className={styles.description}>{description}</p>
                 {user?.role === 'ADMIN' && project && (
                     <ProjectForm project={project} />
                 )}

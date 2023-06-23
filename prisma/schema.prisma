@@ -8,6 +8,44 @@ datasource db {
   shadowDatabaseUrl = env("PGURL")
 }
 
+// About Schema
+model About {
+  id          String @id @default(uuid())
+  title       String
+  description String
+}
+
+model Experience {
+  id          String @id @default(uuid())
+  title       String
+  description String
+  date        String
+}
+
+model Education {
+  id          String @id @default(uuid())
+  title       String
+  description String
+  date        String
+}
+
+model Achievements {
+  id          String @id @default(uuid())
+  title       String
+  description String
+  date        String
+}
+
+model Skills {
+  id          String @id @default(uuid())
+  title       String
+}
+
+model Hobbies {
+  id          String @id @default(uuid())
+  title       String  
+}
+
 // Project Schema
 model Project {
   id          String   @id @default(uuid())
