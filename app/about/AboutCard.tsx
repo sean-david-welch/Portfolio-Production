@@ -1,3 +1,4 @@
+import AboutComponent from './components/AboutComponent';
 import styles from './styles/About.module.css';
 import {
     About,
@@ -9,12 +10,12 @@ import {
 } from '@prisma/client';
 
 interface Models {
-    about: About;
-    achievements: Achievements;
-    education: Education;
-    experience: Experience;
-    hobbies: Hobbies;
-    skills: Skills;
+    about: About[];
+    achievements: Achievements[];
+    education: Education[];
+    experience: Experience[];
+    hobbies: Hobbies[];
+    skills: Skills[];
 }
 
 interface Props {
@@ -23,4 +24,14 @@ interface Props {
 
 const AboutCard = ({
     models: { about, achievements, education, experience, hobbies, skills },
-}: Props) => {};
+}: Props) => {
+    return (
+        <div className={styles.models}>
+            <div className={styles.about}>
+                <AboutComponent about={about} />
+            </div>
+        </div>
+    );
+};
+
+export default AboutCard;

@@ -1,3 +1,4 @@
+import AboutCard from './AboutCard';
 import styles from './styles/About.module.css';
 import { getAboutData } from './utils/getAbout';
 
@@ -23,19 +24,16 @@ const AboutPage = async () => {
 
     if (!models)
         return (
-            <>
+            <section id={styles.AboutPage}>
                 <h1>No Data Found</h1>
-            </>
+            </section>
         );
 
     return (
-        <section>
-            <div className={styles.about}></div>
-            <div className={styles.experience}></div>
-            <div className={styles.education}></div>
-            <div className={styles.achievements}></div>
-            <div className={styles.skills}></div>
-            <div className={styles.hobbies}></div>
+        <section id={styles.AboutPage}>
+            <div className={styles.cards}>
+                <AboutCard models={models} />
+            </div>
         </section>
     );
 };
