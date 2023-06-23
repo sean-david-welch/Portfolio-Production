@@ -32,14 +32,6 @@ export const AboutForm = ({}) => {
             data.description = formData.get('description') as string;
         }
 
-        if (
-            model === 'experience' ||
-            model === 'education' ||
-            model === 'achievements'
-        ) {
-            data.date = formData.get('date') as string;
-        }
-
         return data;
     };
 
@@ -90,9 +82,6 @@ export const AboutForm = ({}) => {
 
                     <label htmlFor="description">Description:</label>
                     <input name="description" id="description" />
-
-                    <label htmlFor="date">Date:</label>
-                    <input type="date" name="date" id="date" />
 
                     <button type="submit">Submit</button>
                 </form>

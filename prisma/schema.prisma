@@ -19,21 +19,21 @@ model Experience {
   id          String @id @default(uuid())
   title       String
   description String
-  date        String
+
 }
 
 model Education {
   id          String @id @default(uuid())
   title       String
   description String
-  date        String
+
 }
 
 model Achievements {
   id          String @id @default(uuid())
   title       String
   description String
-  date        String
+
 }
 
 model Skills {

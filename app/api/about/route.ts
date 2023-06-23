@@ -47,7 +47,6 @@ export const POST = async (request: NextRequest) => {
                     data: {
                         title: data.title,
                         description: data.description,
-                        date: data.date,
                     },
                 });
                 break;
@@ -56,7 +55,6 @@ export const POST = async (request: NextRequest) => {
                     data: {
                         title: data.title,
                         description: data.description,
-                        date: data.date,
                     },
                 });
                 break;
@@ -65,7 +63,6 @@ export const POST = async (request: NextRequest) => {
                     data: {
                         title: data.title,
                         description: data.description,
-                        date: data.date,
                     },
                 });
                 break;
