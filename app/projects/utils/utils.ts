@@ -1,6 +1,26 @@
 import axios from 'axios';
 import React from 'react';
 
+// export const projectFields = [
+//     { name: 'name', type: 'text', defaultValue: project?.name || '' },
+//     {
+//         name: 'description',
+//         type: 'text',
+//         defaultValue: project?.description || '',
+//     },
+//     {
+//         name: 'blurb',
+//         type: 'text',
+//         defaultValue: project?.blurb || '',
+//     },
+//     { name: 'image', type: 'text', defaultValue: project?.image || '' },
+//     {
+//         name: 'tags',
+//         type: 'text',
+//         defaultValue: project?.tags.join(',') || '',
+//     },
+// ];
+
 export const createProject = async (
     event: React.FormEvent<HTMLFormElement>
 ) => {

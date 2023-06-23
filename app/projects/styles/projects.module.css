@@ -8,6 +8,10 @@
     @apply boxshadow;
 }
 
+.optionsBtn {
+    @apply btn;
+}
+
 .tagButton {
     @apply btn cursor-default;
 }
@@ -19,6 +23,10 @@
 .boxshadow {
     box-shadow: 0 0 0 2px rgba(74, 4, 78, 0.5), 0 0 0 3px rgba(74, 4, 78, 0.5),
         0 0 0 4px rgba(74, 4, 78, 0.5), 0 0 0 5px rgba(74, 4, 78, 0.5);
+}
+
+#projectDetail .tagButton {
+    @apply mx-4;
 }
 
 /* Projects Page */
@@ -87,6 +95,30 @@
 
 .projectView {
     @apply flex flex-col text-center;
+}
+
+.projectView > * {
+    @apply my-2;
+}
+
+.projectView img {
+    @apply mx-auto rounded-lg;
+}
+
+.projectView h1 {
+    @apply text-5xl;
+}
+
+.projectView p {
+    @apply text-lg text-gray-300;
+}
+
+.optionsGrid {
+    @apply mx-auto flex flex-row;
+}
+
+.optionsGrid > * {
+    @apply mx-2;
 }
 
 /* Project Form */

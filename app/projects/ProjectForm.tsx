@@ -3,6 +3,9 @@
 import { useState } from 'react';
 import { createProject, updateProject } from './utils/utils';
 import { useRouter } from 'next/navigation';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
+import { DeleteButton } from './deleteProject';
 
 import styles from './styles/projects.module.css';
 
@@ -52,11 +55,18 @@ export const ProjectForm = ({ project }: { project?: Project }) => {
 
     return (
         <section id={styles.form}>
-            <button
-                className={styles.btn}
-                onClick={() => setShowProjectForm(!showProjectForm)}>
-                Toggle Project Form
-            </button>
+            <div className={styles.optionsGrid}>
+                <button
+                    className={styles.optionsBtn}
+                    onClick={() => setShowProjectForm(!showProjectForm)}>
+                    {project ? (
+                        <FontAwesomeIcon icon={faPenToSquare} />
+                    ) : (
+                        'Create Project'
+                    )}
+                </button>
+                {project && <DeleteButton projectId={project?.id} />}
+            </div>
             {showProjectForm && (
                 <form onSubmit={handleSubmit}>
                     {projectFields.map(field => (
@@ -73,7 +83,7 @@ export const ProjectForm = ({ project }: { project?: Project }) => {
                         </div>
                     ))}
                     <button className={styles.btn} type="submit">
-                        Save
+                        {project ? 'Save Changes' : 'Save'}
                     </button>
                 </form>
             )}

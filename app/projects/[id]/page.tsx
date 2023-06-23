@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import styles from '../styles/projects.module.css';
+
 import { prisma } from '@/lib/primsa';
+
 import { ProjectForm } from '../ProjectForm';
 import { DeleteButton } from '../deleteProject';
 import { getServerSession } from 'next-auth';
@@ -31,20 +33,27 @@ const ProjectDetail = async ({ params }: Props) => {
     const project = await prisma.project.findUnique({
         where: { id: params.id },
     });
-    const { id, name, description, image } = project!;
+    const { id, name, blurb, description, image, tags } = project!;
 
     return (
         <section id={styles.projectDetail}>
             <div className={styles.projectView}>
                 <h1>{name}</h1>
-                <p>{description}</p>
+                <p>{blurb}</p>
                 <Image
                     src={image ?? '/default.jpg'}
                     alt="project image"
-                    width={64}
-                    height={64}
+                    width={650}
+                    height={500}
                 />
-                {user?.role === 'ADMIN' && <DeleteButton projectId={id} />}
+                <ul>
+                    {tags?.map(tag => (
+                        <button className={styles.tagButton}>
+                            <li key={tag}>{tag}</li>
+                        </button>
+                    ))}
+                </ul>
+                <p>{description}</p>
                 {user?.role === 'ADMIN' && project && (
                     <ProjectForm project={project} />
                 )}
