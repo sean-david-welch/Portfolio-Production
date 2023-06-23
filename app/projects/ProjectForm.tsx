@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { createProject, updateProject } from './utils/utils';
+import { getProjectFields, createProject, updateProject } from './utils/utils';
 import { useRouter } from 'next/navigation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
@@ -14,25 +14,7 @@ export const ProjectForm = ({ project }: { project?: Project }) => {
     const router = useRouter();
     const [showProjectForm, setShowProjectForm] = useState(false);
 
-    const projectFields = [
-        { name: 'name', type: 'text', defaultValue: project?.name || '' },
-        {
-            name: 'description',
-            type: 'text',
-            defaultValue: project?.description || '',
-        },
-        {
-            name: 'blurb',
-            type: 'text',
-            defaultValue: project?.blurb || '',
-        },
-        { name: 'image', type: 'text', defaultValue: project?.image || '' },
-        {
-            name: 'tags',
-            type: 'text',
-            defaultValue: project?.tags.join(',') || '',
-        },
-    ];
+    const projectFields = getProjectFields(project);
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();

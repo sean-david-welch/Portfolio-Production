@@ -1,0 +1,20 @@
+/* About Form */
+#form {
+    @apply flex flex-col;
+}
+
+#form > * {
+    @apply my-4;
+}
+
+#form form label {
+    @apply my-2 block text-lg font-medium text-gray-900 dark:text-white;
+}
+
+#form form input {
+    @apply block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500;
+}
+
+#form .btn {
+    @apply mt-4;
+}

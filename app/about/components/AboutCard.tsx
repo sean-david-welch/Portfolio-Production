@@ -5,8 +5,8 @@ import {
     ExperienceComponent,
     HobbiesComponent,
     SkillsComponent,
-} from './components/ModelsComponent';
-import styles from './styles/About.module.css';
+} from './ModelsComponent';
+import styles from '../styles/About.module.css';
 import {
     About,
     Achievements,
