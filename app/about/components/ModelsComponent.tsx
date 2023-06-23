@@ -24,6 +24,7 @@ const AboutComponent = ({ about }: Props) => {
     if (!about) return null;
     return (
         <div className={styles.about}>
+            <h1>About Sean:</h1>
             {about.map((item, index) => (
                 <div key={index}>
                     <h1>{item.title}</h1>
@@ -39,6 +40,7 @@ const AchievementComponent = ({ achievement }: Props) => {
     if (!achievement) return null;
     return (
         <div className={styles.achievement}>
+            <h1>Achievements:</h1>
             {achievement.map((item, index) => (
                 <div key={index}>
                     <h1>{item.title}</h1>
@@ -57,6 +59,7 @@ const EducationComponent = ({ education }: Props) => {
     if (!education) return null;
     return (
         <div className={styles.education}>
+            <h1>Education:</h1>
             {education.map((item, index) => (
                 <div key={index}>
                     <h1>{item.title}</h1>
@@ -72,6 +75,7 @@ const ExperienceComponent = ({ experience }: Props) => {
     if (!experience) return null;
     return (
         <div className={styles.experience}>
+            <h1>Experience:</h1>
             {experience.map((item, index) => (
                 <div key={index}>
                     <h1>{item.title}</h1>
@@ -87,6 +91,7 @@ const HobbiesComponent = ({ hobbies }: Props) => {
     if (!hobbies) return null;
     return (
         <div className={styles.hobbies}>
+            <h1>Hobbies:</h1>
             {hobbies.map((item, index) => (
                 <div key={index}>
                     <h1>{item.title}</h1>
@@ -101,6 +106,7 @@ const SkillsComponent = ({ skills }: Props) => {
     if (!skills) return null;
     return (
         <div className={styles.skills}>
+            <h1>Skills:</h1>
             {skills.map((item, index) => (
                 <div key={index}>
                     <h1>{item.title}</h1>

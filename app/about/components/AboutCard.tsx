@@ -35,9 +35,10 @@ const AboutCard = ({
     return (
         <div className={styles.models}>
             <AboutComponent about={about} />
-            <AchievementComponent achievement={achievements} />
-            <EducationComponent education={education} />
+
             <ExperienceComponent experience={experience} />
+            <EducationComponent education={education} />
+            <AchievementComponent achievement={achievements} />
             <HobbiesComponent hobbies={hobbies} />
             <SkillsComponent skills={skills} />
         </div>

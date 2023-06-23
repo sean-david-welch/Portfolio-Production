@@ -45,6 +45,7 @@ export const AboutForm = ({}) => {
         };
 
         const response = await axios.post('/api/about', body);
+        console.log(response);
 
         if (response.status === 200) {
             console.log('Project created successfully!');
@@ -62,8 +63,10 @@ export const AboutForm = ({}) => {
 
     return (
         <section id={styles.form}>
-            <button onClick={() => setShowAboutForm(!showAboutForm)}>
-                Reaveal
+            <button
+                className={styles.btn}
+                onClick={() => setShowAboutForm(!showAboutForm)}>
+                Create Model
             </button>
             {showAboutForm && (
                 <form onSubmit={handleSubmit}>
@@ -83,7 +86,9 @@ export const AboutForm = ({}) => {
                     <label htmlFor="description">Description:</label>
                     <input name="description" id="description" />
 
-                    <button type="submit">Submit</button>
+                    <button className={styles.btn} type="submit">
+                        Submit
+                    </button>
                 </form>
             )}
         </section>

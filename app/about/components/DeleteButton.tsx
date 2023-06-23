@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import styles from '../styles/About.module.css';
 
 interface Props {
     modelId: string;
@@ -29,17 +30,19 @@ export const DeleteButton: React.FC<Props> = ({ modelId, modelName }) => {
             console.log('reponse:', response);
 
             if (response.status >= 200 && response.status < 300) {
-                router.refresh();
             } else {
                 alert(`Error: ${response.status}`);
             }
         } catch (error) {
             alert(`Network error: ${error}`);
         }
+        router.refresh();
     };
 
     return (
-        <button onClick={event => onDelete(event, modelId, modelName)}>
+        <button
+            className={styles.btn}
+            onClick={event => onDelete(event, modelId, modelName)}>
             <FontAwesomeIcon icon={faTrash} />
         </button>
     );

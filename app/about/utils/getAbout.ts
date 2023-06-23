@@ -33,7 +33,7 @@ export const getAboutData = async () => {
     const education: Education[] = await prisma.education.findMany();
     const achievements: Achievements[] = await prisma.achievements.findMany();
     const skills: Skills[] = await prisma.skills.findMany();
-    const hobbies: Hobbies[] = await prisma.skills.findMany();
+    const hobbies: Hobbies[] = await prisma.hobbies.findMany();
 
     return {
         user,
