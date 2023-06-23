@@ -1,4 +1,11 @@
-import AboutComponent from './components/AboutComponent';
+import {
+    AboutComponent,
+    AchievementComponent,
+    EducationComponent,
+    ExperienceComponent,
+    HobbiesComponent,
+    SkillsComponent,
+} from './components/ModelsComponent';
 import styles from './styles/About.module.css';
 import {
     About,
@@ -29,6 +36,21 @@ const AboutCard = ({
         <div className={styles.models}>
             <div className={styles.about}>
                 <AboutComponent about={about} />
+            </div>
+            <div className={styles.achievement}>
+                <AchievementComponent achievement={achievements} />
+            </div>
+            <div className={styles.education}>
+                <EducationComponent education={education} />
+            </div>
+            <div className={styles.experience}>
+                <ExperienceComponent experience={experience} />
+            </div>
+            <div className={styles.hobbies}>
+                <HobbiesComponent hobbies={hobbies} />
+            </div>
+            <div className={styles.skills}>
+                <SkillsComponent skills={skills} />
             </div>
         </div>
     );
