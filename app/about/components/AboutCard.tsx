@@ -1,10 +1,4 @@
-import {
-    AboutComponent,
-    AchievementComponent,
-    EducationComponent,
-    ExperienceComponent,
-    HobbiesComponent,
-} from './ModelsComponent';
+import { HobbiesComponent, SectionComponent } from './ModelsComponent';
 import styles from '../styles/About.module.css';
 import {
     About,
@@ -24,19 +18,41 @@ interface Models {
     skills: Skills[];
 }
 
+interface User {
+    role: string;
+}
+
 interface Props {
     models: Models;
+    user: User | undefined | null;
 }
 
 const AboutCard = ({
     models: { about, achievements, education, experience, hobbies, skills },
+    user,
 }: Props) => {
     return (
         <div className={styles.models}>
-            <AboutComponent about={about} />
-            <ExperienceComponent experience={experience} />
-            <EducationComponent education={education} />
-            <AchievementComponent achievement={achievements} />
+            <SectionComponent
+                title="About Sean"
+                data={about}
+                modelName="about"
+            />
+            <SectionComponent
+                title="Experience"
+                data={experience}
+                modelName="experience"
+            />
+            <SectionComponent
+                title="Education"
+                data={education}
+                modelName="education"
+            />
+            <SectionComponent
+                title="Achievements"
+                data={achievements}
+                modelName="achievements"
+            />
             <HobbiesComponent hobbies={hobbies} skills={skills} />
         </div>
     );

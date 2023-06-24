@@ -4,7 +4,7 @@
 }
 
 .cards {
-    @apply mx-auto my-4 flex flex-col items-center py-10 text-center;
+    @apply mx-auto my-4 flex flex-col items-center py-10;
 }
 
 .models {
@@ -25,6 +25,22 @@
 
 .about .description h1 {
     @apply text-3xl underline;
+}
+
+.experience {
+    @apply my-2;
+}
+
+.education {
+    @apply my-2;
+}
+
+.achievements {
+    @apply my-2;
+}
+
+.hobbies {
+    @apply my-2;
 }
 
 .mapGrid {
@@ -56,7 +72,7 @@
 }
 
 #form {
-    @apply flex flex-col;
+    @apply flex w-[750px] flex-col;
 }
 
 #form > * {

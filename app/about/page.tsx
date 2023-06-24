@@ -20,20 +20,15 @@ const AboutPage = async () => {
             </section>
         );
 
-    const {
-        user,
-        about,
-        experience,
-        education,
-        achievements,
-        skills,
-        hobbies,
-    } = data;
+    const { about, experience, education, achievements, skills, hobbies } =
+        data;
+
+    const user = data.user;
 
     return (
         <section id={styles.AboutPage}>
             <div className={styles.cards}>
-                <AboutCard models={data} />
+                <AboutCard models={data} user={user} />
                 {user && user.role === 'ADMIN' && <AboutForm />}
             </div>
         </section>
