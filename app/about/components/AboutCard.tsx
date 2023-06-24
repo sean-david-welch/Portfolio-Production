@@ -4,7 +4,6 @@ import {
     EducationComponent,
     ExperienceComponent,
     HobbiesComponent,
-    SkillsComponent,
 } from './ModelsComponent';
 import styles from '../styles/About.module.css';
 import {
@@ -35,12 +34,10 @@ const AboutCard = ({
     return (
         <div className={styles.models}>
             <AboutComponent about={about} />
-
             <ExperienceComponent experience={experience} />
             <EducationComponent education={education} />
             <AchievementComponent achievement={achievements} />
-            <HobbiesComponent hobbies={hobbies} />
-            <SkillsComponent skills={skills} />
+            <HobbiesComponent hobbies={hobbies} skills={skills} />
         </div>
     );
 };

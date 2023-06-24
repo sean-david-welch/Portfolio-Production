@@ -24,11 +24,13 @@ const AboutComponent = ({ about }: Props) => {
     if (!about) return null;
     return (
         <div className={styles.about}>
-            <h1>About Sean:</h1>
+            <h1 className={styles.mainHeading}>About Sean:</h1>
             {about.map((item, index) => (
-                <div key={index}>
-                    <h1>{item.title}</h1>
-                    <p>{item.description}</p>
+                <div className={styles.grid} key={index}>
+                    <div className={styles.description}>
+                        <h1>{item.title}</h1>
+                        <p>{item.description}</p>
+                    </div>
                     <DeleteButton modelId={item.id} modelName={'about'} />
                 </div>
             ))}
@@ -40,11 +42,13 @@ const AchievementComponent = ({ achievement }: Props) => {
     if (!achievement) return null;
     return (
         <div className={styles.achievement}>
-            <h1>Achievements:</h1>
+            <h1 className={styles.mainHeading}>Achievements:</h1>
             {achievement.map((item, index) => (
-                <div key={index}>
-                    <h1>{item.title}</h1>
-                    <p>{item.description}</p>
+                <div className={styles.grid} key={index}>
+                    <div className={styles.description}>
+                        <h1>{item.title}</h1>
+                        <p>{item.description}</p>
+                    </div>
                     <DeleteButton
                         modelId={item.id}
                         modelName={'achievements'}
@@ -59,11 +63,13 @@ const EducationComponent = ({ education }: Props) => {
     if (!education) return null;
     return (
         <div className={styles.education}>
-            <h1>Education:</h1>
+            <h1 className={styles.mainHeading}>Education:</h1>
             {education.map((item, index) => (
-                <div key={index}>
-                    <h1>{item.title}</h1>
-                    <p>{item.description}</p>
+                <div className={styles.grid} key={index}>
+                    <div className={styles.description}>
+                        <h1>{item.title}</h1>
+                        <p>{item.description}</p>
+                    </div>
                     <DeleteButton modelId={item.id} modelName={'education'} />
                 </div>
             ))}
@@ -75,11 +81,13 @@ const ExperienceComponent = ({ experience }: Props) => {
     if (!experience) return null;
     return (
         <div className={styles.experience}>
-            <h1>Experience:</h1>
+            <h1 className={styles.mainHeading}>Experience:</h1>
             {experience.map((item, index) => (
-                <div key={index}>
-                    <h1>{item.title}</h1>
-                    <p>{item.description}</p>
+                <div className={styles.grid} key={index}>
+                    <div className={styles.description}>
+                        <h1>{item.title}</h1>
+                        <p>{item.description}</p>
+                    </div>
                     <DeleteButton modelId={item.id} modelName={'experience'} />
                 </div>
             ))}
@@ -87,32 +95,36 @@ const ExperienceComponent = ({ experience }: Props) => {
     );
 };
 
-const HobbiesComponent = ({ hobbies }: Props) => {
-    if (!hobbies) return null;
+const HobbiesComponent = ({ hobbies, skills }: Props) => {
+    if (!hobbies || !skills) return null;
     return (
         <div className={styles.hobbies}>
-            <h1>Hobbies:</h1>
-            {hobbies.map((item, index) => (
-                <div key={index}>
-                    <h1>{item.title}</h1>
-                    <DeleteButton modelId={item.id} modelName={'hobbies'} />
+            <div className={styles.mapGrid}>
+                <div className={styles.skillsGrid}>
+                    <h1 className={styles.mainHeading}>Hobbies:</h1>
+                    {hobbies.map((item, index) => (
+                        <div className={styles.grid} key={index}>
+                            <h1>{item.title}</h1>
+                            <DeleteButton
+                                modelId={item.id}
+                                modelName={'hobbies'}
+                            />
+                        </div>
+                    ))}
                 </div>
-            ))}
-        </div>
-    );
-};
-
-const SkillsComponent = ({ skills }: Props) => {
-    if (!skills) return null;
-    return (
-        <div className={styles.skills}>
-            <h1>Skills:</h1>
-            {skills.map((item, index) => (
-                <div key={index}>
-                    <h1>{item.title}</h1>
-                    <DeleteButton modelId={item.id} modelName={'skills'} />
+                <div className={styles.skillsGrid}>
+                    <h1 className={styles.mainHeading}>Skills:</h1>
+                    {skills.map((item, index) => (
+                        <div className={styles.grid} key={index}>
+                            <h1>{item.title}</h1>
+                            <DeleteButton
+                                modelId={item.id}
+                                modelName={'skills'}
+                            />
+                        </div>
+                    ))}
                 </div>
-            ))}
+            </div>
         </div>
     );
 };
@@ -123,5 +135,4 @@ export {
     EducationComponent,
     ExperienceComponent,
     HobbiesComponent,
-    SkillsComponent,
 };
