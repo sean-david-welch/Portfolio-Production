@@ -1,10 +1,12 @@
 'use client';
-import React, { useEffect } from 'react';
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { Hobbies, Skills } from '@prisma/client';
 import styles from '../styles/About.module.css';
+
+import { useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
+
 import { DeleteButton } from './DeleteButton';
+import { Hobbies, Skills } from '@prisma/client';
+import { motion, useAnimation } from 'framer-motion';
 
 interface GridItemProps {
     item: {
@@ -12,6 +14,7 @@ interface GridItemProps {
         id: string;
     };
     modelName: string;
+    user: { role: string } | undefined | null;
 }
 
 interface HobbiesProps {
@@ -20,7 +23,7 @@ interface HobbiesProps {
     user: { role: string } | undefined | null;
 }
 
-const GridItem: React.FC<GridItemProps> = ({ item, modelName }) => {
+const GridItem: React.FC<GridItemProps> = ({ item, modelName, user }) => {
     const control = useAnimation();
     const [ref, inView] = useInView();
     const gridVariant = {
@@ -44,12 +47,14 @@ const GridItem: React.FC<GridItemProps> = ({ item, modelName }) => {
             initial="hidden"
             animate={control}>
             <h1>{item.title}</h1>
-            <DeleteButton modelId={item.id} modelName={modelName} />
+            {user && user?.role === 'ADMIN' && (
+                <DeleteButton modelId={item.id} modelName={modelName} />
+            )}
         </motion.div>
     );
 };
 
-const HobbiesComponent = ({ hobbies, skills }: HobbiesProps) => {
+const HobbiesComponent = ({ hobbies, skills, user }: HobbiesProps) => {
     if (!hobbies || !skills) return null;
 
     return (
@@ -57,14 +62,24 @@ const HobbiesComponent = ({ hobbies, skills }: HobbiesProps) => {
             <div className={styles.mapGrid}>
                 <div className={styles.skillsGrid}>
                     <h1 className={styles.mainHeading}>Hobbies:</h1>
-                    {hobbies.map((item, index) => (
-                        <GridItem key={index} item={item} modelName="hobbies" />
+                    {hobbies.map(item => (
+                        <GridItem
+                            key={item.id}
+                            item={item}
+                            modelName="hobbies"
+                            user={user}
+                        />
                     ))}
                 </div>
                 <div className={styles.skillsGrid}>
                     <h1 className={styles.mainHeading}>Skills:</h1>
-                    {skills.map((item, index) => (
-                        <GridItem key={index} item={item} modelName="skills" />
+                    {skills.map(item => (
+                        <GridItem
+                            key={item.id}
+                            item={item}
+                            modelName="skills"
+                            user={user}
+                        />
                     ))}
                 </div>
             </div>

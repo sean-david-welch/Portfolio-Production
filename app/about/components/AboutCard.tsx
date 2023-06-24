@@ -1,4 +1,4 @@
-import SectionComponent from './Models';
+import SectionComponent from './About';
 import HobbiesComponent from './Hobbies';
 import styles from '../styles/About.module.css';
 import {

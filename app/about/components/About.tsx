@@ -52,7 +52,7 @@ const SectionGridItem = ({ item, modelName, user }: SectionGridItemProps) => {
                 <h1>{item.title}</h1>
                 <p>{item.description}</p>
             </div>
-            {user && user?.role && (
+            {user && user?.role === 'ADMIN' && (
                 <DeleteButton modelId={item.id} modelName={modelName} />
             )}
         </motion.div>
@@ -65,9 +65,9 @@ const SectionComponent = ({ title, data, modelName, user }: SectionProps) => {
     return (
         <div className={styles[modelName]}>
             <h1 className={styles.mainHeading}>{title}:</h1>
-            {data.map((item, index) => (
+            {data.map(item => (
                 <SectionGridItem
-                    key={index}
+                    key={item.id}
                     item={item}
                     modelName={modelName}
                     user={user}
