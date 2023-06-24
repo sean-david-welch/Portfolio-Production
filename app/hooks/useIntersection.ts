@@ -8,12 +8,6 @@ const useIntersection = (ref: RefObject<HTMLElement>) => {
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    console.log(
-                        'Is intersecting:',
-                        entry.isIntersecting,
-                        entry
-                    );
-                    entry.target.classList.remove('hidden');
                     entry.target.classList.add('show');
                 }
             });
@@ -24,7 +18,6 @@ const useIntersection = (ref: RefObject<HTMLElement>) => {
 
         return () => {
             observer.unobserve(target);
-            console.log('unobserved');
         };
     }, [ref]);
 };
