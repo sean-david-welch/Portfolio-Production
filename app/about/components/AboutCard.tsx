@@ -1,4 +1,5 @@
-import { HobbiesComponent, SectionComponent } from './ModelsComponent';
+import SectionComponent from './Models';
+import HobbiesComponent from './Hobbies';
 import styles from '../styles/About.module.css';
 import {
     About,
@@ -37,23 +38,27 @@ const AboutCard = ({
                 title="About Sean"
                 data={about}
                 modelName="about"
+                user={user}
             />
             <SectionComponent
                 title="Experience"
                 data={experience}
                 modelName="experience"
+                user={user}
             />
             <SectionComponent
                 title="Education"
                 data={education}
                 modelName="education"
+                user={user}
             />
             <SectionComponent
                 title="Achievements"
                 data={achievements}
                 modelName="achievements"
+                user={user}
             />
-            <HobbiesComponent hobbies={hobbies} skills={skills} />
+            <HobbiesComponent hobbies={hobbies} skills={skills} user={user} />
         </div>
     );
 };
