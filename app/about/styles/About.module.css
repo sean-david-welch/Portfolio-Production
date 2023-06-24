@@ -11,6 +11,10 @@
     @apply flex flex-col items-center;
 }
 
+.models > * {
+    @apply w-[900px];
+}
+
 .grid {
     @apply my-4 flex flex-col rounded-xl bg-gray-800 px-8 py-4;
 }
@@ -20,7 +24,11 @@
 }
 
 .description h1 {
-    @apply text-xl;
+    @apply text-2xl text-gray-300;
+}
+
+.description p {
+    @apply text-lg text-gray-300;
 }
 
 .about .description h1 {
@@ -40,7 +48,11 @@
 }
 
 .hobbies {
-    @apply my-2;
+    @apply my-2 w-[950px];
+}
+
+.skillsGrid .grid h1 {
+    @apply text-gray-200;
 }
 
 .mapGrid {
@@ -93,4 +105,37 @@
 
 #form .btn {
     @apply mt-4;
+}
+
+/* Animation */
+.hidden {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+.show {
+    animation: slideIn 800ms ease-in-out forwards;
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.show:nth-child(2) {
+    animation-delay: 300ms;
+}
+
+.show:nth-child(3) {
+    animation-delay: 600ms;
+}
+
+.show:nth-child(4) {
+    animation-delay: 900ms;
 }
