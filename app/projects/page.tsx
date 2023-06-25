@@ -3,8 +3,7 @@ import ProjectCard from './ProjectCard';
 
 import { prisma } from '@/lib/primsa';
 import { Metadata } from 'next';
-import { getServerSession } from 'next-auth';
-import { authOptions } from '../api/auth/[...nextauth]/route';
+import { getSessionAndUser } from '../utils/apiUtils';
 import { ProjectForm } from './ProjectForm';
 import { Project } from '@prisma/client';
 
@@ -14,22 +13,7 @@ export const metadata: Metadata = {
 };
 
 const ProjectPage = async () => {
-    const session = await getServerSession(authOptions);
-    const currentUserEmail = session?.user?.email || undefined;
-
-    let user;
-
-    if (currentUserEmail) {
-        user = await prisma.user
-            .findUnique({
-                where: {
-                    email: currentUserEmail,
-                },
-            })
-            .then(user => {
-                return user;
-            });
-    }
+    const { user } = await getSessionAndUser();
 
     const projects: Project[] = await prisma.project.findMany();
 

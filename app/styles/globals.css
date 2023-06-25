@@ -35,5 +35,5 @@ body {
 }
 
 .container {
-    @apply m-auto h-[100vh] items-center text-center;
+    @apply m-auto min-h-screen items-center text-center;
 }

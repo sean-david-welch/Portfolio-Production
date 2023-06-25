@@ -51,3 +51,20 @@ export const validateAbout = (data: any) => {
         throw new Error('Missing required schema fields');
     }
 };
+
+export const getSessionAndUser = async () => {
+    const session = await getServerSession(authOptions);
+    const currentUserEmail = session?.user?.email;
+
+    if (!currentUserEmail) {
+        return { session: null, user: null };
+    }
+
+    const user = await prisma.user.findUnique({
+        where: {
+            email: currentUserEmail,
+        },
+    });
+
+    return { session, user, currentUserEmail };
+};

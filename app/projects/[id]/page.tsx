@@ -1,32 +1,15 @@
 import styles from '../styles/projects.module.css';
+import ProjectInfo from './Project';
 
 import { prisma } from '@/lib/primsa';
-
-import { getServerSession } from 'next-auth';
-import { authOptions } from '@/app/api/auth/[...nextauth]/route';
-import ProjectInfo from './Project';
+import { getSessionAndUser } from '@/app/utils/apiUtils';
 
 interface Props {
     params: { id: string };
 }
 
 const ProjectDetail = async ({ params }: Props) => {
-    const session = await getServerSession(authOptions);
-    const currentUserEmail = session?.user?.email || undefined;
-
-    let user;
-
-    if (currentUserEmail) {
-        user = await prisma.user
-            .findUnique({
-                where: {
-                    email: currentUserEmail,
-                },
-            })
-            .then(user => {
-                return user;
-            });
-    }
+    const { user } = await getSessionAndUser();
 
     const project = await prisma.project.findUnique({
         where: { id: params.id },
