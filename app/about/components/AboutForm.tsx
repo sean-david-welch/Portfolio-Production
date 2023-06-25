@@ -1,13 +1,23 @@
 'use client';
 import styles from '../styles/About.module.css';
-import { DeleteButton } from './DeleteButton';
 
 import { useState } from 'react';
-import { createModel, updateModel } from '../utils/utils';
 import { useRouter } from 'next/navigation';
+import { DeleteButton } from './DeleteButton';
 
-export const AboutForm = ({ modelId }: { modelId?: string }) => {
+import { createModel, getModelFields, updateModel } from '../utils/utils';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
+
+export const AboutForm = ({
+    modelId,
+    modelName,
+}: {
+    modelId?: string;
+    modelName?: string;
+}) => {
     const router = useRouter();
+    const modelFields = getModelFields(modelName);
     const [showAboutForm, setShowAboutForm] = useState(false);
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -23,30 +33,45 @@ export const AboutForm = ({ modelId }: { modelId?: string }) => {
 
     return (
         <section id={styles.form}>
-            <button
-                className={styles.btn}
-                onClick={() => setShowAboutForm(!showAboutForm)}>
-                Create Model
-            </button>
+            <div className={styles.buttonsGrid}>
+                <button
+                    className={styles.btn}
+                    onClick={() => setShowAboutForm(!showAboutForm)}>
+                    {modelId ? (
+                        <FontAwesomeIcon icon={faPenToSquare} />
+                    ) : (
+                        'Create Model'
+                    )}
+                </button>
+                {modelId && modelName && (
+                    <DeleteButton modelId={modelId} modelName={modelName} />
+                )}
+            </div>
 
             {showAboutForm && (
                 <form onSubmit={handleSubmit}>
-                    <label htmlFor="model">Model:</label>
-                    <select name="model" id="model">
-                        <option value="about">About</option>
-                        <option value="experience">Experience</option>
-                        <option value="education">Education</option>
-                        <option value="achievements">Achievements</option>
-                        <option value="skills">Skills</option>
-                        <option value="hobbies">Hobbies</option>
-                    </select>
-
-                    <label htmlFor="title">Title:</label>
-                    <input type="text" name="title" id="title" required />
-
-                    <label htmlFor="description">Description:</label>
-                    <input name="description" id="description" />
-
+                    {modelFields.map(field =>
+                        field.fieldType === 'select' ? (
+                            <div key={field.name}>
+                                <select
+                                    name={field.name}
+                                    defaultValue={field.defaultValue}>
+                                    {field.options?.map(option => (
+                                        <option key={option} value={option}>
+                                            {option}
+                                        </option>
+                                    ))}
+                                </select>
+                            </div>
+                        ) : (
+                            <input
+                                key={field.name}
+                                type={field.type}
+                                name={field.name}
+                                defaultValue={field.defaultValue}
+                            />
+                        )
+                    )}
                     <button className={styles.btn} type="submit">
                         Submit
                     </button>

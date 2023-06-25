@@ -24,7 +24,7 @@
 }
 
 .description h1 {
-    @apply text-2xl text-gray-300;
+    @apply text-xl text-gray-300;
 }
 
 .description p {
@@ -35,16 +35,20 @@
     @apply text-3xl underline;
 }
 
+.about {
+    @apply mx-auto flex flex-col;
+}
+
 .experience {
-    @apply my-2;
+    @apply mx-auto my-2 flex flex-col;
 }
 
 .education {
-    @apply my-2;
+    @apply mx-auto my-2 flex flex-col;
 }
 
 .achievements {
-    @apply my-2;
+    @apply mx-auto my-2 flex flex-col;
 }
 
 .hobbies {
@@ -69,6 +73,10 @@
 }
 
 /* About Form */
+.buttonsGrid {
+    @apply mx-auto flex flex-row items-center justify-center;
+}
+
 .btn {
     @apply items-center justify-center rounded-xl bg-violet-950 px-8 py-2 text-center text-lg font-semibold;
     @apply mx-auto text-white transition-all duration-700 ease-in-out hover:bg-violet-900;
@@ -84,11 +92,11 @@
 }
 
 #form {
-    @apply flex w-[750px] flex-col;
+    @apply mx-auto flex w-[750px] flex-col;
 }
 
 #form > * {
-    @apply my-4;
+    @apply my-2;
 }
 
 #form form label {
@@ -105,25 +113,4 @@
 
 #form .btn {
     @apply mt-4;
-}
-
-/* Animation */
-.hidden {
-    opacity: 0;
-    transform: translateX(-100%);
-}
-
-.show {
-    animation: slideIn 800ms ease-in-out forwards;
-}
-
-@keyframes slideIn {
-    0% {
-        opacity: 0;
-        transform: translateX(-100%);
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
 }

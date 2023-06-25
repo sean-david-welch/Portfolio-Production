@@ -4,7 +4,7 @@ import styles from '../styles/About.module.css';
 import { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 
-import { DeleteButton } from './DeleteButton';
+import { AboutForm } from './AboutForm';
 import { Hobbies, Skills } from '@prisma/client';
 import { motion, useAnimation } from 'framer-motion';
 
@@ -48,7 +48,7 @@ const GridItem: React.FC<GridItemProps> = ({ item, modelName, user }) => {
             animate={control}>
             <h1>{item.title}</h1>
             {user && user?.role === 'ADMIN' && (
-                <DeleteButton modelId={item.id} modelName={modelName} />
+                <AboutForm modelId={item.id} modelName={modelName} />
             )}
         </motion.div>
     );

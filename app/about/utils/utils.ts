@@ -1,5 +1,33 @@
 import axios from 'axios';
 
+const getModelFields = (model?: any) => [
+    {
+        name: 'model',
+        fieldType: 'select',
+        options: [
+            'About',
+            'Experience',
+            'Education',
+            'Achievements',
+            'Skills',
+            'Hobbies',
+        ],
+        defaultValue: model?.model || '',
+    },
+    {
+        name: 'title',
+        fieldType: 'input',
+        type: 'text',
+        defaultValue: model?.title || '',
+    },
+    {
+        name: 'description',
+        fieldType: 'input',
+        type: 'text',
+        defaultValue: model?.description || '',
+    },
+];
+
 const prepareData = (model: string, formData: FormData) => {
     const data: any = {
         title: formData.get('title') as string,
@@ -61,4 +89,4 @@ const updateModel = async (
     }
 };
 
-export { createModel, updateModel };
+export { createModel, updateModel, getModelFields };

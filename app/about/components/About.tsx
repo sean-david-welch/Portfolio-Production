@@ -53,9 +53,8 @@ const SectionGridItem = ({ item, modelName, user }: SectionGridItemProps) => {
                 <h1>{item.title}</h1>
                 <p>{item.description}</p>
             </div>
-            {user && user?.role === 'ADMIN' && <AboutForm modelId={item.id} />}
             {user && user?.role === 'ADMIN' && (
-                <DeleteButton modelId={item.id} modelName={modelName} />
+                <AboutForm modelId={item.id} modelName={modelName} />
             )}
         </motion.div>
     );
