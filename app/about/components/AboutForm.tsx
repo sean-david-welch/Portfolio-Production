@@ -1,62 +1,22 @@
 'use client';
-import axios from 'axios';
 import styles from '../styles/About.module.css';
+import { DeleteButton } from './DeleteButton';
 
 import { useState } from 'react';
-import {
-    About,
-    Achievements,
-    Education,
-    Experience,
-    Hobbies,
-    Skills,
-} from '@prisma/client';
+import { createModel, updateModel } from '../utils/utils';
 import { useRouter } from 'next/navigation';
 
-export const AboutForm = ({}) => {
-    const [showAboutForm, setShowAboutForm] = useState(false);
-
+export const AboutForm = ({ modelId }: { modelId?: string }) => {
     const router = useRouter();
-
-    const prepareData = (model: string, formData: FormData) => {
-        const data: any = {
-            title: formData.get('title') as string,
-        };
-
-        if (
-            model === 'about' ||
-            model === 'experience' ||
-            model === 'education' ||
-            model === 'achievements'
-        ) {
-            data.description = formData.get('description') as string;
-        }
-
-        return data;
-    };
-
-    const createModel = async (event: React.FormEvent<HTMLFormElement>) => {
-        const formData = new FormData(event.currentTarget as HTMLFormElement);
-        const model = formData.get('model') as string;
-
-        const body = {
-            model: model,
-            data: prepareData(model, formData),
-        };
-
-        const response = await axios.post('/api/about', body);
-        console.log(response);
-
-        if (response.status === 200) {
-            console.log('Project created successfully!');
-        } else {
-            console.error('Failed to create project', response);
-        }
-    };
+    const [showAboutForm, setShowAboutForm] = useState(false);
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        await createModel(event);
+        if (modelId) {
+            await updateModel(event, modelId);
+        } else {
+            await createModel(event);
+        }
         setShowAboutForm(false);
         router.refresh();
     };
@@ -68,6 +28,7 @@ export const AboutForm = ({}) => {
                 onClick={() => setShowAboutForm(!showAboutForm)}>
                 Create Model
             </button>
+
             {showAboutForm && (
                 <form onSubmit={handleSubmit}>
                     <label htmlFor="model">Model:</label>

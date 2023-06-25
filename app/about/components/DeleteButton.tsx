@@ -27,7 +27,6 @@ export const DeleteButton: React.FC<Props> = ({ modelId, modelName }) => {
                     id: modelId,
                 },
             });
-            console.log('reponse:', response);
 
             if (response.status >= 200 && response.status < 300) {
             } else {
