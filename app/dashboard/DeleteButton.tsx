@@ -3,7 +3,6 @@ import styles from './styles/Account.module.css';
 import { useRouter } from 'next/navigation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
-import { User } from '@prisma/client';
 
 export const DeleteButton = async () => {
     const router = useRouter();

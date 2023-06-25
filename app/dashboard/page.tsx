@@ -33,7 +33,7 @@ const DashboardPage = async () => {
         <section id={styles.dashboardPage}>
             <h1 className={styles.mainHeading}>User Dashboard:</h1>
             <UserCard user={user!} />
-            <ProfileForm user={user} />
+            <ProfileForm user={user!} />
         </section>
     );
 };

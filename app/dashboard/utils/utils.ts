@@ -1,8 +1,7 @@
 import axios from 'axios';
-import { useRouter } from 'next/navigation';
 
 export const updateUser = async (event: React.FormEvent<HTMLFormElement>) => {
-    const router = useRouter();
+    event.preventDefault();
     const formData = new FormData(event.target as HTMLFormElement);
 
     const body = {
@@ -16,7 +15,6 @@ export const updateUser = async (event: React.FormEvent<HTMLFormElement>) => {
         const response = await axios.put('/api/users', body);
 
         if (response.status >= 200 && response.status < 300) {
-            router.prefetch('/dashboard');
         } else {
             alert(`Error: ${response.status}`);
         }
