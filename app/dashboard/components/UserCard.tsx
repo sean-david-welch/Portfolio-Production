@@ -1,6 +1,6 @@
-import styles from './styles/Account.module.css';
 import { User } from '@prisma/client';
 import Image from 'next/image';
+import styles from '../styles/Account.module.css';
 
 interface Props {
     user: User;

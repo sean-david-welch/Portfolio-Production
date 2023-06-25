@@ -1,39 +1,49 @@
 import styles from './styles/Account.module.css';
-import UserCard from './UserCard';
+import UserCard from './components/UserCard';
 
 import { prisma } from '@/lib/primsa';
-import { redirect } from 'next/navigation';
 import { authOptions } from '../api/auth/[...nextauth]/route';
-import { ProfileForm } from './ProfileForm';
+import { ProfileForm } from './components/ProfileForm';
 import { getServerSession } from 'next-auth';
+import { RedirectButton } from './components/Buttons';
 
-const DashboardPage = async () => {
+const getSessionAndUser = async () => {
     const session = await getServerSession(authOptions);
+    const currentUserEmail = session?.user?.email;
 
-    if (!session) {
-        redirect('api/auth/signin');
+    if (!currentUserEmail) {
+        return { session: null, user: null };
     }
 
-    const currentUserEmail = session?.user?.email!;
-    const user = await prisma.user
-        .findUnique({
-            where: {
-                email: currentUserEmail,
-            },
-        })
-        .then(user => {
-            return user;
-        });
+    const user = await prisma.user.findUnique({
+        where: {
+            email: currentUserEmail,
+        },
+    });
 
-    if (!user) {
-        redirect('api/auth/signin');
+    return { session, user, currentUserEmail };
+};
+
+const DashboardPage = async () => {
+    const { session, user, currentUserEmail } = await getSessionAndUser();
+    console.log(session, user, currentUserEmail);
+
+    if (!session || !currentUserEmail || !user) {
+        return (
+            <section id={styles.dashboardPage}>
+                <h1 className={styles.mainHeading}>User Dashboard:</h1>
+                <div className={styles.redirectButton}>
+                    <RedirectButton />
+                </div>
+            </section>
+        );
     }
 
     return (
         <section id={styles.dashboardPage}>
             <h1 className={styles.mainHeading}>User Dashboard:</h1>
-            <UserCard user={user!} />
-            <ProfileForm user={user!} />
+            {user && <UserCard user={user} />}
+            {user && <ProfileForm user={user} />}
         </section>
     );
 };

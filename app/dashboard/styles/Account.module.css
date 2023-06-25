@@ -13,6 +13,14 @@
         0 0 0 4px rgba(74, 4, 78, 0.5), 0 0 0 5px rgba(74, 4, 78, 0.5);
 }
 
+.redirectButton {
+    @apply m-auto flex items-center justify-center;
+}
+
+.redirectButton .btn {
+    @apply my-6;
+}
+
 /* Page */
 #dashboardPage {
     @apply py-6;

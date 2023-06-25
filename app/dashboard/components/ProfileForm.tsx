@@ -1,9 +1,9 @@
 'use client';
 
-import styles from './styles/Account.module.css';
+import styles from '../styles/Account.module.css';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { updateUser } from './utils/utils';
+import { updateUser } from '../utils/utils';
 import { DeleteButton } from './DeleteButton';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import styles from './styles/Account.module.css';
+import styles from '../styles/Account.module.css';
 import { useRouter } from 'next/navigation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
