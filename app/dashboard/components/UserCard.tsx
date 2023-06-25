@@ -31,26 +31,24 @@ const UserCard = ({ user: { name, bio, email, age, image } }: Props) => {
     return (
         <div className={styles.card}>
             <motion.div
-                className={styles.projectCard}
+                className={styles.userCard}
                 ref={ref}
                 variants={cardVariant}
                 initial="hidden"
                 animate={control}>
-                <div className={styles.userCard}>
-                    <Image
-                        src={image ?? '/favicon.ico'}
-                        width={500}
-                        height={750}
-                        alt={`${name}'s profile`}
-                        className={styles.cardImage}
-                    />
-                    <div className={styles.cardContent}>
-                        <h1>
-                            {name} Age: {age ?? `none`}
-                        </h1>
-                        <h1>{email}</h1>
-                        <p>{bio ?? `No bio`}</p>
-                    </div>
+                <Image
+                    src={image ?? '/favicon.ico'}
+                    width={500}
+                    height={750}
+                    alt={`${name}'s profile`}
+                    className={styles.cardImage}
+                />
+                <div className={styles.cardContent}>
+                    <h1>
+                        {name} Age: {age ?? `none`}
+                    </h1>
+                    <h1>{email}</h1>
+                    <p>{bio ?? `No bio`}</p>
                 </div>
             </motion.div>
         </div>

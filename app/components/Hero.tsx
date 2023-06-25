@@ -1,22 +1,39 @@
 'use client';
-
-import { useRef } from 'react';
 import styles from './styles/Hero.module.css';
-import useIntersection from '../hooks/useIntersection';
+
+import { motion, useAnimation } from 'framer-motion';
+import { useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
 
 const HeroSection = () => {
-    const ItemRef = useRef<HTMLHeadingElement>(null);
+    const control = useAnimation();
+    const [ref, inView] = useInView();
+    const cardVariant = {
+        visible: {
+            opacity: 1,
+            scale: 1,
+            transition: { duration: 0.6 },
+        },
+        hidden: { opacity: 0, scale: 0 },
+    };
 
-    useIntersection(ItemRef);
+    useEffect(() => {
+        if (inView) control.start('visible');
+    }, [control, inView]);
 
     return (
-        <>
-            <h1
-                className={`${styles.mainHeading} ${styles.show}`}
-                ref={ItemRef}>
-                Professional & Modern App Solutions for Enterprises
-            </h1>
-        </>
+        <section id={styles.hero}>
+            <motion.div
+                className={styles.hero}
+                ref={ref}
+                variants={cardVariant}
+                initial="hidden"
+                animate={control}>
+                <h1 className={`${styles.mainHeading} ${styles.show}`}>
+                    Modern & Professional App Solutions for Enterprise
+                </h1>
+            </motion.div>
+        </section>
     );
 };
 

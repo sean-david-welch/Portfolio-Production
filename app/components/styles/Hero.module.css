@@ -1,5 +1,5 @@
 .mainHeading {
-    @apply my-2 text-3xl font-semibold;
+    @apply my-2 text-5xl font-semibold;
 }
 
 .hidden {

@@ -1,12 +1,10 @@
-import { ModalButton } from './components/Buttons';
-import HeroSection from './components/Hero';
 import styles from './styles/Page.module.css';
+import HeroSection from './components/Hero';
 
 const Home = () => {
     return (
         <section className={styles.main}>
             <HeroSection />
-            <ModalButton />
         </section>
     );
 };
