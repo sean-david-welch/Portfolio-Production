@@ -4,6 +4,7 @@ import styles from './styles/Hero.module.css';
 import { motion, useAnimation } from 'framer-motion';
 import { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
+import { Carousel } from './Carousel';
 
 const HeroSection = () => {
     const control = useAnimation();
@@ -33,6 +34,7 @@ const HeroSection = () => {
                     Modern & Professional App Solutions for Enterprise
                 </h1>
             </motion.div>
+            <Carousel />
         </section>
     );
 };
