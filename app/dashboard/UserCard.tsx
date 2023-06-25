@@ -6,7 +6,7 @@ interface Props {
     user: User;
 }
 
-const UserCard = ({ user: { id, name, age, image } }: Props) => {
+const UserCard = ({ user: { name, bio, email, age, image } }: Props) => {
     return (
         <div className={styles.card}>
             <img
@@ -15,10 +15,11 @@ const UserCard = ({ user: { id, name, age, image } }: Props) => {
                 className={styles.cardImage}
             />
             <div className={styles.cardContent}>
-                <h3>
-                    <Link href={`/users/${id}`}>{name}</Link>
-                </h3>
-                <p>Age: {age ?? `none`}</p>
+                <h1>
+                    {name} Age: {age ?? `none`}
+                </h1>
+                <h1>{email}</h1>
+                <p>{bio ?? `No bio`}</p>
             </div>
         </div>
     );

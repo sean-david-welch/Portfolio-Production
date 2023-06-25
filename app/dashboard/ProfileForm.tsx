@@ -1,10 +1,22 @@
 'use client';
 
-import axios from 'axios';
 import styles from './styles/ProfileForm.module.css';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { updateUser } from './utils/utils';
+import { User } from '@prisma/client';
+import { DeleteButton } from './DeleteButton';
 
-export const ProfileForm = ({ user }: any) => {
+type UserWithIndex = User & {
+    [key: string]: any;
+};
+
+interface Props {
+    user: UserWithIndex;
+}
+
+export const ProfileForm = ({ user }: Props) => {
+    const router = useRouter();
     const [showProfileForm, setShowProfileForm] = useState(false);
 
     const userFields = [
@@ -14,39 +26,25 @@ export const ProfileForm = ({ user }: any) => {
         { name: 'image', type: 'text', defaultValue: '' },
     ];
 
-    const updateUser = async (event: React.FormEvent) => {
-        event.preventDefault();
-        const formData = new FormData(event.target as HTMLFormElement);
-
-        const body = {
-            name: formData.get('name'),
-            bio: formData.get('bio'),
-            age: formData.get('age'),
-            image: formData.get('image'),
-        };
-
-        try {
-            const response = await axios.put('/api/users', body);
-
-            if (response.status >= 200 && response.status < 300) {
-                setShowProfileForm(false);
-            } else {
-                alert(`Error: ${response.status}`);
-            }
-        } catch (error) {
-            alert(`Network error: ${error}`);
-        }
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault;
+        await updateUser(event);
+        setShowProfileForm(false);
+        router.refresh();
     };
 
     return (
-        <>
+        <section id={styles.form}>
             <button onClick={() => setShowProfileForm(!showProfileForm)}>
-                Toggle Profile Form
+                Edit Profile
             </button>
+            <DeleteButton />
+
             {showProfileForm && (
                 <div className={styles.editProfile}>
-                    <h2>Edit Your Profile</h2>
-                    <form onSubmit={updateUser} className={styles.profileForm}>
+                    <form
+                        onSubmit={handleSubmit}
+                        className={styles.profileForm}>
                         {userFields.map(field => (
                             <div className={styles.key} key={field.name}>
                                 <label htmlFor={field.name}>
@@ -66,6 +64,6 @@ export const ProfileForm = ({ user }: any) => {
                     </form>
                 </div>
             )}
-        </>
+        </section>
     );
 };
