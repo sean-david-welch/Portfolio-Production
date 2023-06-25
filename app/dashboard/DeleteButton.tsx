@@ -24,7 +24,7 @@ export const DeleteButton = async () => {
     };
 
     return (
-        <button className={styles.optionsBtn} onClick={deleteUser}>
+        <button className={styles.btn} onClick={deleteUser}>
             <FontAwesomeIcon icon={faTrash} />
         </button>
     );

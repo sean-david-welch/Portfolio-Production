@@ -1,10 +1,11 @@
 import styles from './styles/Account.module.css';
+import UserCard from './UserCard';
+
 import { prisma } from '@/lib/primsa';
-import { getServerSession } from 'next-auth';
 import { redirect } from 'next/navigation';
 import { authOptions } from '../api/auth/[...nextauth]/route';
 import { ProfileForm } from './ProfileForm';
-import UserCard from './UserCard';
+import { getServerSession } from 'next-auth';
 
 const DashboardPage = async () => {
     const session = await getServerSession(authOptions);
@@ -24,9 +25,13 @@ const DashboardPage = async () => {
             return user;
         });
 
+    if (!user) {
+        redirect('api/auth/signin');
+    }
+
     return (
         <section id={styles.dashboardPage}>
-            <h1>Dashboard</h1>
+            <h1 className={styles.mainHeading}>User Dashboard:</h1>
             <UserCard user={user!} />
             <ProfileForm user={user} />
         </section>

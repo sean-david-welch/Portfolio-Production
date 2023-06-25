@@ -1,11 +1,14 @@
 'use client';
 
-import styles from './styles/ProfileForm.module.css';
+import styles from './styles/Account.module.css';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { updateUser } from './utils/utils';
-import { User } from '@prisma/client';
 import { DeleteButton } from './DeleteButton';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
+
+import { User } from '@prisma/client';
 
 type UserWithIndex = User & {
     [key: string]: any;
@@ -35,10 +38,14 @@ export const ProfileForm = ({ user }: Props) => {
 
     return (
         <section id={styles.form}>
-            <button onClick={() => setShowProfileForm(!showProfileForm)}>
-                Edit Profile
-            </button>
-            <DeleteButton />
+            <div className={styles.optionsGrid}>
+                <button
+                    className={styles.btn}
+                    onClick={() => setShowProfileForm(!showProfileForm)}>
+                    <FontAwesomeIcon icon={faPenToSquare} />
+                </button>
+                <DeleteButton />
+            </div>
 
             {showProfileForm && (
                 <div className={styles.editProfile}>
@@ -60,7 +67,9 @@ export const ProfileForm = ({ user }: Props) => {
                                 />
                             </div>
                         ))}
-                        <button type="submit">Save</button>
+                        <button className={styles.btn} type="submit">
+                            Save
+                        </button>
                     </form>
                 </div>
             )}
