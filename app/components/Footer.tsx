@@ -5,8 +5,8 @@ const Footer = () => {
     return (
         <footer className={styles.footer}>
             <div className={styles.footerContent}>
-                <FooterButtons />
                 <FooterInformation />
+                <FooterButtons />
             </div>
         </footer>
     );

@@ -46,7 +46,7 @@
 }
 
 .footerInfo img {
-    @apply mx-auto mb-8 mt-4;
+    @apply mx-auto my-4;
 }
 
 .linksList {
