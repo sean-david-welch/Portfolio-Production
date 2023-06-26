@@ -69,6 +69,7 @@ export const AboutForm = ({
                                 type={field.type}
                                 name={field.name}
                                 defaultValue={field.defaultValue}
+                                placeholder={field?.defaultValue || field.name}
                             />
                         )
                     )}

@@ -8,6 +8,14 @@ datasource db {
   shadowDatabaseUrl = env("PGURL")
 }
 
+// Main Schema
+model Technologies {
+  id          String @id @default(uuid())
+  title       String
+  description String
+  image       String
+}
+
 // About Schema
 model About {
   id          String @id @default(uuid())

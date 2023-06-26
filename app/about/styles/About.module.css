@@ -55,6 +55,10 @@
     @apply my-2 w-[950px];
 }
 
+.hobbies .grid {
+    @apply w-[420px];
+}
+
 .skillsGrid .grid h1 {
     @apply text-gray-200;
 }
@@ -75,6 +79,10 @@
 /* About Form */
 .buttonsGrid {
     @apply mx-auto flex flex-row items-center justify-center;
+}
+
+.hobbies .buttonsGrid {
+    @apply w-[100px];
 }
 
 .btn {
@@ -113,4 +121,8 @@
 
 #form .btn {
     @apply mt-4;
+}
+
+.hobbies #form {
+    @apply w-[350px];
 }

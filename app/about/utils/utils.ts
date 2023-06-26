@@ -5,12 +5,12 @@ const getModelFields = (model?: any) => [
         name: 'model',
         fieldType: 'select',
         options: [
-            'About',
-            'Experience',
-            'Education',
-            'Achievements',
-            'Skills',
-            'Hobbies',
+            'about',
+            'experience',
+            'education',
+            'achievements',
+            'skills',
+            'hobbies',
         ],
         defaultValue: model?.model || '',
     },
@@ -25,6 +25,12 @@ const getModelFields = (model?: any) => [
         fieldType: 'input',
         type: 'text',
         defaultValue: model?.description || '',
+    },
+    {
+        name: 'image',
+        fieldType: 'input',
+        type: 'text',
+        defaultValue: model?.image || '',
     },
 ];
 
@@ -78,6 +84,7 @@ const updateModel = async (
         };
 
         const response = await axios.put(`/api/about/${modelId}`, body);
+        console.log('response:', response.data.modelId);
 
         if (response.status === 200) {
             console.log('Model updated successfully!');

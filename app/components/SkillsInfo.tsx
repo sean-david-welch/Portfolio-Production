@@ -1,8 +1,6 @@
-'use client';
-
 import styles from './styles/Info.module.css';
 
-export const SkillsDisplay = () => {
+export const SkillsDisplay = async () => {
     return (
         <section id="skills">
             <div className={styles.SkillsDisplay}>

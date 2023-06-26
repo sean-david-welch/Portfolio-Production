@@ -87,6 +87,8 @@ export const PUT = async (request: NextRequest): Promise<NextResponse> => {
                     where: { id },
                     data: {
                         title: data.title,
+                        description: data.description,
+                        image: data.image,
                     },
                 });
                 break;
