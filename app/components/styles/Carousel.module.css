@@ -1,5 +1,5 @@
 .slideshow {
-    @apply relative m-auto aspect-video w-[70vw] overflow-hidden rounded-xl;
+    @apply relative mx-auto my-4 aspect-video w-[70vw] overflow-hidden rounded-xl;
 }
 
 .slideButton {

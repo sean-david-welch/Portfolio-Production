@@ -1,10 +1,14 @@
 'use client';
 import styles from './styles/Hero.module.css';
+import Link from 'next/link';
 
 import { motion, useAnimation } from 'framer-motion';
 import { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { Carousel } from './Carousel';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 const HeroSection = () => {
     const control = useAnimation();
@@ -33,6 +37,11 @@ const HeroSection = () => {
                 <h1 className={`${styles.mainHeading} ${styles.show}`}>
                     Modern & Professional App Solutions for Enterprise
                 </h1>
+                <Link href={'/products'}>
+                    <button className={styles.btn}>
+                        View Solutions <FontAwesomeIcon icon={faArrowRight} />
+                    </button>
+                </Link>
                 <Carousel />
             </motion.div>
         </section>
