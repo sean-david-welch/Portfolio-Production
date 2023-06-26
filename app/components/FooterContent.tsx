@@ -22,10 +22,10 @@ export const FooterInformation = () => {
                 </h1>
                 <Link href={'/'}>
                     <Image
-                        src={'/favicon.ico'}
+                        src={'/moderndev.png'}
                         alt={'Logo'}
-                        height={100}
-                        width={100}
+                        height={200}
+                        width={200}
                     />
                 </Link>
 

@@ -41,7 +41,8 @@ const ProjectCard = ({ project: { id, name, blurb, image, tags } }: Props) => {
                     src={image ?? '/default.jpg'}
                     alt="project image"
                     height={500}
-                    width={650}></Image>
+                    width={650}
+                />
                 <h1>{name}</h1>
                 <p>{blurb}</p>
                 <ul>

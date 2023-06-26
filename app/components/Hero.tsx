@@ -33,8 +33,8 @@ const HeroSection = () => {
                 <h1 className={`${styles.mainHeading} ${styles.show}`}>
                     Modern & Professional App Solutions for Enterprise
                 </h1>
+                <Carousel />
             </motion.div>
-            <Carousel />
         </section>
     );
 };
