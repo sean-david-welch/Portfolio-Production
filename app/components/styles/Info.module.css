@@ -36,17 +36,21 @@
     @apply mx-auto my-5 flex rounded-xl;
 }
 
-.gridlayout {
+.gridLayout {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
 
+.gridLayout > * {
+    @apply mx-4 my-4;
+}
+
 .gridItem {
-    @apply mx-auto my-4 flex w-[650px] flex-col rounded-xl bg-gray-800 p-10;
+    @apply mx-auto my-auto flex h-[320px] w-[500px] flex-col justify-center rounded-xl bg-gray-800 p-10;
 }
 
 .gridItem > * {
-    @apply my-2;
+    @apply mx-4 my-2;
 }
 
 .gridItem img {

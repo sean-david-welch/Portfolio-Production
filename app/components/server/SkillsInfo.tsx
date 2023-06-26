@@ -1,8 +1,11 @@
 import styles from '../styles/Info.module.css';
+import Link from 'next/link';
 import TechItems from '../client/techView';
 import TechnologiesForm from '../client/techForm';
 
 import { prisma } from '@/lib/primsa';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
 import { getSessionAndUser } from '@/app/utils/apiUtils';
 
 export const SkillsDisplay = async () => {
@@ -17,6 +20,12 @@ export const SkillsDisplay = async () => {
             </div>
             <TechItems technologies={technologies} />
             {user && user.role === 'ADMIN' && <TechnologiesForm />}
+            <Link href={'#projects'}>
+                <button className={styles.btn}>
+                    Check out my Work
+                    <FontAwesomeIcon icon={faArrowDown} />
+                </button>
+            </Link>
         </section>
     );
 };
