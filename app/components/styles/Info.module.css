@@ -7,6 +7,10 @@
     @apply boxshadow;
 }
 
+.btn svg {
+    @apply mx-2;
+}
+
 .boxshadow {
     box-shadow: 0 0 0 2px rgba(74, 4, 78, 0.5), 0 0 0 3px rgba(74, 4, 78, 0.5),
         0 0 0 4px rgba(74, 4, 78, 0.5), 0 0 0 5px rgba(74, 4, 78, 0.5);
