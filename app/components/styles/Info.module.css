@@ -35,3 +35,44 @@
 .intro img {
     @apply mx-auto my-5 flex rounded-xl;
 }
+
+.gridlayout {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.gridItem {
+    @apply mx-auto my-4 flex w-[650px] flex-col rounded-xl bg-gray-800 p-10;
+}
+
+.gridItem > * {
+    @apply my-2;
+}
+
+.gridItem img {
+    @apply mx-auto;
+}
+
+.gridItem .description {
+    @apply mx-auto w-full;
+}
+
+#form {
+    @apply flex flex-col;
+}
+
+#form > * {
+    @apply my-4;
+}
+
+#form form label {
+    @apply my-2 block text-lg font-medium text-gray-900 dark:text-white;
+}
+
+#form form input {
+    @apply block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500;
+}
+
+#form .btn {
+    @apply mt-4;
+}
