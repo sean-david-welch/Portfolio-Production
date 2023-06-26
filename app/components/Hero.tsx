@@ -8,7 +8,7 @@ import { useInView } from 'react-intersection-observer';
 import { Carousel } from './Carousel';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { faArrowDown, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 const HeroSection = () => {
     const control = useAnimation();
@@ -43,6 +43,11 @@ const HeroSection = () => {
                     </button>
                 </Link>
                 <Carousel />
+                <Link href={'#infoSection'}>
+                    <button className={styles.btn}>
+                        Learn more <FontAwesomeIcon icon={faArrowDown} />
+                    </button>
+                </Link>
             </motion.div>
         </section>
     );
