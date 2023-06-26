@@ -17,6 +17,7 @@
 
 .grid {
     @apply my-4 flex flex-col rounded-xl bg-gray-800 px-8 py-4;
+    @apply transition-transform duration-700 hover:scale-[1.05] !important;
 }
 
 .description {

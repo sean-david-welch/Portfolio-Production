@@ -9,6 +9,7 @@ import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
 import { motion, useAnimation } from 'framer-motion';
 import { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
+import { useRouter } from 'next/navigation';
 
 export const Introduction = () => {
     const control = useAnimation();
@@ -26,6 +27,8 @@ export const Introduction = () => {
         if (inView) control.start('visible');
     }, [control, inView]);
 
+    const router = useRouter();
+
     return (
         <motion.div
             ref={ref}
@@ -33,16 +36,17 @@ export const Introduction = () => {
             initial="hidden"
             animate={control}>
             <div className={styles.intro}>
-                <h1 className={styles.mainHeading}>Hello, I'm Sean</h1>
-                <h2 className={styles.heading}>A passionate Web developer</h2>
-                <Link href={'/about'}>
-                    <Image
-                        src={'/modeling.jpeg'}
-                        width={600}
-                        height={400}
-                        alt="image"
-                    />
-                </Link>
+                <h1 className={styles.mainHeading}>
+                    Hello, I'm Sean. A Passionate Web Developer
+                </h1>
+
+                <Image
+                    src={'/modeling.jpeg'}
+                    width={600}
+                    height={200}
+                    alt="image"
+                    onClick={() => router.push('/about')}
+                />
                 <p className={styles.description}>
                     I'm Dublin-based web developer with a knack for creating
                     dynamic and efficient websites. My journey into the realm of

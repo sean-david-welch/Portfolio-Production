@@ -5,6 +5,7 @@
 
 .logo {
     @apply mx-auto flex cursor-pointer flex-row items-center justify-center hover:pointer-events-auto;
+    @apply cursor-pointer transition-transform duration-700 hover:scale-[1.1];
 }
 
 /* Side Navbar */

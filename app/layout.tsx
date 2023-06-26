@@ -22,7 +22,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
     return (
         <AuthProvider>
             <html lang="en" className={ropa.className}>
-                <body className="min-h-screen text-white">
+                <body className="min-h-screen text-gray-200">
                     <Header />
                     <main>
                         <div className="container">{children}</div>

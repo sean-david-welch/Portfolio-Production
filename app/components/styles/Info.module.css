@@ -1,5 +1,5 @@
 .btn {
-    @apply items-center justify-center rounded-xl bg-violet-950 px-8 py-2 text-center text-lg font-semibold;
+    @apply my-10 items-center justify-center rounded-xl bg-violet-950 px-8 py-2 text-center text-lg font-semibold;
     @apply mx-auto text-white transition-all duration-700 ease-in-out hover:bg-violet-900;
 }
 
@@ -17,7 +17,7 @@
 }
 
 .mainHeading {
-    @apply mt-2 text-5xl underline;
+    @apply mt-2 text-4xl underline;
 }
 
 .heading {
@@ -29,11 +29,15 @@
 }
 
 .intro {
+    @apply my-12;
+}
+
+.intro > * {
     @apply my-8;
 }
 
 .intro img {
-    @apply mx-auto my-2 flex rounded-xl;
+    @apply mx-auto my-2 flex cursor-pointer rounded-xl transition-transform duration-700 hover:scale-[1.05];
 }
 
 .gridLayout {
@@ -46,7 +50,8 @@
 }
 
 .gridItem {
-    @apply mx-auto my-auto flex h-[320px] w-[500px] flex-col justify-center rounded-xl bg-gray-800 p-10;
+    @apply mx-auto my-auto flex h-[320px] w-[400px] flex-col justify-center rounded-xl bg-gray-800 p-10;
+    @apply cursor-pointer transition-transform duration-700 hover:scale-[1.1];
 }
 
 .gridItem > * {
