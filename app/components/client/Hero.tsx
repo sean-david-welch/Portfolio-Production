@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowDown, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 const HeroSection = () => {
     const control = useAnimation();

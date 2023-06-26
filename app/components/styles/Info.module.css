@@ -17,7 +17,7 @@
 }
 
 .mainHeading {
-    @apply mt-4 text-5xl underline;
+    @apply mt-2 text-5xl underline;
 }
 
 .heading {
@@ -29,11 +29,11 @@
 }
 
 .intro {
-    @apply my-10;
+    @apply my-8;
 }
 
 .intro img {
-    @apply mx-auto my-5 flex rounded-xl;
+    @apply mx-auto my-2 flex rounded-xl;
 }
 
 .gridLayout {

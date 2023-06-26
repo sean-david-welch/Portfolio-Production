@@ -11,11 +11,11 @@ const Navbar = () => {
             <nav id={styles.navbar}>
                 <Link href={'/'} prefetch={false} className={styles.logo}>
                     <Image
-                        src={'/moderndev.png'}
+                        src={'/logo/logo.png'}
                         alt={'Your Logo'}
                         priority={true}
-                        width={100}
-                        height={100}
+                        width={60}
+                        height={60}
                     />
                 </Link>
                 <SignInButton />

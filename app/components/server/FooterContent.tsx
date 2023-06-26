@@ -20,14 +20,6 @@ export const FooterInformation = () => {
                 <h1 className={styles.mainHeading}>
                     Email: seanwelch51199@icloud.com
                 </h1>
-                <Link href={'/'}>
-                    <Image
-                        src={'/moderndev.png'}
-                        alt={'Logo'}
-                        height={200}
-                        width={200}
-                    />
-                </Link>
 
                 <ul className={styles.linksList}>
                     <Link

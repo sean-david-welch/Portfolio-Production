@@ -42,11 +42,11 @@
 }
 
 .footerInfo {
-    @apply my-4 flex flex-col items-center justify-center;
+    @apply my-8 flex flex-col items-center justify-center;
 }
 
 .footerInfo img {
-    @apply mx-auto mt-4;
+    @apply mx-auto mt-2;
 }
 
 .linksList {
