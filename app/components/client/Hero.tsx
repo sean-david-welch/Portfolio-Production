@@ -1,5 +1,5 @@
 'use client';
-import styles from './styles/Hero.module.css';
+import styles from '../styles/Hero.module.css';
 import Link from 'next/link';
 
 import { motion, useAnimation } from 'framer-motion';

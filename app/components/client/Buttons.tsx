@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import Image from 'next/image';
-import styles from './styles/Buttons.module.css';
+import styles from '../styles/Buttons.module.css';
 import { useSession, signIn, signOut } from 'next-auth/react';
 
 export const SignInButton = () => {

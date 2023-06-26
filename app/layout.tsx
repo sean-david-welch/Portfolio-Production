@@ -3,7 +3,7 @@ import { Ropa_Sans } from 'next/font/google';
 
 import axios from 'axios';
 import Header from './components/Header';
-import Footer from './components/Footer';
+import Footer from './components/server/Footer';
 import AuthProvider from './AuthProvider';
 
 const ropa = Ropa_Sans({

@@ -1,4 +1,4 @@
-import styles from './styles/Info.module.css';
+import styles from '../styles/Info.module.css';
 import { prisma } from '@/lib/primsa';
 
 export const ProjectDisplay = async () => {

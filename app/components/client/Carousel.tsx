@@ -1,5 +1,5 @@
 'use client';
-import styles from './styles/Carousel.module.css';
+import styles from '../styles/Carousel.module.css';
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';

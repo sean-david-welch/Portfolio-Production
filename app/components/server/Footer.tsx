@@ -1,5 +1,5 @@
 import { FooterButtons, FooterInformation } from './FooterContent';
-import styles from './styles/Footer.module.css';
+import styles from '../styles/Footer.module.css';
 
 const Footer = () => {
     return (

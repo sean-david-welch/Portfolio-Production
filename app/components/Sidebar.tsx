@@ -10,7 +10,6 @@ import {
     faHome,
     faCartPlus,
     faDiagramProject,
-    faUser,
     faAddressCard,
     faCircleInfo,
 } from '@fortawesome/free-solid-svg-icons';

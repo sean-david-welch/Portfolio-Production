@@ -1,4 +1,4 @@
-import styles from './styles/Info.module.css';
+import styles from '../styles/Info.module.css';
 
 export const SkillsDisplay = async () => {
     return (

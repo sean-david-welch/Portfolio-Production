@@ -1,6 +1,6 @@
 import styles from './styles/Page.module.css';
-import HeroSection from './components/Hero';
-import { InfoSection } from './components/Info';
+import HeroSection from './components/client/Hero';
+import { InfoSection } from './components/server/Info';
 
 const Home = () => {
     return (

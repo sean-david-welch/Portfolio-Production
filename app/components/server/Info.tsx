@@ -1,7 +1,7 @@
-import { Introduction } from './Intro';
+import { Introduction } from '../client/Intro';
 import { ProjectDisplay } from './ProjectInfo';
 import { SkillsDisplay } from './SkillsInfo';
-import styles from './styles/Info.module.css';
+import styles from '../styles/Info.module.css';
 
 export const InfoSection = () => {
     return (
