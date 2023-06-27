@@ -67,6 +67,36 @@
     @apply mx-2 my-5 justify-center;
 }
 
+/* Product Details */
+#productDetail {
+    @apply py-4;
+}
+
+.productView {
+    @apply my-8 grid rounded-xl bg-gray-800;
+    grid-template-columns: 1fr 1fr;
+}
+
+.productView img {
+    @apply h-full rounded-s-lg object-fill;
+}
+
+.productInfo {
+    @apply flex-col p-4;
+}
+
+.productInfo > * {
+    @apply my-2;
+}
+
+.productInfo .mainHeading {
+    @apply text-2xl;
+}
+
+.productInfo .price {
+    @apply text-2xl;
+}
+
 /* Buttons */
 .btn {
     @apply items-center justify-center rounded-xl bg-violet-950 px-8 py-2 text-center text-lg font-semibold;
