@@ -14,6 +14,11 @@ export const getProductFields = (product?: Product) => [
         defaultValue: product?.price || '',
     },
     { name: 'image', type: 'text', defaultValue: product?.image || '' },
+    {
+        name: 'stack',
+        type: 'text',
+        defaultValue: product?.stack.join(',') || '',
+    },
 ];
 
 export const createProduct = async (

@@ -19,7 +19,7 @@ const ProductsPage = async () => {
     }
 
     return (
-        <section id={styles.products}>
+        <section id={styles.productsPage}>
             <h1>products</h1>
             {user && user.role === 'ADMIN' && <ProductFrom />}
         </section>

@@ -23,6 +23,7 @@ export const POST = async (request: NextRequest) => {
                 description: data.description,
                 image: data.image,
                 price: Number(data.price),
+                stack: data.stack,
             },
         });
 
