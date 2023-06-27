@@ -49,11 +49,11 @@ export const validateProject = (data: any) => {
 
 export const validateProduct = (data: Product) => {
     if (
-        !data.id ||
         !data.name ||
         !data.description ||
         !data.image ||
-        !data.price
+        !data.price ||
+        !data.stack
     ) {
         throw new Error('Missing required product fields');
     }

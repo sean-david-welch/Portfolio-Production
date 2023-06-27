@@ -1,9 +1,10 @@
-import { getSession } from 'next-auth/react';
 import styles from './styles/Products.module.css';
-import { getSessionAndUser } from '../utils/apiUtils';
-import { Product } from '@prisma/client';
+import ProductCard from './components/ProductCard';
+
 import { prisma } from '@/lib/primsa';
+import { Product } from '@prisma/client';
 import { ProductFrom } from './components/ProductForm';
+import { getSessionAndUser } from '../utils/apiUtils';
 
 const ProductsPage = async () => {
     const { user } = await getSessionAndUser();
@@ -20,7 +21,12 @@ const ProductsPage = async () => {
 
     return (
         <section id={styles.productsPage}>
-            <h1>products</h1>
+            <h1 className={styles.mainHeading}>Products:</h1>
+            <div className={styles.productList}>
+                {products.map(product => (
+                    <ProductCard key={product.id} product={product} />
+                ))}
+            </div>
             {user && user.role === 'ADMIN' && <ProductFrom />}
         </section>
     );

@@ -2,6 +2,66 @@
     @apply py-2;
 }
 
+/* Projects Page */
+#projectsPage {
+    @apply items-center py-10 text-center;
+}
+
+.mainHeading {
+    @apply mb-2 text-5xl;
+}
+
+.description {
+    @apply text-lg text-gray-300;
+}
+
+.productList {
+    @apply mx-auto flex flex-col flex-wrap justify-center text-center;
+}
+
+.productList > * {
+    @apply mx-2 flex flex-row py-10;
+}
+
+/* Project Card */
+
+.productCard {
+    @apply mx-auto my-5 flex w-[780px] flex-col rounded-lg bg-gray-800 pt-0 transition-transform duration-700 ease-in-out;
+    @apply cursor-pointer transition-transform duration-700 hover:scale-[1.05] !important;
+}
+
+.productCard > * {
+    @apply w-[780px];
+}
+
+.productCard *:not(:first-child) {
+    @apply mt-5 px-5;
+}
+
+.productCard:hover {
+    @apply scale-[1.025];
+}
+
+.productCard h1 {
+    @apply text-5xl;
+}
+
+.productCard p {
+    @apply mx-4;
+}
+
+.productCard img {
+    @apply w-full rounded-lg;
+}
+
+.productCard ul {
+    @apply mx-auto my-auto flex flex-row items-center justify-center duration-700 ease-in-out;
+}
+
+.productCard ul > * {
+    @apply mx-2 my-5 justify-center;
+}
+
 /* Buttons */
 .btn {
     @apply items-center justify-center rounded-xl bg-violet-950 px-8 py-2 text-center text-lg font-semibold;

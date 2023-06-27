@@ -29,11 +29,13 @@ export const createProduct = async (
     const body = {
         name: formData.get('name') as string,
         description: formData.get('description') as string,
-        price: formData.get('price'),
+        price: Number(formData.get('price')),
+        stack: (formData.get('stack') as string)?.split(',') || [],
         image: formData.get('image') as string,
     };
 
     const response = await axios.post('/api/products', body);
+    console.log('Response:', response);
 
     if (response.status === 200) {
         console.log('Product created successfully!');
