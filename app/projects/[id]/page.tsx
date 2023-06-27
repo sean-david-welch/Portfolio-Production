@@ -1,4 +1,4 @@
-import styles from '../styles/projects.module.css';
+import styles from '../styles/Projects.module.css';
 import ProjectInfo from './Project';
 
 import { prisma } from '@/lib/primsa';

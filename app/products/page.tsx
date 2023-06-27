@@ -22,6 +22,7 @@ const ProductsPage = async () => {
     return (
         <section id={styles.productsPage}>
             <h1 className={styles.mainHeading}>Products:</h1>
+            <h2>See what application suits your business's demands</h2>
             <div className={styles.productList}>
                 {products.map(product => (
                     <ProductCard key={product.id} product={product} />

@@ -12,11 +12,15 @@
 }
 
 .description {
-    @apply text-lg text-gray-300;
+    @apply text-base text-gray-300;
+}
+
+.price {
+    @apply text-lg text-gray-300 underline;
 }
 
 .productList {
-    @apply mx-auto flex flex-col flex-wrap justify-center text-center;
+    @apply mx-auto flex flex-row flex-wrap justify-center text-center;
 }
 
 .productList > * {
@@ -26,36 +30,37 @@
 /* Project Card */
 
 .productCard {
-    @apply mx-auto my-5 flex w-[780px] flex-col rounded-lg bg-gray-800 pt-0 transition-transform duration-700 ease-in-out;
-    @apply cursor-pointer transition-transform duration-700 hover:scale-[1.05] !important;
+    @apply mx-auto my-2 flex h-[1100px] w-[380px] flex-col rounded-lg bg-gray-800;
+    @apply pt-0 transition-transform duration-700 ease-in-out;
+    @apply cursor-pointer transition-transform duration-700 hover:scale-[1.0125] !important;
+    grid-template-rows: auto 1fr auto;
 }
 
 .productCard > * {
-    @apply w-[780px];
+    @apply w-[380];
 }
 
 .productCard *:not(:first-child) {
     @apply mt-5 px-5;
 }
-
 .productCard:hover {
-    @apply scale-[1.025];
+    @apply scale-[1.01];
 }
 
 .productCard h1 {
-    @apply text-5xl;
+    @apply text-3xl;
 }
 
 .productCard p {
-    @apply mx-4;
+    @apply mx-4 h-[315px];
 }
 
 .productCard img {
-    @apply w-full rounded-lg;
+    @apply w-full rounded-t-lg;
 }
 
 .productCard ul {
-    @apply mx-auto my-auto flex flex-row items-center justify-center duration-700 ease-in-out;
+    @apply mx-8 my-auto flex flex-row flex-wrap items-center justify-center duration-700 ease-in-out;
 }
 
 .productCard ul > * {
@@ -75,6 +80,18 @@
 .boxshadow {
     box-shadow: 0 0 0 2px rgba(74, 4, 78, 0.5), 0 0 0 3px rgba(74, 4, 78, 0.5),
         0 0 0 4px rgba(74, 4, 78, 0.5), 0 0 0 5px rgba(74, 4, 78, 0.5);
+}
+
+.optionsBtn {
+    @apply btn;
+}
+
+.stackButton {
+    @apply btn mx-auto cursor-default;
+}
+
+.stackButton:hover {
+    @apply boxshadow;
 }
 
 /* Form */

@@ -46,7 +46,7 @@ const ProductCard = ({
                     width={650}
                 />
                 <h1>{name}</h1>
-                <p>{description}</p>
+                <p className={styles.description}>{description}</p>
                 <ul>
                     {stack?.map((stack, index) => (
                         <button
@@ -56,7 +56,8 @@ const ProductCard = ({
                         </button>
                     ))}
                 </ul>
-                <button className={styles.btn}>€{price}</button>
+                <h1 className={styles.price}>Price: €{price}</h1>
+                <button className={styles.btn}>Buy Now</button>
             </Link>
         </motion.div>
     );

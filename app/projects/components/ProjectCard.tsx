@@ -1,6 +1,6 @@
 'use client';
 
-import styles from '../styles/projects.module.css';
+import styles from '../styles/Projects.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
 
