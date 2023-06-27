@@ -19,9 +19,9 @@ const ProjectPage = async () => {
 
     if (!projects) {
         return (
-            <>
+            <section id={styles.projectsPage}>
                 <h1>No Projects Found</h1>
-            </>
+            </section>
         );
     }
 
