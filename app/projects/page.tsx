@@ -1,10 +1,10 @@
 import styles from './styles/projects.module.css';
-import ProjectCard from './ProjectCard';
+import ProjectCard from './components/ProjectCard';
 
 import { prisma } from '@/lib/primsa';
 import { Metadata } from 'next';
 import { getSessionAndUser } from '../utils/apiUtils';
-import { ProjectForm } from './ProjectForm';
+import { ProjectForm } from './components/ProjectForm';
 import { Project } from '@prisma/client';
 
 export const metadata: Metadata = {

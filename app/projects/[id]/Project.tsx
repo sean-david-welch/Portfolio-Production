@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import { Project } from '@prisma/client';
-import { ProjectForm } from '../ProjectForm';
+import { ProjectForm } from '../components/ProjectForm';
 
 import { motion, useAnimation } from 'framer-motion';
 import { useEffect } from 'react';
@@ -43,7 +43,7 @@ const ProjectInfo = ({ project, user }: Props) => {
             <h1>{name}</h1>
             <p>{blurb}</p>
 
-            <Link href={String(link)} target="_blank">
+            <Link href={String(link) ?? '/'} target="_blank">
                 <Image
                     src={image ?? '/default.jpg'}
                     alt="project image"

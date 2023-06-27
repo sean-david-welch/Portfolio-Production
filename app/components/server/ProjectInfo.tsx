@@ -1,5 +1,5 @@
 import styles from '../styles/Info.module.css';
-import ProjectCard from '@/app/projects/ProjectCard';
+import ProjectCard from '@/app/projects/components/ProjectCard';
 
 import { prisma } from '@/lib/primsa';
 

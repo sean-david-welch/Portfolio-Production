@@ -1,14 +1,14 @@
 'use client';
 
 import { useState } from 'react';
-import { getProjectFields, createProject, updateProject } from './utils/utils';
+import { getProjectFields, createProject, updateProject } from '../utils/utils';
 import { useRouter } from 'next/navigation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import { DeleteButton } from './deleteProject';
 import { Project } from '@prisma/client';
 
-import styles from './styles/projects.module.css';
+import styles from '../styles/projects.module.css';
 
 export const ProjectForm = ({ project }: { project?: Project }) => {
     const router = useRouter();

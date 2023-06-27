@@ -2,6 +2,7 @@ import { prisma } from '@/lib/primsa';
 import { getServerSession } from 'next-auth';
 import { NextRequest, NextResponse } from 'next/server';
 import { authOptions } from '../api/auth/[...nextauth]/route';
+import { Product } from '@prisma/client';
 
 export const errorResponse = (status: number, messgae: string) => {
     return NextResponse.json({
@@ -43,6 +44,18 @@ export const validateProject = (data: any) => {
         !data.tags
     ) {
         throw new Error('Missing required project fields');
+    }
+};
+
+export const validateProduct = (data: Product) => {
+    if (
+        !data.id ||
+        !data.name ||
+        !data.description ||
+        !data.image ||
+        !data.price
+    ) {
+        throw new Error('Missing required product fields');
     }
 };
 
