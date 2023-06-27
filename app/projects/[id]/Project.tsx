@@ -1,6 +1,7 @@
 'use client';
 
 import styles from '../styles/projects.module.css';
+import Link from 'next/link';
 import Image from 'next/image';
 
 import { Project } from '@prisma/client';
@@ -16,7 +17,7 @@ interface Props {
 }
 
 const ProjectInfo = ({ project, user }: Props) => {
-    const { name, blurb, description, image, tags } = project!;
+    const { name, blurb, description, image, tags, link } = project!;
     const control = useAnimation();
     const [ref, inView] = useInView();
     const infoVariant = {
@@ -41,12 +42,15 @@ const ProjectInfo = ({ project, user }: Props) => {
             animate={control}>
             <h1>{name}</h1>
             <p>{blurb}</p>
-            <Image
-                src={image ?? '/default.jpg'}
-                alt="project image"
-                width={650}
-                height={500}
-            />
+
+            <Link href={String(link)} target="_blank">
+                <Image
+                    src={image ?? '/default.jpg'}
+                    alt="project image"
+                    width={650}
+                    height={500}
+                />
+            </Link>
             <ul>
                 {tags?.map(tag => (
                     <button key={tag} className={styles.tagButton}>

@@ -51,7 +51,7 @@
 
 .gridItem {
     @apply mx-auto my-auto flex h-[320px] w-[400px] flex-col justify-center rounded-xl bg-gray-800 p-10;
-    @apply cursor-pointer transition-transform duration-700 hover:scale-[1.1];
+    @apply cursor-pointer transition-transform duration-700 hover:scale-[1.05];
 }
 
 .gridItem > * {

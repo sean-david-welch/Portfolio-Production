@@ -38,8 +38,8 @@ const TechItem: React.FC<TechItemProps> = ({ technology }) => {
                 <Image
                     src={technology.image}
                     alt="image"
-                    height={100}
-                    width={100}
+                    height={70}
+                    width={70}
                 />
                 <p className={styles.description}>{technology.description}</p>
             </div>

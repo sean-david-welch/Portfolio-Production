@@ -61,6 +61,7 @@ model Project {
   blurb       String?
   description String?
   image       String?
+  link        String?
   tags        String []
   createdAt   DateTime @default(now())  
 
