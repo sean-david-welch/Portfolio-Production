@@ -54,8 +54,8 @@ export const Introduction = () => {
                     but it quickly turned into a passion. After graduating from
                     Trinity College Dublin with a 2:1 in Commerce (BBS), I found
                     myself drawn to the intersection of business and technology.
-                    I've since dedicated myself to building digital solutions
-                    that not only look great but also enhance business
+                    I&apos;ve since dedicated myself to building digital
+                    solutions that not only look great but also enhance business
                     operations. My background in commerce equips me with a
                     unique perspective, allowing me to understand and cater to
                     the specific needs of businesses. I am excited about the
