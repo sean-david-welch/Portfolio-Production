@@ -3,10 +3,10 @@ import Link from 'next/link';
 import TechItems from '../client/techView';
 import TechnologiesForm from '../client/techForm';
 
-import { prisma } from '@/lib/primsa';
+import { prisma } from '@/lib/prisma';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
-import { getSessionAndUser } from '@/app/utils/apiUtils';
+import { getSessionAndUser } from '@/utils/utils';
 
 export const SkillsDisplay = async () => {
     const { user } = await getSessionAndUser();
