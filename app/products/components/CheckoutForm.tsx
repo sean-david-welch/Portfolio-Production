@@ -2,13 +2,14 @@ import axios from 'axios';
 import styles from '../styles/Products.module.css';
 
 import { Product } from '@prisma/client';
-import { loadStripe } from '@stripe/stripe-js';
+import { useRouter } from 'next/navigation';
 
 interface Props {
     product: Product;
 }
 
 const CheckoutForm = ({ product }: Props) => {
+    const router = useRouter();
     const handlePayment = async (
         event: React.FormEvent<HTMLFormElement>,
         product: Product
@@ -20,29 +21,17 @@ const CheckoutForm = ({ product }: Props) => {
         };
 
         try {
-            const stripe = await loadStripe(
-                String(process.env.TEST_PUBLIC_KEY!)
-            );
             const response = await axios.post('/api/checkout', body);
+            const {
+                data: { url },
+            } = response;
 
-            console.log(response);
-
-            if (!stripe) {
-                console.log('Stripe failed to initialize.');
+            if (!url) {
+                console.log('Stripe session creation failed.');
                 return;
             }
 
-            if (response.data.id) {
-                stripe
-                    .redirectToCheckout({
-                        sessionId: response.data.id,
-                    })
-                    .catch(function (error) {
-                        console.error('Stripe redirection error:', error);
-                    });
-            } else {
-                console.error('Stripe checkout session creation failed');
-            }
+            router.push(url);
         } catch (error) {
             console.error('An error occurred:', error);
         }

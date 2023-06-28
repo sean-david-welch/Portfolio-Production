@@ -38,8 +38,7 @@ export const POST = async (request: NextRequest): Promise<NextResponse> => {
             automatic_tax: { enabled: true },
         });
 
-        console.log('Session:', session);
-        return NextResponse.redirect(session.url, 303);
+        return NextResponse.json({ url: session.url });
     } catch (error: any) {
         console.error(error);
         return errorResponse(500, error.message || 'Internal Server Error');
