@@ -1,4 +1,4 @@
-import styles from './styles/Page.module.css';
+import styles from '@/styles/Page.module.css';
 // import HeroSection from './components/client/Hero';
 // import { InfoSection } from './components/server/Info';
 
