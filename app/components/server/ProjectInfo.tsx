@@ -11,7 +11,8 @@ export const ProjectDisplay = async () => {
             <div className={styles.projectDisplay}>
                 <h1 className={styles.mainHeading}>Featured Projects:</h1>
                 <h2 className={styles.heading}>
-                    See what applications I've built for enterprises solutions
+                    See what applications I&apos;ve built for enterprises
+                    solutions
                 </h2>
                 {projects.map(project => (
                     <ProjectCard key={project.id} project={project} />

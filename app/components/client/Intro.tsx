@@ -37,7 +37,7 @@ export const Introduction = () => {
             animate={control}>
             <div className={styles.intro}>
                 <h1 className={styles.mainHeading}>
-                    Hello, I'm Sean. A Passionate Web Developer
+                    Hello, I&apos;m Sean. A Passionate Web Developer
                 </h1>
 
                 <Image
@@ -48,19 +48,19 @@ export const Introduction = () => {
                     onClick={() => router.push('/about')}
                 />
                 <p className={styles.description}>
-                    I'm Dublin-based web developer with a knack for creating
-                    dynamic and efficient websites. My journey into the realm of
-                    web development started as a personal challenge, but it
-                    quickly turned into a passion. After graduating from Trinity
-                    College Dublin with a 2:1 in Commerce (BBS), I found myself
-                    drawn to the intersection of business and technology. I've
-                    since dedicated myself to building digital solutions that
-                    not only look great but also enhance business operations. My
-                    background in commerce equips me with a unique perspective,
-                    allowing me to understand and cater to the specific needs of
-                    businesses. I am excited about the endless possibilities of
-                    web development and look forward to helping more businesses
-                    navigate the digital landscape.
+                    I&apos;m Dublin-based web developer with a knack for
+                    creating dynamic and efficient websites.My journey into the
+                    realm of web development started as a personal challenge,
+                    but it quickly turned into a passion. After graduating from
+                    Trinity College Dublin with a 2:1 in Commerce (BBS), I found
+                    myself drawn to the intersection of business and technology.
+                    I've since dedicated myself to building digital solutions
+                    that not only look great but also enhance business
+                    operations. My background in commerce equips me with a
+                    unique perspective, allowing me to understand and cater to
+                    the specific needs of businesses. I am excited about the
+                    endless possibilities of web development and look forward to
+                    helping more businesses navigate the digital landscape.
                 </p>
                 <Link href={'#skills'}>
                     <button className={styles.btn}>
