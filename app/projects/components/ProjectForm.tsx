@@ -8,7 +8,7 @@ import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import { DeleteButton } from './deleteProject';
 import { Project } from '@prisma/client';
 
-import styles from '../styles/Projects.module.css';
+import styles from '../styles/ProjectsStyles.module.css';
 
 export const ProjectForm = ({ project }: { project?: Project }) => {
     const router = useRouter();
