@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { validateUser, errorResponse } from '@/app/utils/apiUtils';
-import { prisma } from '@/lib/primsa';
+import { validateUser, errorResponse } from '@/utils/utils';
+import { prisma } from '@/lib/prisma';
 
 export const DELETE = async (request: NextRequest): Promise<NextResponse> => {
     try {
