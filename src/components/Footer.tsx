@@ -1,12 +1,12 @@
-// import { FooterButtons, FooterInformation } from './FooterContent';
+import { FooterButtons, FooterInformation } from './server/FooterContent';
 import styles from './styles/Footer.module.css';
 
 const Footer = () => {
     return (
         <footer className={styles.footer}>
             <div className={styles.footerContent}>
-                {/* <FooterButtons />
-                <FooterInformation /> */}
+                <FooterButtons />
+                <FooterInformation />
             </div>
         </footer>
     );
