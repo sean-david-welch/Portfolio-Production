@@ -1,8 +1,9 @@
 'use client';
 
 import styles from '../styles/Products.module.css';
-import Image from 'next/image';
 import Link from 'next/link';
+import Image from 'next/image';
+import CheckoutForm from './CheckoutForm';
 
 import { Product } from '@prisma/client';
 import { useEffect } from 'react';
@@ -13,9 +14,9 @@ interface Props {
     product: Product;
 }
 
-const ProductCard = ({
-    product: { id, name, description, stack, price, image },
-}: Props) => {
+const ProductCard = ({ product }: Props) => {
+    const { id, name, description, image, stack, price } = product;
+
     const control = useAnimation();
     const [ref, inView] = useInView();
     const cardVariant = {
@@ -57,8 +58,8 @@ const ProductCard = ({
                     ))}
                 </ul>
                 <h1 className={styles.price}>Price: €{price}</h1>
-                <button className={styles.btn}>Buy Now</button>
             </Link>
+            <CheckoutForm product={product} />
         </motion.div>
     );
 };

@@ -3,6 +3,7 @@ const { hostname } = require('os');
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
+        domains: ['avatars.githubusercontent.com', 'lh3.googleusercontent.com'],
         remotePatterns: [
             {
                 protocol: 'https',
@@ -15,7 +16,7 @@ const nextConfig = {
     async headers() {
         return [
             {
-                source: '/api/:path*',
+                source: '/api/checkout',
                 headers: [
                     { key: 'Access-Control-Allow-Credentials', value: 'true' },
                     { key: 'Access-Control-Allow-Origin', value: '*' },
