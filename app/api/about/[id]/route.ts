@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { validateUser, errorResponse } from '@/app/utils/apiUtils';
 import { prisma } from '@/lib/primsa';
-import { data } from 'autoprefixer';
 
 export const DELETE = async (request: NextRequest): Promise<NextResponse> => {
     try {
@@ -87,8 +86,6 @@ export const PUT = async (request: NextRequest): Promise<NextResponse> => {
                     where: { id },
                     data: {
                         title: data.title,
-                        description: data.description,
-                        image: data.image,
                     },
                 });
                 break;
