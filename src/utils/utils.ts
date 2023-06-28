@@ -12,7 +12,7 @@ export const errorResponse = (status: number, messgae: string) => {
     });
 };
 
-export const validateUser = async () => {
+export const validateUser = async (request: NextRequest) => {
     const session = await getServerSession(authOptions);
 
     if (!session) throw new Error(`Not Logged In!`);
