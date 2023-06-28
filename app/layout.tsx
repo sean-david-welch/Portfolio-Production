@@ -1,4 +1,4 @@
-import './styles/globals.css';
+import './globals.css';
 import { Ropa_Sans } from 'next/font/google';
 
 import axios from 'axios';
