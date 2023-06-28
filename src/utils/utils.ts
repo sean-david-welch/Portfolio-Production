@@ -2,7 +2,7 @@ import { prisma } from '@/lib/prisma';
 import { Product } from '@prisma/client';
 
 import { getServerSession } from 'next-auth';
-import { authOptions } from '@/app/api/auth/[...nextauth]/route';
+import { authOptions } from '@/lib/auth';
 import { NextRequest, NextResponse } from 'next/server';
 
 export const errorResponse = (status: number, messgae: string) => {
