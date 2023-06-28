@@ -1,7 +1,14 @@
-import Image from 'next/image';
+import styles from './styles/Page.module.css';
+// import HeroSection from './components/client/Hero';
+// import { InfoSection } from './components/server/Info';
 
-export default function Home() {
+const Home = () => {
     return (
-        <main className="flex min-h-screen flex-col items-center justify-between p-24"></main>
+        <section className={styles.main}>
+            {/* <HeroSection />
+            <InfoSection /> */}
+        </section>
     );
-}
+};
+
+export default Home;
