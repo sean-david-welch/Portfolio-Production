@@ -1,0 +1,67 @@
+.btn {
+    @apply items-center justify-center rounded-xl bg-violet-950 px-8 py-2 text-center font-semibold text-white transition-all duration-700 ease-in-out hover:bg-violet-900;
+}
+
+.btn:hover {
+    @apply boxshadow;
+}
+
+.boxshadow {
+    box-shadow: 0 0 0 2px rgba(74, 4, 78, 0.5), 0 0 0 3px rgba(74, 4, 78, 0.5),
+        0 0 0 4px rgba(74, 4, 78, 0.5), 0 0 0 5px rgba(74, 4, 78, 0.5);
+}
+
+/* ModalButton */
+#dialog {
+    @apply m-auto flex scale-0 flex-col items-center justify-center opacity-0 transition-all duration-200 ease-in;
+}
+
+#dialog[open] {
+    @apply scale-150 opacity-100 duration-1000;
+}
+
+.modal {
+    @apply m-auto flex flex-col items-center justify-center rounded-xl p-4;
+}
+
+.modal::backdrop {
+    @apply bg-slate-600 opacity-90;
+}
+
+.modalHeading {
+    @apply text-3xl font-bold leading-none text-black;
+}
+
+.modalButton {
+    @apply rounded-xl bg-violet-950 px-10 py-2 font-semibold text-white transition-all duration-700 ease-in-out hover:bg-violet-900;
+}
+
+.modalButton:hover {
+    @apply boxshadow;
+}
+
+/* SignIn/Out */
+.signIn {
+    @apply absolute right-2 top-6 flex flex-row;
+}
+
+.signInButton {
+    @apply absolute right-5 top-7;
+    @apply rounded-xl bg-violet-950 px-10 py-2 font-semibold text-white transition-all duration-700 ease-in-out hover:bg-violet-900;
+}
+
+.signInButton:hover {
+    @apply boxshadow;
+}
+
+.profileImage {
+    @apply mx-4 rounded-lg;
+}
+
+.signOutButton {
+    @apply rounded-xl bg-violet-950 px-10 py-2 font-semibold text-white transition-all duration-700 ease-in-out hover:bg-violet-900;
+}
+
+.signOutButton:hover {
+    @apply boxshadow;
+}

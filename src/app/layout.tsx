@@ -3,8 +3,8 @@ import '@/styles/globals.css';
 import { Ropa_Sans } from 'next/font/google';
 
 import axios from 'axios';
-// import Header from './components/Header';
-// import Footer from './components/server/Footer';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 import AuthProvider from './AuthProvider';
 
 const ropa = Ropa_Sans({
@@ -24,11 +24,11 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <AuthProvider>
             <html lang="en" className={ropa.className}>
                 <body className="min-h-screen text-gray-200">
-                    {/* <Header /> */}
+                    <Header />
                     <main>
                         <div className="container">{children}</div>
                     </main>
-                    {/* <Footer /> */}
+                    <Footer />
                 </body>
             </html>
         </AuthProvider>

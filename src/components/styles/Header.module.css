@@ -1,0 +1,85 @@
+#navbar {
+    @apply flex flex-row py-4;
+    @apply border-b-2 border-indigo-900;
+}
+
+.logo {
+    @apply mx-auto flex cursor-pointer flex-row items-center justify-center hover:pointer-events-auto;
+    @apply cursor-pointer transition-transform duration-700 hover:scale-[1.1];
+}
+
+/* Side Navbar */
+.sideNav {
+    @apply absolute left-0 top-4 z-10 h-full min-h-screen w-64 border-r-2 border-indigo-900;
+    @apply transform transition-all duration-700 ease-in-out;
+    @apply bg-gradient-to-b from-[rgb(18,24,27)] via-[rgb(18,24,27)] to-[rgb(32,39,55)];
+}
+
+.sideNav.open {
+    @apply pointer-events-auto fixed translate-x-0 opacity-100;
+}
+
+.sideNav.closed {
+    @apply -translate-x-full opacity-0;
+}
+
+.navList {
+    @apply mx-auto mb-2 mt-20 flex flex-col justify-evenly;
+}
+
+.navItem {
+    @apply mx-auto my-6 w-56 text-xl transition-all duration-500 ease-in-out;
+}
+
+.navItem:hover {
+    @apply text-indigo-600;
+}
+
+.navItem > * {
+    @apply mx-2;
+}
+
+.navIcon {
+    @apply fixed left-5 top-8 z-10 cursor-pointer hover:pointer-events-auto;
+}
+
+.iconGrid {
+    @apply grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+.sectionHeading {
+    @apply mx-6 w-56 text-2xl font-medium;
+}
+
+.navigation {
+    @apply h-8 cursor-pointer hover:pointer-events-auto;
+}
+
+.socialLinks {
+    @apply mx-auto flex flex-col;
+}
+
+.socialHeading {
+    @apply mx-5 text-xl font-medium;
+}
+
+.underline {
+    @apply bg-gradient-to-r from-indigo-600 via-blue-800 to-purple-900 bg-[length:100%_2px] bg-bottom bg-no-repeat;
+}
+
+.linksList {
+    @apply mx-2 flex flex-col;
+}
+
+.linksList a {
+    @apply mx-4 my-2 w-56 text-xl font-medium transition-all duration-500 ease-in-out;
+}
+
+.linksList a:hover {
+    @apply text-indigo-600;
+}
+
+.linksList svg {
+    @apply mr-4 mt-6;
+}
