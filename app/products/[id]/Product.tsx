@@ -8,7 +8,7 @@ import { Product } from '@prisma/client';
 import { motion, useAnimation } from 'framer-motion';
 import { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
-import { handlePayment } from '../utils/utils';
+import CheckoutForm from '../components/CheckoutForm';
 
 interface Props {
     product: Product;
@@ -57,11 +57,7 @@ export const ProductInfo = ({ product }: Props) => {
                     ))}
                 </ul>
                 <h1 className={styles.price}>Price: €{price}</h1>
-                <button
-                    className={styles.btn}
-                    onClick={event => handlePayment(event, product)}>
-                    Buy Now
-                </button>
+                <CheckoutForm product={product} />
             </div>
         </motion.div>
     );

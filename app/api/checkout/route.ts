@@ -4,7 +4,7 @@ import { NextRequest, NextResponse } from 'next/server';
 
 const stripe = require('stripe')(String(process.env.TEST_PRIVATE_KEY));
 
-export const POST = async (request: NextRequest, response: NextResponse) => {
+export const POST = async (request: NextRequest): Promise<NextResponse> => {
     try {
         const data = await request.json();
         const product = await prisma.product.findUnique({
@@ -39,7 +39,7 @@ export const POST = async (request: NextRequest, response: NextResponse) => {
         });
 
         console.log('Session:', session);
-        return NextResponse.json(session);
+        return NextResponse.redirect(session.url, 303);
     } catch (error: any) {
         console.error(error);
         return errorResponse(500, error.message || 'Internal Server Error');
