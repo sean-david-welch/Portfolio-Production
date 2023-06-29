@@ -65,3 +65,13 @@
 .signOutButton:hover {
     @apply boxshadow;
 }
+
+@media (max-width: 1024px) {
+    .btn {
+        @apply px-4 py-1 text-sm !important;
+    }
+
+    .signIn img {
+        @apply hidden !important;
+    }
+}

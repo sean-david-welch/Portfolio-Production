@@ -129,12 +129,20 @@
 }
 
 @media (max-width: 1024px) {
+    .card {
+        @apply overflow-x-hidden !important;
+    }
+
+    .models {
+        @apply mx-auto !important;
+    }
+
     .about {
         @apply mx-auto !important;
     }
 
     .models > * {
-        @apply w-[400px] !important;
+        @apply w-[350px] !important;
     }
 
     .hobbies {

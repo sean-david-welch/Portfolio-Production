@@ -41,6 +41,6 @@ body {
 
 @media (max-width: 1024px) {
     .container {
-        @apply w-screen mx-auto max-w-fit overflow-x-hidden !important;
+        @apply w-screen mx-auto overflow-x-hidden !important;
     }
 }

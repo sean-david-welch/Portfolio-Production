@@ -146,3 +146,25 @@
 #form .btn {
     @apply mt-4;
 }
+
+@media (max-width: 1024px) {
+    #projectsPage {
+        @apply mx-auto !important;
+    }
+
+    .projectCard {
+        @apply w-[350px] mx-auto !important;
+    }
+
+    .projectCard > * {
+        @apply w-[350px] !important;
+    }
+
+    .projectCard img {
+        @apply w-[350px] mx-auto !important;
+    }
+
+    .projectCard ul {
+        @apply w-[350px] mx-auto flex-wrap !important;
+    }
+}
