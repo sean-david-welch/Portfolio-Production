@@ -1,5 +1,5 @@
 import styles from '../styles/Info.module.css';
-// import ProjectCard from '@/app/projects/components/ProjectCard';
+import ProjectCard from '@/app/projects/components/ProjectCard';
 
 import { prisma } from '@/lib/prisma';
 
@@ -14,9 +14,9 @@ export const ProjectDisplay = async () => {
                     See what applications I&apos;ve built for enterprises
                     solutions
                 </h2>
-                {/* {projects.map(project => (
+                {projects.map(project => (
                     <ProjectCard key={project.id} project={project} />
-                ))} */}
+                ))}
             </div>
         </section>
     );
