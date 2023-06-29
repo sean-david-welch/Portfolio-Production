@@ -129,10 +129,6 @@
 }
 
 @media (max-width: 1024px) {
-    .card {
-        @apply overflow-x-hidden !important;
-    }
-
     .models {
         @apply mx-auto !important;
     }
