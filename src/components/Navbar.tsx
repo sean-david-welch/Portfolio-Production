@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from './styles/Header.module.css';
 import Sidebar from './Sidebar';
-// import { SignInButton } from './client/Buttons';
+import { SignInButton } from './client/Buttons';
 
 const Navbar = () => {
     return (
@@ -18,7 +18,7 @@ const Navbar = () => {
                         height={60}
                     />
                 </Link>
-                {/* <SignInButton /> */}
+                <SignInButton />
             </nav>
         </>
     );
