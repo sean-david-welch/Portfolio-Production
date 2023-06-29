@@ -85,3 +85,32 @@
 #form .btn {
     @apply mt-4;
 }
+
+@media (max-width: 1024px) {
+    .mainHeading {
+        @apply text-2xl !important;
+    }
+
+    .heading {
+        @apply text-lg !important;
+    }
+    .description {
+        @apply mx-auto w-screen !important;
+    }
+
+    .intro img {
+        @apply w-[250px] !important;
+    }
+
+    .gridLayout {
+        grid-template-columns: 1fr !important;
+    }
+
+    .gridItem {
+        @apply w-[200] mx-auto !important;
+    }
+
+    .gridItem .description {
+        @apply w-fit !important;
+    }
+}

@@ -127,3 +127,34 @@
 .hobbies #form {
     @apply w-[350px];
 }
+
+@media (max-width: 1024px) {
+    .about {
+        @apply mx-auto !important;
+    }
+
+    .models > * {
+        @apply w-[400px] !important;
+    }
+
+    .hobbies {
+        @apply mx-auto !important;
+    }
+
+    .mapGrid {
+        grid-template-columns: 1fr !important;
+        @apply mx-auto !important;
+    }
+
+    .buttonsGrid {
+        @apply w-[200px] !important;
+    }
+
+    .grid {
+        @apply mx-auto !important;
+    }
+
+    #form {
+        @apply w-[300] text-center items-center !important;
+    }
+}

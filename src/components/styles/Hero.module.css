@@ -6,38 +6,6 @@
     @apply my-4 text-5xl font-semibold;
 }
 
-.hidden {
-    opacity: 0;
-    transform: translateX(-100%);
-}
-
-.show {
-    animation: slideIn 800ms ease-in-out forwards;
-}
-
-@keyframes slideIn {
-    0% {
-        opacity: 0;
-        transform: translateX(-100%);
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-.show:nth-child(2) {
-    animation-delay: 300ms;
-}
-
-.show:nth-child(3) {
-    animation-delay: 600ms;
-}
-
-.show:nth-child(4) {
-    animation-delay: 900ms;
-}
-
 /* Buttons */
 .btn {
     @apply items-center justify-center rounded-xl bg-violet-950 px-8 py-2 text-center text-lg font-semibold;
@@ -51,4 +19,10 @@
 .boxshadow {
     box-shadow: 0 0 0 2px rgba(74, 4, 78, 0.5), 0 0 0 3px rgba(74, 4, 78, 0.5),
         0 0 0 4px rgba(74, 4, 78, 0.5), 0 0 0 5px rgba(74, 4, 78, 0.5);
+}
+
+@media (max-width: 1024px) {
+    .hero {
+        @apply mx-auto !important;
+    }
 }

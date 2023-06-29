@@ -68,3 +68,17 @@
 .mainHeading {
     @apply text-3xl underline;
 }
+
+@media (max-width: 1024px) {
+    .footerList {
+        @apply flex-col !important;
+    }
+
+    .footerList > * {
+        @apply my-2 !important;
+    }
+
+    .footerList button {
+        @apply mx-auto !important;
+    }
+}

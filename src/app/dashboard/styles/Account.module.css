@@ -101,3 +101,9 @@
 .optionsGrid > * {
     @apply mx-2;
 }
+
+@media (max-width: 1024px) {
+    #dashboardPage {
+        @apply mx-auto !important;
+    }
+}
