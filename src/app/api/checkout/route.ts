@@ -30,6 +30,7 @@ export const POST = async (request: NextRequest): Promise<NextResponse> => {
                             description: product.description,
                         },
                         unit_amount: product.price * 100,
+                        tax_behaviour: 'inclusive',
                     },
                     quantity: 1,
                 },
