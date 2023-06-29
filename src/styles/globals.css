@@ -36,11 +36,11 @@ body {
 }
 
 .container {
-    @apply m-auto min-h-screen items-center text-center;
+    @apply mx-auto min-h-screen items-center text-center;
 }
 
 @media (max-width: 1024px) {
     .container {
-        @apply w-screen mx-auto max-w-max overflow-x-hidden !important;
+        @apply w-screen mx-auto min-w-full overflow-x-hidden !important;
     }
 }
