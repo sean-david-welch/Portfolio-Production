@@ -1,9 +1,9 @@
 #success {
-    @apply flex justify-center text-align center;
+    @apply flex justify-center text-center center;
 }
 
 #failure {
-    @apply flex justify-center text-align center;
+    @apply flex justify-center text-center center;
 }
 
 .btn {
