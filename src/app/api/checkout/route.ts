@@ -4,7 +4,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { BASE_URL } from '@/lib/config';
 import { STRIPE_PRIVATE_KEY } from '@/lib/config';
 
-const stripe = require('stripe')(STRIPE_PRIVATE_KEY);
+const stripe = require('stripe')(String(STRIPE_PRIVATE_KEY));
 
 export const POST = async (request: NextRequest): Promise<NextResponse> => {
     try {
