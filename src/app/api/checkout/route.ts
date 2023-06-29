@@ -35,8 +35,8 @@ export const POST = async (request: NextRequest): Promise<NextResponse> => {
                 },
             ],
             mode: 'payment',
-            success_url: `${BASE_URL}/payments/success`,
-            cancel_url: `${BASE_URL}/payments/failure`,
+            success_url: `${BASE_URL}payments/success`,
+            cancel_url: `${BASE_URL}payments/failure`,
             automatic_tax: { enabled: true },
         });
 
