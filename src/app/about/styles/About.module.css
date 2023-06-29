@@ -142,7 +142,11 @@
     }
 
     .hobbies {
-        @apply mx-auto !important;
+        @apply mx-auto w-[350px] !important;
+    }
+
+    .hobbies .grid {
+        @apply w-[250px] mx-auto !important;
     }
 
     .mapGrid {
