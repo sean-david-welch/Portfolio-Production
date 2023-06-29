@@ -1,5 +1,13 @@
-const LoadingProjects = () => {
-    return <div>Loading Projects...</div>;
+import React from 'react';
+
+const Loading: React.FC = () => {
+    return (
+        <div className="loading-spinner">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    );
 };
 
-export default LoadingProjects;
+export default Loading;

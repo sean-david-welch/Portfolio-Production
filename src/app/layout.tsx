@@ -19,7 +19,6 @@ export const metadata = {
 };
 
 axios.defaults.baseURL = API_URL;
-console.log(axios.defaults.baseURL);
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
     return (
