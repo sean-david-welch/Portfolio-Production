@@ -1,5 +1,5 @@
 .navbar {
-    @apply flex flex-row border-b-2 border-indigo-900 py-4;
+    @apply flex flex-row border-b-2 border-indigo-900 py-4 max-w-[100vw] overflow-x-hidden;
 }
 
 .logo {

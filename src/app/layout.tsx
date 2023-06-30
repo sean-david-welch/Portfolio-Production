@@ -33,12 +33,12 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
                     />
                     <meta
                         name="viewport"
-                        content="width=device-width, initial-scale=1.0, user-scalable=no"
+                        content="width=device-width, initial-scale=1.0"
                     />
                 </Head>
-                <body className="max-w-[100vw]">
+                <body className="max-w-[100vw] overflow-x-hidden mx-auto">
                     <Header />
-                    <main>
+                    <main className="max-w-[100vw] overflow-x-hidden mx-auto">
                         <div className="container">{children}</div>
                     </main>
                     <Footer />

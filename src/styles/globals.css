@@ -40,7 +40,7 @@ body {
 }
 
 .container {
-    @apply mx-auto min-h-screen items-center text-center;
+    @apply mx-auto min-h-screen items-center text-center max-w-[100vw] overflow-x-hidden;
 }
 
 .loading-spinner {
@@ -57,10 +57,4 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
-
-@media (max-width: 1024px) {
-    .container {
-        @apply mx-auto min-w-full !important;
-    }
 }
