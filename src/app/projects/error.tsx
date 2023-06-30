@@ -1,5 +1,5 @@
 'use client';
-import styles from './styles/ProjectStyles.module.css';
+import styles from './styles/ProjectsStyles.module.css';
 
 import { useEffect } from 'react';
 
