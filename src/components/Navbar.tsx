@@ -6,21 +6,19 @@ import { SignInButton } from './client/Buttons';
 
 const Navbar = () => {
     return (
-        <>
+        <nav className={styles.navbar}>
             <Sidebar />
-            <nav id={styles.navbar}>
-                <Link href={'/'} prefetch={false} className={styles.logo}>
-                    <Image
-                        src={'/logo/logo.png'}
-                        alt={'Your Logo'}
-                        priority={true}
-                        width={60}
-                        height={60}
-                    />
-                </Link>
-                <SignInButton />
-            </nav>
-        </>
+            <Link href={'/'} prefetch={false} className={styles.logo}>
+                <Image
+                    src={'/logo/logo.png'}
+                    alt={'Your Logo'}
+                    priority={true}
+                    width={60}
+                    height={60}
+                />
+            </Link>
+            <SignInButton />
+        </nav>
     );
 };
 

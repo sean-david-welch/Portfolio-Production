@@ -1,6 +1,5 @@
-#navbar {
-    @apply flex flex-row py-4;
-    @apply border-b-2 border-indigo-900;
+.navbar {
+    @apply flex flex-row border-b-2 border-indigo-900 py-4;
 }
 
 .logo {
@@ -10,13 +9,13 @@
 
 /* Side Navbar */
 .sideNav {
-    @apply absolute left-0 top-4 z-10 h-full min-h-screen w-64 border-r-2 border-indigo-900;
+    @apply absolute left-0 top-2 z-10 min-h-screen w-64 border-r-2 border-indigo-900;
     @apply transform transition-all duration-700 ease-in-out;
     @apply bg-gradient-to-b from-[rgb(18,24,27)] via-[rgb(18,24,27)] to-[rgb(32,39,55)];
 }
 
 .sideNav.open {
-    @apply pointer-events-auto fixed translate-x-0 opacity-100;
+    @apply pointer-events-auto fixed translate-x-0 opacity-100 min-h-screen;
 }
 
 .sideNav.closed {
