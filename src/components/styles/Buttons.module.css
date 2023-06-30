@@ -71,6 +71,14 @@
         @apply px-4 py-1 text-sm !important;
     }
 
+    .signInButton {
+        @apply px-4 py-1 top-8 !important;
+    }
+
+    .signOutButton {
+        @apply px-6 py-2 top-10 !important;
+    }
+
     .signIn img {
         @apply hidden !important;
     }

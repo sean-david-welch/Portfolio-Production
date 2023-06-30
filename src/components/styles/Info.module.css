@@ -95,7 +95,15 @@
         @apply text-lg !important;
     }
     .description {
-        @apply mx-auto w-screen !important;
+        @apply mx-auto w-[200px] !important;
+    }
+
+    .about > * {
+        @apply w-[350px];
+    }
+
+    .about {
+        @apply mx-auto w-[350px] !important;
     }
 
     .intro img {

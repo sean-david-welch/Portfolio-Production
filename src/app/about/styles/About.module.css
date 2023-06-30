@@ -105,7 +105,7 @@
 }
 
 #form > * {
-    @apply my-2;
+    @apply my-4;
 }
 
 #form form label {
@@ -133,8 +133,12 @@
         @apply mx-auto !important;
     }
 
+    .about > * {
+        @apply w-[350px];
+    }
+
     .about {
-        @apply mx-auto !important;
+        @apply mx-auto w-[350px] !important;
     }
 
     .models > * {
@@ -155,14 +159,18 @@
     }
 
     .buttonsGrid {
-        @apply w-[200px] !important;
+        @apply w-[150px] mx-auto items-center !important;
     }
 
     .grid {
-        @apply mx-auto !important;
+        @apply mx-auto px-0 !important;
     }
 
     #form {
-        @apply w-[300] text-center items-center !important;
+        @apply mx-auto w-[250px] text-center items-center !important;
+    }
+
+    .hobbies #form {
+        @apply w-[250px] mx-auto text-center items-center !important;
     }
 }
