@@ -33,10 +33,10 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
                     />
                     <meta
                         name="viewport"
-                        content="width=device-width, initial-scale=1"
+                        content="width=device-width, initial-scale=1.0, user-scalable=no"
                     />
                 </Head>
-                <body className="min-h-screen text-gray-200">
+                <body className="max-w-[100vw]">
                     <Header />
                     <main>
                         <div className="container">{children}</div>

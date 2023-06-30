@@ -18,11 +18,14 @@ const spinTransition = {
 
 function LoadingSpinner() {
     return (
-        <motion.div
-            style={spinner}
-            animate={{ rotate: 360 }}
-            transition={spinTransition}
-        />
+        <>
+            <motion.div
+                className="loading-spinner"
+                style={spinner}
+                animate={{ rotate: 360 }}
+                transition={spinTransition}
+            />
+        </>
     );
 }
 
