@@ -1,3 +1,94 @@
+-- CreateEnum
+CREATE TYPE "Role" AS ENUM ('ADMIN', 'USER');
+
+-- CreateTable
+CREATE TABLE "Technologies" (
+    "id" TEXT NOT NULL,
+    "title" TEXT NOT NULL,
+    "description" TEXT NOT NULL,
+    "image" TEXT NOT NULL,
+
+    CONSTRAINT "Technologies_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "About" (
+    "id" TEXT NOT NULL,
+    "title" TEXT NOT NULL,
+    "description" TEXT NOT NULL,
+
+    CONSTRAINT "About_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "Experience" (
+    "id" TEXT NOT NULL,
+    "title" TEXT NOT NULL,
+    "description" TEXT NOT NULL,
+
+    CONSTRAINT "Experience_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "Education" (
+    "id" TEXT NOT NULL,
+    "title" TEXT NOT NULL,
+    "description" TEXT NOT NULL,
+
+    CONSTRAINT "Education_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "Achievements" (
+    "id" TEXT NOT NULL,
+    "title" TEXT NOT NULL,
+    "description" TEXT NOT NULL,
+
+    CONSTRAINT "Achievements_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "Skills" (
+    "id" TEXT NOT NULL,
+    "title" TEXT NOT NULL,
+
+    CONSTRAINT "Skills_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "Hobbies" (
+    "id" TEXT NOT NULL,
+    "title" TEXT NOT NULL,
+
+    CONSTRAINT "Hobbies_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "Project" (
+    "id" TEXT NOT NULL,
+    "name" TEXT NOT NULL,
+    "blurb" TEXT,
+    "description" TEXT,
+    "image" TEXT,
+    "link" TEXT,
+    "tags" TEXT[],
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT "Project_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "Product" (
+    "id" TEXT NOT NULL,
+    "name" TEXT NOT NULL,
+    "description" TEXT,
+    "stack" TEXT[],
+    "image" TEXT,
+    "price" INTEGER NOT NULL,
+
+    CONSTRAINT "Product_pkey" PRIMARY KEY ("id")
+);
+
 -- CreateTable
 CREATE TABLE "Account" (
     "id" TEXT NOT NULL,
@@ -36,6 +127,7 @@ CREATE TABLE "User" (
     "email" TEXT,
     "emailVerified" TIMESTAMP(3),
     "image" TEXT,
+    "role" "Role" NOT NULL DEFAULT 'USER',
 
     CONSTRAINT "User_pkey" PRIMARY KEY ("id")
 );
