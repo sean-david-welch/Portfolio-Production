@@ -48,7 +48,7 @@ export const Introduction = () => {
                     onClick={() => router.push('/about')}
                 />
                 <p className={styles.description}>
-                    I&apos;m Dublin-based web developer with a knack for
+                    I&apos;m a Dublin-based web developer with a knack for
                     creating dynamic and efficient websites.My journey into the
                     realm of web development started as a personal challenge,
                     but it quickly turned into a passion. After graduating from
