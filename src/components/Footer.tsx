@@ -1,5 +1,7 @@
-import { FooterButtons, FooterInformation } from './server/FooterContent';
 import styles from './styles/Footer.module.css';
+
+import ToTopButton from './client/ToTop';
+import { FooterButtons, FooterInformation } from './server/FooterContent';
 
 const Footer = () => {
     return (
@@ -8,6 +10,7 @@ const Footer = () => {
                 <FooterButtons />
                 <FooterInformation />
             </div>
+            <ToTopButton />
         </footer>
     );
 };

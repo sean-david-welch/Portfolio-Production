@@ -73,8 +73,7 @@
 }
 
 .productView {
-    @apply my-8 grid rounded-xl bg-gray-800;
-    grid-template-columns: 1fr 1fr;
+    @apply my-8 grid rounded-xl bg-gray-800 grid-cols-2;
 }
 
 .productView img {
@@ -147,4 +146,10 @@
 
 #form .btn {
     @apply mt-4;
+}
+
+@media (max-width: 1024px) {
+    .productView {
+        @apply grid-cols-1;
+    }
 }
