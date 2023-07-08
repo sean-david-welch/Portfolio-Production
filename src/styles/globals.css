@@ -18,8 +18,7 @@ html::-webkit-scrollbar {
 }
 
 html::-webkit-scrollbar-thumb {
-    background-color: var(--black-color);
-    border-radius: 10px;
+    @apply bg-gray-900 rounded-lg;
 }
 
 html::-webkit-scrollbar-track {
@@ -36,11 +35,11 @@ body {
 }
 
 body {
-    @apply min-h-screen overflow-x-hidden mx-auto text-gray-200;
+    @apply min-h-screen overflow-x-hidden mx-auto max-w-full text-gray-200;
 }
 
 .container {
-    @apply mx-auto min-h-screen items-center text-center max-w-[100vw] overflow-x-hidden;
+    @apply mx-auto min-h-screen items-center text-center max-w-full overflow-x-hidden;
 }
 
 .loading-spinner {

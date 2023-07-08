@@ -1,5 +1,4 @@
 import '@/styles/globals.css';
-import Head from 'next/head';
 
 import { Ropa_Sans } from 'next/font/google';
 import { API_URL } from '@/lib/config';
@@ -17,6 +16,11 @@ const ropa = Ropa_Sans({
 export const metadata = {
     title: 'ModerDev',
     description: 'Modern and clean web development',
+    viewport: {
+        width: 'device-width',
+        initialScale: 1,
+        maximumScale: 1,
+    },
 };
 
 axios.defaults.baseURL = API_URL;
@@ -25,20 +29,9 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
     return (
         <AuthProvider>
             <html lang="en" className={ropa.className}>
-                <Head>
-                    <title>ModerDev</title>
-                    <meta
-                        name="description"
-                        content="Modern and clean web development"
-                    />
-                    <meta
-                        name="viewport"
-                        content="width=device-width, initial-scale=1.0"
-                    />
-                </Head>
-                <body className="max-w-[100vw] overflow-x-hidden mx-auto">
+                <body className="max-w-full overflow-x-hidden mx-auto">
                     <Header />
-                    <main className="max-w-[100vw] overflow-x-hidden mx-auto">
+                    <main className="max-w-full overflow-x-hidden mx-auto">
                         <div className="container">{children}</div>
                     </main>
                     <Footer />
