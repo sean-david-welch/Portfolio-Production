@@ -9,8 +9,7 @@
 }
 
 html {
-    scroll-behavior: smooth !important;
-    scroll-padding: 2rem !important;
+    @apply scroll-smooth scroll-p-6 overflow-x-hidden max-w-full !important;
 }
 
 html::-webkit-scrollbar {
