@@ -11,14 +11,13 @@ import {
     faCircleInfo,
 } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import ContactForm from '../client/ContactForm';
 
 export const FooterInformation = () => {
     return (
         <div className={styles.footerInfo}>
             <div className={styles.infoContent}>
-                <h1 className={styles.mainHeading}>
-                    Email: seanwelch51199@icloud.com
-                </h1>
+                <ContactForm />
 
                 <ul className={styles.linksList}>
                     <Link

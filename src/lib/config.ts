@@ -10,3 +10,8 @@ export const STRIPE_PRIVATE_KEY =
     process.env.NODE_ENV === 'production'
         ? process.env.STRIPE_PRIVATE_KEY
         : process.env.TEST_PRIVATE_KEY;
+
+export const emailHost = process.env.EMAIL_SERVER;
+export const emailPass = process.env.EMAIL_PASSWORD;
+export const emailUser = process.env.EMAIL_USER;
+export const emailPort = process.env.EMAIL_PORT;
