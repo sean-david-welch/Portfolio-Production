@@ -6,7 +6,6 @@ import { errorResponse } from '@/utils/utils';
 import { NextRequest, NextResponse } from 'next/server';
 
 const recaptcha = process.env.RECAPTCHA_SECRET!;
-
 export const POST = async (request: NextRequest): Promise<NextResponse> => {
     try {
         const data = await request.json();
