@@ -4,12 +4,12 @@ import { emailHost, emailPass, emailUser, emailPort } from './config';
 export const transporter = nodemailer.createTransport({
     host: emailHost,
     port: Number(emailPort),
-    secure: true,
+    secure: false,
     auth: {
         user: emailUser,
         pass: emailPass,
     },
     tls: {
-        ciphers: 'SSLv3',
+        ciphers: 'TLSv1.2',
     },
 });
