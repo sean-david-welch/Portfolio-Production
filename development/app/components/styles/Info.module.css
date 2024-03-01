@@ -1,0 +1,87 @@
+.btn {
+    @apply my-10 items-center justify-center rounded-xl bg-violet-950 px-8 py-2 text-center text-lg font-semibold;
+    @apply mx-auto text-white transition-all duration-700 ease-in-out hover:bg-violet-900;
+}
+
+.btn:hover {
+    @apply boxshadow;
+}
+
+.btn svg {
+    @apply mx-2;
+}
+
+.boxshadow {
+    box-shadow: 0 0 0 2px rgba(74, 4, 78, 0.5), 0 0 0 3px rgba(74, 4, 78, 0.5),
+        0 0 0 4px rgba(74, 4, 78, 0.5), 0 0 0 5px rgba(74, 4, 78, 0.5);
+}
+
+.mainHeading {
+    @apply mt-2 text-4xl underline;
+}
+
+.heading {
+    @apply text-2xl;
+}
+
+.description {
+    @apply mx-auto my-3 w-[750px] text-lg;
+}
+
+.intro {
+    @apply my-12;
+}
+
+.intro > * {
+    @apply my-8;
+}
+
+.intro img {
+    @apply mx-auto my-2 flex cursor-pointer rounded-xl transition-transform duration-700 hover:scale-[1.05];
+}
+
+.gridLayout {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.gridLayout > * {
+    @apply mx-4 my-4;
+}
+
+.gridItem {
+    @apply mx-auto my-auto flex h-[320px] w-[400px] flex-col justify-center rounded-xl bg-gray-800 p-10;
+    @apply cursor-pointer transition-transform duration-700 hover:scale-[1.05];
+}
+
+.gridItem > * {
+    @apply mx-4 my-2;
+}
+
+.gridItem img {
+    @apply mx-auto;
+}
+
+.gridItem .description {
+    @apply mx-auto w-full;
+}
+
+#form {
+    @apply flex flex-col;
+}
+
+#form > * {
+    @apply my-4;
+}
+
+#form form label {
+    @apply my-2 block text-lg font-medium text-gray-900 dark:text-white;
+}
+
+#form form input {
+    @apply block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500;
+}
+
+#form .btn {
+    @apply mt-4;
+}
